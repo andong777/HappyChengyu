@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS Chengyu;
+CREATE TABLE Chengyu(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ChengYu CHARACTER(4) NOT NULL,
+    PingYin VARCHAR(255) NOT NULL,
+    DianGu TEXT,
+    ChuChu TEXT,
+    LiZi TEXT,
+    SPingYin CHARACTER(4)
+);
