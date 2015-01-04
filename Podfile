@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'HappyChengyu' do
-	pod 'FMDB'
+	pod "Mantle"
 end
 
 target 'HappyChengyuTests' do

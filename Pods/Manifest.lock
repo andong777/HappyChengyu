@@ -1,14 +1,12 @@
 PODS:
-  - FMDB (2.4):
-    - FMDB/standard (= 2.4)
-  - FMDB/common (2.4)
-  - FMDB/standard (2.4):
-    - FMDB/common
+  - Mantle (1.5.1):
+    - Mantle/extobjc (= 1.5.1)
+  - Mantle/extobjc (1.5.1)
 
 DEPENDENCIES:
-  - FMDB
+  - Mantle
 
 SPEC CHECKSUMS:
-  FMDB: 0b2fa25e5264ef177973c0cb8c02c711107979aa
+  Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
 
 COCOAPODS: 0.35.0
