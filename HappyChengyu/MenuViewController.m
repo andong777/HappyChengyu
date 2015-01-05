@@ -17,10 +17,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *theSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *answerButton;
+@property (weak, nonatomic) IBOutlet UISwitch *characterSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *toneSwitch;
 
 - (IBAction)clickStart:(UIButton *)sender;
 - (IBAction)clickAnswer:(UIButton *)sender;
+- (IBAction)toggleCharacterSwitch:(UISwitch *)sender;
 
 @end
 
@@ -41,6 +44,7 @@
     currentChengyu = [[ChengyuHelper sharedInstance] random];
     [self setContent];
     _began = YES;
+    _answerButton.enabled = YES;
 }
 
 - (IBAction)clickAnswer:(UIButton *)sender {
@@ -48,13 +52,13 @@
         return;
     }
     Chengyu *answer = nil;
-    if(_theSwitch.isOn){
+    if(_characterSwitch.isOn){
         NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
         answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter];
     }else{
         NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
         NSLog(@"pinyin: %@", thePinyin);
-        answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin];
+        answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_toneSwitch.isOn];
     }
     if(answer){
         NSLog(@"%@", answer.name);
@@ -63,6 +67,15 @@
     }else{
         _questionLabel.text = @"找不到候选词";
         _began = NO;
+        _answerButton.enabled = NO;
+    }
+}
+
+- (IBAction)toggleCharacterSwitch:(UISwitch *)sender {
+    if(sender.isOn){
+        _toneSwitch.enabled = NO;
+    }else{
+        _toneSwitch.enabled = YES;
     }
 }
 

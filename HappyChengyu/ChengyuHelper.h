@@ -9,15 +9,23 @@
 #import <Foundation/Foundation.h>
 @class Chengyu;
 
-#define kFileName @"chengyu"
+enum {
+    UnknownError = 0,
+    WrongLengthError = 1,
+    UsedNameError = 2,
+    NonExistentNameError = 3
+};
 
 @interface ChengyuHelper : NSObject
 
 + (instancetype)sharedInstance;
+- (void)loadData;
+
 - (Chengyu *)random;
-- (Chengyu *)findNextWithFirstCharacter: (NSString *)character;
-- (Chengyu *)findNextWithFirstPinyin: (NSString *)pinyin;
-- (NSArray *)find: (NSInteger)number withFirstCharacter: (NSString *)character;
-- (NSArray *)find: (NSInteger)number withFirstPinyin: (NSString *)pinyin;
+- (Chengyu *)findNextWithFirstCharacter:(NSString *)character;
+- (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
+- (NSArray *)find:(NSInteger)number withFirstCharacter:(NSString *)character;
+- (NSArray *)find:(NSInteger)number withFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
+- (BOOL)checkIsValid:(NSString *)chengyuName withError:(NSError *)error;
 
 @end
