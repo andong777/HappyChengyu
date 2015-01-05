@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 @class Chengyu;
 
+#define kFileName @"chengyu"
+
 @interface ChengyuHelper : NSObject
 
 + (instancetype)sharedInstance;
 - (Chengyu *)random;
 - (Chengyu *)findNextWithFirstCharacter: (NSString *)character;
 - (Chengyu *)findNextWithFirstPinyin: (NSString *)pinyin;
-- (Chengyu *)find: (NSInteger)number withFirstCharacter: (NSString *)character;
-- (Chengyu *)find: (NSInteger)number withFirstPinyin: (NSString *)pinyin;
+- (NSArray *)find: (NSInteger)number withFirstCharacter: (NSString *)character;
+- (NSArray *)find: (NSInteger)number withFirstPinyin: (NSString *)pinyin;
 
 @end

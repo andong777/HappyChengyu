@@ -21,7 +21,7 @@
              };
 }
 
-- (NSValueTransformer *)pinyinJSONTransformer {
++ (NSValueTransformer *)pinyinJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^(NSString *string){
         return [string componentsSeparatedByString:@" "];

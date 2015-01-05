@@ -18,6 +18,7 @@
 		7658C3531A58D01D0062C946 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7658C3511A58D01D0062C946 /* LaunchScreen.xib */; };
 		7658C35F1A58D01D0062C946 /* HappyChengyuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */; };
 		7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3711A58F0380062C946 /* ChengyuHelper.m */; };
+		766F4ED11A5A7E8B002FB3FF /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 766F4ED01A5A7E8B002FB3FF /* test.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyChengyuTests.m; sourceTree = "<group>"; };
 		7658C3701A58F0380062C946 /* ChengyuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChengyuHelper.h; path = HappyChengyu/ChengyuHelper.h; sourceTree = "<group>"; };
 		7658C3711A58F0380062C946 /* ChengyuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChengyuHelper.m; path = HappyChengyu/ChengyuHelper.m; sourceTree = "<group>"; };
+		766F4ED01A5A7E8B002FB3FF /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		D64B6ED411EC69097BCFD0FF /* Pods-HappyChengyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyChengyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyChengyu/Pods-HappyChengyu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		7658C3411A58D01D0062C946 /* HappyChengyu */ = {
 			isa = PBXGroup;
 			children = (
+				766F4ED01A5A7E8B002FB3FF /* test.json */,
 				763D18FE1A59926D00A3B3A5 /* chengyu.json */,
 				7658C3691A58EBFE0062C946 /* Controllers */,
 				7658C3681A58EBDB0062C946 /* Models */,
@@ -257,6 +260,7 @@
 			files = (
 				7658C34E1A58D01D0062C946 /* Main.storyboard in Resources */,
 				7658C3531A58D01D0062C946 /* LaunchScreen.xib in Resources */,
+				766F4ED11A5A7E8B002FB3FF /* test.json in Resources */,
 				7658C3501A58D01D0062C946 /* Images.xcassets in Resources */,
 				763D18FF1A59926D00A3B3A5 /* chengyu.json in Resources */,
 			);

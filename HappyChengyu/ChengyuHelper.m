@@ -29,8 +29,7 @@
 - (instancetype)init {
     self = [super init];
     if(self){
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"chengyu" ofType:@"json"];
-        NSLog(@"path: %@", path);
+        NSString *path = [[NSBundle mainBundle] pathForResource:kFileName ofType:@"json"];
         NSData *JSONData = [NSData dataWithContentsOfFile:path];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
         NSArray *array = [dictionary valueForKey:@"Chengyu"];
@@ -46,6 +45,48 @@
 - (Chengyu *)random {
     NSUInteger index = arc4random() % [[self chengyuList] count];
     return [[self chengyuList] objectAtIndex:index];
+}
+
+- (NSArray *)find:(NSInteger)number withFirstCharacter:(NSString *)character {
+    NSPredicate *select = [NSPredicate predicateWithFormat:@"%K BEGINSWITH %@", @"name", character];
+    NSArray *results = [[self chengyuList] filteredArrayUsingPredicate:select];
+    if(!results || [results count] == 0){
+        return nil;
+    }
+    NSRange theRange;
+    theRange.location = 0;
+    theRange.length = number < [results count]? number : [results count];
+    return [results subarrayWithRange:theRange];
+}
+
+- (Chengyu *)findNextWithFirstCharacter:(NSString *)character {
+    NSArray *array = [self find:1 withFirstCharacter:character];
+    Chengyu *result = nil;
+    if(array && [array count] > 0){
+        result = [array objectAtIndex:0];
+    }
+    return result;
+}
+
+- (NSArray *)find:(NSInteger)number withFirstPinyin:(NSString *)pinyin {
+    NSPredicate *select = [NSPredicate predicateWithFormat:@"%K[FIRST] == %@", @"pinyin", pinyin];
+    NSArray *results = [[self chengyuList] filteredArrayUsingPredicate:select];
+    if(!results || [results count] == 0){
+        return nil;
+    }
+    NSRange theRange;
+    theRange.location = 0;
+    theRange.length = number < [results count]? number : [results count];
+    return [results subarrayWithRange:theRange];
+}
+
+- (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin {
+    NSArray *array = [self find:1 withFirstPinyin:pinyin];
+    Chengyu *result = nil;
+    if(array && [array count] > 0){
+        result = [array objectAtIndex:0];
+    }
+    return result;
 }
 
 @end
