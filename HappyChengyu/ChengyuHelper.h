@@ -13,19 +13,25 @@ enum {
     UnknownError = 0,
     WrongLengthError = 1,
     UsedNameError = 2,
-    NonExistentNameError = 3
+    NonExistentNameError = 3,
+    InvalidInputError = 4,
+    IncorrectStartError = 5
 };
 
 @interface ChengyuHelper : NSObject
 
+@property (nonatomic, strong, readonly) NSArray *chengyuList;
+
 + (instancetype)sharedInstance;
-- (void)loadData;
+- (void)reloadData;
 
 - (Chengyu *)random;
 - (Chengyu *)findNextWithFirstCharacter:(NSString *)character;
 - (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
-- (NSArray *)find:(NSInteger)number withFirstCharacter:(NSString *)character;
-- (NSArray *)find:(NSInteger)number withFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
-- (BOOL)checkIsValid:(NSString *)chengyuName withError:(NSError *)error;
+- (NSArray *)findWithFirstCharacter:(NSString *)character;
+- (NSArray *)findWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
+
+- (Chengyu *)checkValidByName:(NSString *)name andCharacter:(NSString *)character error:(NSError **)error;
+- (Chengyu *)checkValidByName:(NSString *)name andPinyin:(NSString *)pinyin includingTone:(BOOL)include error:(NSError **)error;
 
 @end

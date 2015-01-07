@@ -10,3 +10,4 @@ A chengyu-linking iOS APP for entertainment
 - 实现人机对战的模式；
 - 实现提示功能和界面；
 - 实现游戏结束界面；
+- 找不到下一个自动显示新的；

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		232032561813581BC85534D2 /* libPods-HappyChengyu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D05E294BE556E10B24FEECB /* libPods-HappyChengyu.a */; };
+		760D65721A5CC5BA00232953 /* ViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65711A5CC5BA00232953 /* ViewerViewController.m */; };
 		763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */ = {isa = PBXBuildFile; fileRef = 763D18E11A59479A00A3B3A5 /* Chengyu.m */; };
 		763D18FF1A59926D00A3B3A5 /* chengyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 763D18FE1A59926D00A3B3A5 /* chengyu.json */; };
 		7658C3451A58D01D0062C946 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3441A58D01D0062C946 /* main.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		1D05E294BE556E10B24FEECB /* libPods-HappyChengyu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyChengyu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		313EA5ED9F43FAE07D308963 /* Pods-HappyChengyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyChengyu.release.xcconfig"; path = "Pods/Target Support Files/Pods-HappyChengyu/Pods-HappyChengyu.release.xcconfig"; sourceTree = "<group>"; };
+		760D65701A5CC5BA00232953 /* ViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerViewController.h; sourceTree = "<group>"; };
+		760D65711A5CC5BA00232953 /* ViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerViewController.m; sourceTree = "<group>"; };
 		763D18E01A59479A00A3B3A5 /* Chengyu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chengyu.h; path = HappyChengyu/Chengyu.h; sourceTree = "<group>"; };
 		763D18E11A59479A00A3B3A5 /* Chengyu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chengyu.m; path = HappyChengyu/Chengyu.m; sourceTree = "<group>"; };
 		763D18FE1A59926D00A3B3A5 /* chengyu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chengyu.json; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 			children = (
 				7658C3491A58D01D0062C946 /* MenuViewController.h */,
 				7658C34A1A58D01D0062C946 /* MenuViewController.m */,
+				760D65701A5CC5BA00232953 /* ViewerViewController.h */,
+				760D65711A5CC5BA00232953 /* ViewerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				7658C34B1A58D01D0062C946 /* MenuViewController.m in Sources */,
 				7658C3481A58D01D0062C946 /* AppDelegate.m in Sources */,
 				7658C3451A58D01D0062C946 /* main.m in Sources */,
+				760D65721A5CC5BA00232953 /* ViewerViewController.m in Sources */,
 				7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
