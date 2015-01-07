@@ -10,6 +10,7 @@
 #import "Chengyu.h"
 #import <Mantle/Mantle.h>
 
+//#define TEST
 #ifdef TEST
     #define kFileName @"test"
 #else
@@ -39,7 +40,7 @@
 - (instancetype)init {
     self = [super init];
     if(self){
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:kFileType];
+        NSString *path = [[NSBundle mainBundle] pathForResource:kFileName ofType:kFileType];
         NSData *JSONData = [NSData dataWithContentsOfFile:path];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
         NSArray *array = [dictionary valueForKey:@"Chengyu"];
@@ -62,7 +63,7 @@
     return result;
 }
 
-- (NSArray *)findWithFirstCharacter:(NSString *)character {
+- (NSArray *)findAllWithFirstCharacter:(NSString *)character {
     NSPredicate *select = [NSPredicate predicateWithFormat:@"%K BEGINSWITH %@", @"name", character];
     NSArray *results = [_chengyuList filteredArrayUsingPredicate:select];
     if(!results || [results count] == 0){
@@ -75,7 +76,7 @@
 }
 
 - (Chengyu *)findNextWithFirstCharacter:(NSString *)character {
-    NSArray *array = [self findWithFirstCharacter:character];
+    NSArray *array = [self findAllWithFirstCharacter:character];
     Chengyu *result = nil;
     if(array && [array count] > 0){
         result = [array objectAtIndex:0];
@@ -85,7 +86,7 @@
     return result;
 }
 
-- (NSArray *)findWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include {
+- (NSArray *)findAllWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include {
     NSPredicate *select = nil;
     if(include){
         select = [NSPredicate predicateWithFormat:@"%K[FIRST] == %@", @"pinyin", pinyin];
@@ -104,12 +105,21 @@
 
 - (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin
                        includingTone:(BOOL)include {
-    NSArray *array = [self findWithFirstPinyin:pinyin includingTone:include];
+    NSArray *array = [self findAllWithFirstPinyin:pinyin includingTone:include];
     Chengyu *result = nil;
     if(array && [array count] > 0){
         result = [array objectAtIndex:0];
     }
     return result;
+}
+
+- (Chengyu *)getByName:(NSString *)name {
+    for(Chengyu *cy in _chengyuList){
+        if([cy.name isEqualToString:name]){
+            return cy;
+        }
+    }
+    return nil;
 }
 
 - (Chengyu *)checkValidByName:(NSString *)name andCharacter:(NSString *)character error:(NSError **)error {
@@ -186,9 +196,8 @@
     NSLog(@"modification begins");
     NSMutableArray *fourcyList = [NSMutableArray arrayWithCapacity:13000];
     for(Chengyu *cy in _chengyuList){
-        if([cy.name length] == 4){
-            [fourcyList addObject:cy];
-        }
+        cy.abbr = [cy.abbr uppercaseString];
+        [fourcyList addObject:cy];
     }
     NSArray *array = [MTLJSONAdapter JSONArrayFromModels:fourcyList];
     NSDictionary *dictionary = @{@"Chengyu": array};

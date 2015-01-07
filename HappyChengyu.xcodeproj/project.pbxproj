@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		232032561813581BC85534D2 /* libPods-HappyChengyu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D05E294BE556E10B24FEECB /* libPods-HappyChengyu.a */; };
-		760D65721A5CC5BA00232953 /* ViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65711A5CC5BA00232953 /* ViewerViewController.m */; };
+		760D65721A5CC5BA00232953 /* ChengyuSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65711A5CC5BA00232953 /* ChengyuSelectViewController.m */; };
+		760D65751A5CFC7E00232953 /* CharacterSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65741A5CFC7E00232953 /* CharacterSelectViewController.m */; };
+		760D65781A5CFCE100232953 /* ChengyuDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */; };
+		760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65811A5D0A8A00232953 /* LetterSelectViewController.m */; };
+		760D65881A5D0D7200232953 /* LetterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65861A5D0D7200232953 /* LetterCell.m */; };
+		760D658C1A5D23E800232953 /* CharacterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D658B1A5D23E800232953 /* CharacterCell.m */; };
 		763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */ = {isa = PBXBuildFile; fileRef = 763D18E11A59479A00A3B3A5 /* Chengyu.m */; };
 		763D18FF1A59926D00A3B3A5 /* chengyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 763D18FE1A59926D00A3B3A5 /* chengyu.json */; };
 		7658C3451A58D01D0062C946 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3441A58D01D0062C946 /* main.m */; };
@@ -35,8 +40,18 @@
 /* Begin PBXFileReference section */
 		1D05E294BE556E10B24FEECB /* libPods-HappyChengyu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyChengyu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		313EA5ED9F43FAE07D308963 /* Pods-HappyChengyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyChengyu.release.xcconfig"; path = "Pods/Target Support Files/Pods-HappyChengyu/Pods-HappyChengyu.release.xcconfig"; sourceTree = "<group>"; };
-		760D65701A5CC5BA00232953 /* ViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerViewController.h; sourceTree = "<group>"; };
-		760D65711A5CC5BA00232953 /* ViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerViewController.m; sourceTree = "<group>"; };
+		760D65701A5CC5BA00232953 /* ChengyuSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChengyuSelectViewController.h; sourceTree = "<group>"; };
+		760D65711A5CC5BA00232953 /* ChengyuSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChengyuSelectViewController.m; sourceTree = "<group>"; };
+		760D65731A5CFC7E00232953 /* CharacterSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSelectViewController.h; sourceTree = "<group>"; };
+		760D65741A5CFC7E00232953 /* CharacterSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSelectViewController.m; sourceTree = "<group>"; };
+		760D65761A5CFCE100232953 /* ChengyuDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChengyuDetailViewController.h; sourceTree = "<group>"; };
+		760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChengyuDetailViewController.m; sourceTree = "<group>"; };
+		760D65801A5D0A8A00232953 /* LetterSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterSelectViewController.h; sourceTree = "<group>"; };
+		760D65811A5D0A8A00232953 /* LetterSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterSelectViewController.m; sourceTree = "<group>"; };
+		760D65851A5D0D7200232953 /* LetterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterCell.h; sourceTree = "<group>"; };
+		760D65861A5D0D7200232953 /* LetterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterCell.m; sourceTree = "<group>"; };
+		760D658A1A5D23E800232953 /* CharacterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterCell.h; sourceTree = "<group>"; };
+		760D658B1A5D23E800232953 /* CharacterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterCell.m; sourceTree = "<group>"; };
 		763D18E01A59479A00A3B3A5 /* Chengyu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chengyu.h; path = HappyChengyu/Chengyu.h; sourceTree = "<group>"; };
 		763D18E11A59479A00A3B3A5 /* Chengyu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chengyu.m; path = HappyChengyu/Chengyu.m; sourceTree = "<group>"; };
 		763D18FE1A59926D00A3B3A5 /* chengyu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chengyu.json; sourceTree = "<group>"; };
@@ -86,6 +101,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		760D65791A5D035400232953 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				760D65851A5D0D7200232953 /* LetterCell.h */,
+				760D65861A5D0D7200232953 /* LetterCell.m */,
+				760D658A1A5D23E800232953 /* CharacterCell.h */,
+				760D658B1A5D23E800232953 /* CharacterCell.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		7658C3361A58D01D0062C946 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +135,7 @@
 		7658C3411A58D01D0062C946 /* HappyChengyu */ = {
 			isa = PBXGroup;
 			children = (
+				760D65791A5D035400232953 /* UI */,
 				766F4ED01A5A7E8B002FB3FF /* test.json */,
 				763D18FE1A59926D00A3B3A5 /* chengyu.json */,
 				7658C3691A58EBFE0062C946 /* Controllers */,
@@ -166,8 +193,14 @@
 			children = (
 				7658C3491A58D01D0062C946 /* MenuViewController.h */,
 				7658C34A1A58D01D0062C946 /* MenuViewController.m */,
-				760D65701A5CC5BA00232953 /* ViewerViewController.h */,
-				760D65711A5CC5BA00232953 /* ViewerViewController.m */,
+				760D65701A5CC5BA00232953 /* ChengyuSelectViewController.h */,
+				760D65711A5CC5BA00232953 /* ChengyuSelectViewController.m */,
+				760D65731A5CFC7E00232953 /* CharacterSelectViewController.h */,
+				760D65741A5CFC7E00232953 /* CharacterSelectViewController.m */,
+				760D65761A5CFCE100232953 /* ChengyuDetailViewController.h */,
+				760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */,
+				760D65801A5D0A8A00232953 /* LetterSelectViewController.h */,
+				760D65811A5D0A8A00232953 /* LetterSelectViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -318,12 +351,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760D65751A5CFC7E00232953 /* CharacterSelectViewController.m in Sources */,
 				763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */,
+				760D658C1A5D23E800232953 /* CharacterCell.m in Sources */,
 				7658C34B1A58D01D0062C946 /* MenuViewController.m in Sources */,
 				7658C3481A58D01D0062C946 /* AppDelegate.m in Sources */,
 				7658C3451A58D01D0062C946 /* main.m in Sources */,
-				760D65721A5CC5BA00232953 /* ViewerViewController.m in Sources */,
+				760D65781A5CFCE100232953 /* ChengyuDetailViewController.m in Sources */,
+				760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */,
+				760D65721A5CC5BA00232953 /* ChengyuSelectViewController.m in Sources */,
 				7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */,
+				760D65881A5D0D7200232953 /* LetterCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

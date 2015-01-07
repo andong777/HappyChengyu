@@ -41,6 +41,7 @@
 }
 
 - (IBAction)clickStart:(UIButton *)sender {
+//    [[ChengyuHelper sharedInstance] modifyDataAndSave];
     [[ChengyuHelper sharedInstance] reloadData];
     currentChengyu = [[ChengyuHelper sharedInstance] random];
     [self setContent];
