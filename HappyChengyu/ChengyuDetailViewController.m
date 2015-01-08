@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     _nameText.text = _chengyu.name;
     _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
     _meaningText.text = _chengyu.meaning;

@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKz-d1-lYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2112" y="-70"/>
+            <point key="canvasLocation" x="-2106" y="438"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="web-Y0-PIs">
@@ -36,7 +36,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POM-d8-FG4">
                                 <rect key="frame" x="96" y="346" width="128" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <state key="normal" title="前往成语大全">
+                                <state key="normal" title="成语大全">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -70,13 +70,22 @@
                                 <rect key="frame" x="181" y="230" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEi-NC-z2a">
-                                <rect key="frame" x="96" y="274" width="128" height="30"/>
+                                <rect key="frame" x="96" y="295" width="128" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="开始成语接龙">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="StartSegue" id="yqa-uW-VWq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkN-2D-N8R">
+                                <rect key="frame" x="128" y="384" width="64" height="30"/>
+                                <state key="normal" title="我的收藏">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4Sv-d0-KU3" kind="push" id="2xI-9c-7NY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vds-3z-eDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1674" y="-70"/>
+            <point key="canvasLocation" x="-1688" y="438"/>
         </scene>
         <!--Letter Select View Controller-->
         <scene sceneID="YAL-XN-H7E">
@@ -140,6 +149,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB9-Cd-dUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1206" y="438"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="2Ce-Iv-yGy">
+            <objects>
+                <tableViewController id="4Sv-d0-KU3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CNg-Lx-UXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChengyuCellReuseIdentifier" id="8u6-3k-xdB">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8u6-3k-xdB" id="WRf-Ig-kcY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xSN-Ob-h53" kind="push" id="x0f-PN-ykH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4Sv-d0-KU3" id="Zvg-VK-IiK"/>
+                            <outlet property="delegate" destination="4Sv-d0-KU3" id="ci4-mc-Vo3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="KiW-ZN-XpA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hg6-ml-OiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1206" y="1139"/>
         </scene>
         <!--Character Select View Controller-->
         <scene sceneID="Ot0-Sj-dIS">
@@ -507,4 +546,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="x0f-PN-ykH"/>
+    </inferredMetricsTieBreakers>
 </document>
