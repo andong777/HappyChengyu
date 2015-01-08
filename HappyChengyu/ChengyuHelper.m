@@ -51,7 +51,6 @@
 }
 
 - (void)reloadData {
-    [_chengyuList addObjectsFromArray:_appearedList];
     [_appearedList removeAllObjects];
 }
 
@@ -65,25 +64,19 @@
 
 - (NSArray *)findAllWithFirstCharacter:(NSString *)character {
     NSPredicate *select = [NSPredicate predicateWithFormat:@"%K BEGINSWITH %@", @"name", character];
-    NSArray *results = [_chengyuList filteredArrayUsingPredicate:select];
-    if(!results || [results count] == 0){
-        return nil;
-    }
-    NSRange theRange;
-    theRange.location = 0;
-    theRange.length = [results count];
-    return [results subarrayWithRange:theRange];
+    return [_chengyuList filteredArrayUsingPredicate:select];
 }
 
 - (Chengyu *)findNextWithFirstCharacter:(NSString *)character {
-    NSArray *array = [self findAllWithFirstCharacter:character];
-    Chengyu *result = nil;
-    if(array && [array count] > 0){
-        result = [array objectAtIndex:0];
+    NSMutableArray *candidates = [[self findAllWithFirstCharacter:character] mutableCopy];
+    if(candidates && [candidates count]){
+        NSUInteger index = arc4random() % [candidates count];
+        Chengyu *result = [candidates objectAtIndex:index];
+        [candidates removeObjectAtIndex:index];
+        [_appearedList addObject:result];
+        return result;
     }
-    [_chengyuList removeObject:result];
-    [_appearedList addObject:result];
-    return result;
+    return nil;
 }
 
 - (NSArray *)findAllWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include {
@@ -93,24 +86,20 @@
     }else{
         select = [NSPredicate predicateWithFormat:@"%K[FIRST] ==[cd] %@", @"pinyin", pinyin];
     }
-    NSArray *results = [_chengyuList filteredArrayUsingPredicate:select];
-    if(!results || [results count] == 0){
-        return nil;
-    }
-    NSRange theRange;
-    theRange.location = 0;
-    theRange.length = [results count];
-    return [results subarrayWithRange:theRange];
+    return [_chengyuList filteredArrayUsingPredicate:select];
 }
 
 - (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin
                        includingTone:(BOOL)include {
-    NSArray *array = [self findAllWithFirstPinyin:pinyin includingTone:include];
-    Chengyu *result = nil;
-    if(array && [array count] > 0){
-        result = [array objectAtIndex:0];
+    NSMutableArray *candidates = [[self findAllWithFirstPinyin:pinyin includingTone:include] mutableCopy];
+    if(candidates && [candidates count]){
+        NSUInteger index = arc4random() % [candidates count];
+        Chengyu *result = [candidates objectAtIndex:index];
+        [candidates removeObjectAtIndex:index];
+        [_appearedList addObject:result];
+        return result;
     }
-    return result;
+    return nil;
 }
 
 - (Chengyu *)getByName:(NSString *)name {
