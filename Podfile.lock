@@ -2,11 +2,14 @@ PODS:
   - Mantle (1.5.1):
     - Mantle/extobjc (= 1.5.1)
   - Mantle/extobjc (1.5.1)
+  - MBProgressHUD (0.9)
 
 DEPENDENCIES:
   - Mantle
+  - MBProgressHUD (~> 0.8)
 
 SPEC CHECKSUMS:
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
 
 COCOAPODS: 0.35.0

@@ -112,7 +112,7 @@
 }
 
 - (Chengyu *)checkValidByName:(NSString *)name andCharacter:(NSString *)character error:(NSError **)error {
-    if(!name){
+    if(!name || [name length] == 0){
         *error = [NSError errorWithDomain:@"customised" code:InvalidInputError userInfo:nil];
         return nil;
     }
@@ -143,7 +143,7 @@
 }
 
 - (Chengyu *)checkValidByName:(NSString *)name andPinyin:(NSString *)pinyin includingTone:(BOOL)include error:(NSError *__autoreleasing *)error {
-    if(!name){
+    if(!name || [name length] == 0){
         *error = [NSError errorWithDomain:@"customised" code:InvalidInputError userInfo:nil];
         return nil;
     }

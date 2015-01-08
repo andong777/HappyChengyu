@@ -9,6 +9,7 @@
 #import "AnswerViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
+#import <MBProgressHUD.h>
 
 @interface AnswerViewController () {
     Chengyu *currentChengyu;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *answerText;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *detailSwitcher;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIButton *checkButton;
 
 - (IBAction)switchDetail:(UISegmentedControl *)sender;
 - (IBAction)clickCheck:(UIButton *)sender;
@@ -60,31 +62,33 @@
         validChengyu = [[ChengyuHelper sharedInstance] checkValidByName:content andPinyin:thePinyin includingTone:_includeTone error:&error];
     }
     if(validChengyu){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark"]];
+        [hud hide:YES afterDelay:1];
         currentChengyu = validChengyu;
         [self setContent];
         [self doAnswer];
     }else{
         NSString *errorInfo = nil;
-        if(error){
-            switch(error.code){
-                case InvalidInputError: errorInfo = @"请输入内容"; break;
-                case WrongLengthError: errorInfo = @"必须是四个字"; break;
-                case NonExistentNameError: errorInfo = @"不是成语"; break;
-                case UsedNameError: errorInfo = @"已经用过了"; break;
-                default: errorInfo = @"未知错误";
-            }
-        }else{
-            NSLog(@"error is still nil");
-            errorInfo = @"未知错误";
+        switch(error.code){
+            case InvalidInputError: errorInfo = @"请输入内容"; break;
+            case WrongLengthError: errorInfo = @"必须是四个字"; break;
+            case NonExistentNameError: errorInfo = @"不是成语"; break;
+            case UsedNameError: errorInfo = @"已经用过了"; break;
+            default: errorInfo = @"未知错误";
         }
-        [self setContentWithText:errorInfo];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = errorInfo;
+        [hud hide:YES afterDelay:1];
     }
 }
 
 - (void)doAnswer {
+    _checkButton.enabled = NO;
     [_spinner startAnimating];
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NSThread sleepForTimeInterval:0.5];    // to display user's answer
         Chengyu *answer = nil;
         if(_includeCharacter){
@@ -92,18 +96,18 @@
             answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter];
         }else{
             NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
-            NSLog(@"pinyin: %@", thePinyin);
             answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_includeTone];
         }
         [NSThread sleepForTimeInterval:0.5];    // to simulate thinking
         dispatch_async(dispatch_get_main_queue(), ^{
             [_spinner stopAnimating];
+            _checkButton.enabled = YES;
             if(answer){
                 NSLog(@"%@", answer.name);
                 currentChengyu = answer;
                 [self setContent];
             }else{
-                [self setContentWithText:@"找不到候选词"];
+                //[self setContentWithText:@"找不到候选词"];
             }
         });
     });
@@ -123,7 +127,17 @@
 }
 
 - (IBAction)clickHint:(UIButton *)sender {
-    [self doAnswer];
+    Chengyu *answer = nil;
+    if(_includeCharacter){
+        NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
+        answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter];
+    }else{
+        NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
+        answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_includeTone];
+    }
+    if(answer){
+        _answerText.text = answer.name;
+    }
 }
 
 - (void)setContent {
@@ -138,28 +152,12 @@
             default: text = currentChengyu.meaning;
         }
         _detailText.text = (text && [text length]>0) ? text : @"未收录";
-    }else{
-        _nameText.text = nil;
-        _pinyinText.text = nil;
-        _detailText.text = nil;
     }
     _answerText.text = nil;
 }
 
-- (void)setContentWithText:(NSString *)text {
-    currentChengyu = nil;
-    [self setContent];
-    _nameText.text = text;
-}
-
 - (IBAction)backgroundTap:(id)sender {
     [_answerText resignFirstResponder];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    [self doCheck];
-    return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField

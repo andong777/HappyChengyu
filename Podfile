@@ -3,6 +3,7 @@
 
 target 'HappyChengyu' do
 	pod "Mantle"
+	pod 'MBProgressHUD', '~> 0.8'
 end
 
 target 'HappyChengyuTests' do

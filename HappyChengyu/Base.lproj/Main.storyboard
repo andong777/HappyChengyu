@@ -114,7 +114,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-cJ-caO">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-cJ-caO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -163,7 +163,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-Tm-z4N">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="马" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-Tm-z4N">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -311,6 +311,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
+                                    <action selector="backgroundTap:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="laY-wz-H5L"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="YX3-MF-Tb9"/>
                                 </connections>
                             </textField>
@@ -372,7 +373,7 @@
                                     <action selector="clickHint:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VSK-Fr-fNw"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IOQ-4z-7IS">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OCQ-8v-9Mk">
                                 <rect key="frame" x="209" y="86" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -384,11 +385,12 @@
                     <navigationItem key="navigationItem" title="Title" id="xbT-FK-S9k"/>
                     <connections>
                         <outlet property="answerText" destination="AOH-bG-a29" id="j9t-AS-iGn"/>
+                        <outlet property="checkButton" destination="4bo-ap-f7u" id="4Y4-eb-uC9"/>
                         <outlet property="detailSwitcher" destination="6DC-bn-6Vi" id="Lr6-6c-XSc"/>
                         <outlet property="detailText" destination="7l2-tD-27G" id="O6c-OX-hfY"/>
                         <outlet property="nameText" destination="Jl0-i3-RIM" id="BoT-BR-y9I"/>
                         <outlet property="pinyinText" destination="S3r-0g-hvY" id="qVU-4z-m7P"/>
-                        <outlet property="spinner" destination="IOQ-4z-7IS" id="YDm-NY-hYf"/>
+                        <outlet property="spinner" destination="OCQ-8v-9Mk" id="eUa-s8-ilj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
