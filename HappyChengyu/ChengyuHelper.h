@@ -25,9 +25,9 @@ enum {
 + (instancetype)sharedInstance;
 - (void)reloadData;
 
-- (Chengyu *)random;
-- (Chengyu *)findNextWithFirstCharacter:(NSString *)character;
-- (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
+- (Chengyu *)randomWithRemove:(BOOL)remove;
+- (Chengyu *)findNextWithFirstCharacter:(NSString *)character andRemove:(BOOL)remove;
+- (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include andRemove:(BOOL)remove;
 - (NSArray *)findAllWithFirstCharacter:(NSString *)character;
 - (NSArray *)findAllWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include;
 - (Chengyu *)getByName:(NSString *)name;

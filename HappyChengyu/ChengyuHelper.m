@@ -10,7 +10,7 @@
 #import "Chengyu.h"
 #import <Mantle/Mantle.h>
 
-//#define TEST
+#define TEST
 #ifdef TEST
     #define kFileName @"test"
 #else
@@ -54,11 +54,18 @@
     [_appearedList removeAllObjects];
 }
 
-- (Chengyu *)random {
+- (Chengyu *)randomWithRemove:(BOOL)remove {
     NSUInteger index = arc4random() % [_chengyuList count];
     Chengyu *result = [_chengyuList objectAtIndex:index];
-    [_chengyuList removeObject:result];
-    [_appearedList addObject:result];
+    NSArray *candidatesAfterResult = nil;
+    do {
+        NSString *character = [result.name substringFromIndex:[result.name length] - 1];
+        candidatesAfterResult = [self findAllWithFirstCharacter:character];
+    } while (!candidatesAfterResult || [candidatesAfterResult count] == 0);
+    if(remove){
+        [_chengyuList removeObject:result];
+        [_appearedList addObject:result];
+    }
     return result;
 }
 
@@ -67,13 +74,15 @@
     return [_chengyuList filteredArrayUsingPredicate:select];
 }
 
-- (Chengyu *)findNextWithFirstCharacter:(NSString *)character {
+- (Chengyu *)findNextWithFirstCharacter:(NSString *)character andRemove:(BOOL)remove {
     NSMutableArray *candidates = [[self findAllWithFirstCharacter:character] mutableCopy];
     if(candidates && [candidates count]){
         NSUInteger index = arc4random() % [candidates count];
         Chengyu *result = [candidates objectAtIndex:index];
-        [candidates removeObjectAtIndex:index];
-        [_appearedList addObject:result];
+        if(remove){
+            [candidates removeObjectAtIndex:index];
+            [_appearedList addObject:result];
+        }
         return result;
     }
     return nil;
@@ -89,14 +98,15 @@
     return [_chengyuList filteredArrayUsingPredicate:select];
 }
 
-- (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin
-                       includingTone:(BOOL)include {
+- (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include andRemove:(BOOL)remove {
     NSMutableArray *candidates = [[self findAllWithFirstPinyin:pinyin includingTone:include] mutableCopy];
     if(candidates && [candidates count]){
         NSUInteger index = arc4random() % [candidates count];
         Chengyu *result = [candidates objectAtIndex:index];
-        [candidates removeObjectAtIndex:index];
-        [_appearedList addObject:result];
+        if(remove){
+            [candidates removeObjectAtIndex:index];
+            [_appearedList addObject:result];
+        }
         return result;
     }
     return nil;

@@ -9,6 +9,7 @@
 #import "AnswerViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
+#import "ResultViewController.h"
 #import <MBProgressHUD.h>
 
 @interface AnswerViewController () {
@@ -46,7 +47,7 @@
 
 - (void)doRestart {
     [[ChengyuHelper sharedInstance] reloadData];
-    currentChengyu = [[ChengyuHelper sharedInstance] random];
+    currentChengyu = [[ChengyuHelper sharedInstance] randomWithRemove:YES];
     [self setContent];
 }
 
@@ -91,23 +92,28 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NSThread sleepForTimeInterval:0.5];    // to display user's answer
         Chengyu *answer = nil;
+        NSArray *candidatesAfterAnswer = nil;
         if(_includeCharacter){
             NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
-            answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter];
+            answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter andRemove:YES];
+            NSString *answerCharacter = [answer.name substringFromIndex:[answer.name length] - 1];
+            candidatesAfterAnswer = [[ChengyuHelper sharedInstance] findAllWithFirstCharacter:answerCharacter];
         }else{
             NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
-            answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_includeTone];
+            answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_includeTone andRemove:YES];
+            NSString *answerPinyin = [answer.pinyin objectAtIndex:[answer.pinyin count] - 1];
+            candidatesAfterAnswer = [[ChengyuHelper sharedInstance] findAllWithFirstPinyin:answerPinyin includingTone:_includeTone];
         }
         [NSThread sleepForTimeInterval:0.5];    // to simulate thinking
         dispatch_async(dispatch_get_main_queue(), ^{
             [_spinner stopAnimating];
             _checkButton.enabled = YES;
             if(answer){
-                NSLog(@"%@", answer.name);
                 currentChengyu = answer;
                 [self setContent];
-            }else{
-                //[self setContentWithText:@"找不到候选词"];
+            }
+            if(!answer || !candidatesAfterAnswer || [candidatesAfterAnswer count] == 0){
+                [self performSegueWithIdentifier:@"EndSegue" sender:self];
             }
         });
     });
@@ -130,10 +136,10 @@
     Chengyu *answer = nil;
     if(_includeCharacter){
         NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
-        answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter];
+        answer = [[ChengyuHelper sharedInstance] findNextWithFirstCharacter:theCharacter andRemove:NO];
     }else{
         NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
-        answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_includeTone];
+        answer = [[ChengyuHelper sharedInstance] findNextWithFirstPinyin:thePinyin includingTone:_includeTone andRemove:NO];
     }
     if(answer){
         _answerText.text = answer.name;
