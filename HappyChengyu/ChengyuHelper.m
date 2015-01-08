@@ -55,10 +55,11 @@
 }
 
 - (Chengyu *)randomWithRemove:(BOOL)remove {
-    NSUInteger index = arc4random() % [_chengyuList count];
-    Chengyu *result = [_chengyuList objectAtIndex:index];
+    Chengyu *result = nil;
     NSArray *candidatesAfterResult = nil;
     do {
+        NSUInteger index = arc4random() % [_chengyuList count];
+        result = [_chengyuList objectAtIndex:index];
         NSString *character = [result.name substringFromIndex:[result.name length] - 1];
         candidatesAfterResult = [self findAllWithFirstCharacter:character];
     } while (!candidatesAfterResult || [candidatesAfterResult count] == 0);

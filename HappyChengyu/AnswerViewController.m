@@ -14,6 +14,7 @@
 
 @interface AnswerViewController () {
     Chengyu *currentChengyu;
+    NSDate *startTime;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameText;
@@ -49,6 +50,7 @@
     [[ChengyuHelper sharedInstance] reloadData];
     currentChengyu = [[ChengyuHelper sharedInstance] randomWithRemove:YES];
     [self setContent];
+    startTime = [NSDate date];
 }
 
 - (void)doCheck {
@@ -117,6 +119,15 @@
             }
         });
     });
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"EndSegue"]){
+        NSDate *stopTime = [NSDate date];
+        NSTimeInterval timeInterval = [stopTime timeIntervalSinceDate:startTime];
+        ResultViewController *vc = segue.destinationViewController;
+        vc.timeInterval = timeInterval;
+    }
 }
 
 - (IBAction)switchDetail:(UISegmentedControl *)sender {

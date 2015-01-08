@@ -21,6 +21,7 @@ enum {
 @interface ChengyuHelper : NSObject
 
 @property (nonatomic, strong, readonly) NSArray *chengyuList;
+@property (nonatomic, strong, readonly) NSArray *appearedList;
 
 + (instancetype)sharedInstance;
 - (void)reloadData;
