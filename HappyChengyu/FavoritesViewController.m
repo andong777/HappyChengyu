@@ -21,10 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+
     UIEdgeInsets contentInset = self.tableView.contentInset;
     contentInset.top = 20;
     [self.tableView setContentInset:contentInset];
@@ -46,6 +43,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSString *key = [self tableView:tableView titleForHeaderInSection:section];
+    NSLog(@"key %@ has %lu items", key, [_favorites[key] count]);
     return [_favorites[key] count];
 }
 
@@ -54,6 +52,7 @@
     NSString *key = [self tableView:tableView titleForHeaderInSection:indexPath.section];
     Chengyu *chengyu = [_favorites[key] objectAtIndex:indexPath.row];
     cell.textLabel.text = chengyu.name;
+    NSLog(@"favorite: %@", chengyu.name);
     cell.detailTextLabel.text = [chengyu.pinyin componentsJoinedByString:@" "];
     return cell;
 }
@@ -86,6 +85,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSString *key = [self tableView:self.tableView titleForHeaderInSection:indexPath.section];
     vc.chengyu = [_favorites[key] objectAtIndex:indexPath.row];
+    vc.fromFavorite = YES;
 }
 
 @end

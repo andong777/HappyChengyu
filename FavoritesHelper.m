@@ -24,18 +24,28 @@
 }
 
 - (BOOL)addFavorite:(Chengyu *)chengyu {
+    if([self hasFavorite:chengyu]){
+        return NO;
+    }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *dictionary = [[defaults dictionaryForKey:kFavorites] mutableCopy];
+    if(!dictionary){
+        dictionary = [NSMutableDictionary dictionary];
+    }
     NSString *firstLetter = [[chengyu.abbr substringToIndex:1] uppercaseString];
     NSMutableArray *theArray = [NSMutableArray arrayWithArray:[dictionary objectForKey:firstLetter]];
-    [theArray addObject:chengyu];
+    [theArray addObject:chengyu.name];
     [dictionary setObject:theArray forKey:firstLetter];
     [defaults setObject:dictionary forKey:kFavorites];
     [defaults synchronize];
+    NSLog(@"add: %@", chengyu.name);
     return YES;
 }
 
 - (BOOL)removeFavorite:(Chengyu *)chengyu {
+    if(![self hasFavorite:chengyu]){
+        return NO;
+    }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *dictionary = [[defaults dictionaryForKey:kFavorites] mutableCopy];
     NSString *firstLetter = [[chengyu.abbr substringToIndex:1] uppercaseString];
@@ -44,7 +54,19 @@
     [dictionary setObject:theArray forKey:firstLetter];
     [defaults setObject:dictionary forKey:kFavorites];
     [defaults synchronize];
+    NSLog(@"remove: %@", chengyu.name);
     return YES;
+}
+
+- (BOOL)hasFavorite:(Chengyu *)chengyu {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *dictionary = [[defaults dictionaryForKey:kFavorites] mutableCopy];
+    if(!chengyu || !dictionary || [dictionary count] == 0){
+        return NO;
+    }
+    NSString *firstLetter = [[chengyu.abbr substringToIndex:1] uppercaseString];
+    NSArray *theArray = [dictionary objectForKey:firstLetter];
+    return [theArray containsObject:chengyu.name];
 }
 
 - (NSDictionary *)loadFavorites {
@@ -60,6 +82,7 @@
         }
         [dictionaryWithChengyus setObject:arrayWithChengyus forKey:key];
     }
+    NSLog(@"load %lu items", [dictionaryWithChengyus count]);
     return dictionaryWithChengyus;
 }
 

@@ -13,6 +13,8 @@ A chengyu-linking iOS APP for entertainment
 - ~~实现游戏结束界面；~~
 - ~~实现成语大全；~~
 - 加入Auto Layout约束，美化界面；
+- 按照功能重新整理文件结构；
+- 将首页改为Tab Bar样式；
 - 实现收藏功能；
 - 实现分享功能；
 - 实现获取网络数据的功能；

@@ -15,6 +15,7 @@
 
 - (BOOL)addFavorite:(Chengyu *)chengyu;
 - (BOOL)removeFavorite:(Chengyu *)chengyu;
+- (BOOL)hasFavorite:(Chengyu *)chengyu;
 - (NSDictionary *)loadFavorites;
 
 @end

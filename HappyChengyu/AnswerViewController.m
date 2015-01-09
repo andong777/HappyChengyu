@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pinyinText;
 @property (weak, nonatomic) IBOutlet UITextView *detailText;
 @property (weak, nonatomic) IBOutlet UITextField *answerText;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *detailSwitcher;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *detailSwitch;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 
@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _detailSwitcher.selectedSegmentIndex = 0;
+    _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
 }
 
@@ -162,7 +162,7 @@
         _nameText.text = currentChengyu.name;
         _pinyinText.text = [currentChengyu.pinyin componentsJoinedByString:@" "];
         NSString *text = nil;
-        switch(_detailSwitcher.selectedSegmentIndex){
+        switch(_detailSwitch.selectedSegmentIndex){
             case 0: text = currentChengyu.meaning; break;
             case 1: text = currentChengyu.source; break;
             case 2: text = currentChengyu.example; break;

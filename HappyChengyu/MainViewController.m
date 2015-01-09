@@ -23,6 +23,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *includeCharacter = [defaults objectForKey:@"Character"];
+    if(includeCharacter && [includeCharacter boolValue]){
+        _characterSwitch.on = YES;
+        _toneSwitch.enabled = NO;
+        _toneSwitch.on = YES;
+    }else{
+        _characterSwitch.on = NO;
+        _toneSwitch.enabled = YES;
+        NSNumber *includeTone = [defaults objectForKey:@"Tone"];
+        if(includeTone && [includeTone boolValue]){
+            _toneSwitch.on = YES;
+        }else{
+            _toneSwitch.on = NO;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

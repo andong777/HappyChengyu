@@ -7,6 +7,7 @@
 //
 
 #import "ChengyuDetailViewController.h"
+#import "FavoritesHelper.h"
 #import "Chengyu.h"
 
 @interface ChengyuDetailViewController ()
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *meaningText;
 @property (weak, nonatomic) IBOutlet UITextView *sourceText;
 @property (weak, nonatomic) IBOutlet UITextView *exampleText;
+
+- (IBAction)clickAdd:(id)sender;
 @end
 
 @implementation ChengyuDetailViewController
@@ -23,13 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     _nameText.text = _chengyu.name;
     _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
     _meaningText.text = _chengyu.meaning;
     _sourceText.text = _chengyu.source;
     _exampleText.text = _chengyu.example;
+    
+    if(_fromFavorite){
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clickRemove)];
+    }else{  // from chengyu select view
+        if([[FavoritesHelper sharedInstance] hasFavorite:_chengyu]){
+            self.navigationItem.rightBarButtonItem.enabled = NO;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,5 +55,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)clickAdd:(id)sender {
+    [[FavoritesHelper sharedInstance] addFavorite:_chengyu];
+}
+
+- (void)clickRemove {
+    [[FavoritesHelper sharedInstance] removeFavorite:_chengyu];
+}
 
 @end

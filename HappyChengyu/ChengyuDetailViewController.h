@@ -12,5 +12,6 @@
 @interface ChengyuDetailViewController : UIViewController
 
 @property (nonatomic, strong) Chengyu *chengyu;
+@property (nonatomic, assign) BOOL fromFavorite;
 
 @end
