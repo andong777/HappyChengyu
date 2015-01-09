@@ -16,7 +16,6 @@
 #else
     #define kFileName @"chengyu"
 #endif
-#define kFileType @"json"
 
 
 @interface ChengyuHelper() {
@@ -40,7 +39,7 @@
 - (instancetype)init {
     self = [super init];
     if(self){
-        NSString *path = [[NSBundle mainBundle] pathForResource:kFileName ofType:kFileType];
+        NSString *path = [[NSBundle mainBundle] pathForResource:kFileName ofType:@"json"];
         NSData *JSONData = [NSData dataWithContentsOfFile:path];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
         NSArray *array = [dictionary valueForKey:@"Chengyu"];
@@ -207,7 +206,7 @@
         NSLog(@"error: %@", error);
         return NO;
     }
-    NSString *path = [[NSBundle mainBundle] pathForResource:kFileName ofType:kFileType];
+    NSString *path = [[NSBundle mainBundle] pathForResource:kFileName ofType:@"json"];
     NSLog(@"output path: %@", path);
     return [JSONdata writeToFile:path atomically:YES];
 }

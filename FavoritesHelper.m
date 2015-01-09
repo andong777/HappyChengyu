@@ -10,7 +10,14 @@
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 
-#define kFavorites @"Favorites"
+#define kFavoritesFileName @"favorites.json"
+
+@interface FavoritesHelper() {
+    NSMutableDictionary *_favorites;
+    BOOL contentsChanged;
+}
+
+@end
 
 @implementation FavoritesHelper
 
@@ -23,22 +30,42 @@
     return shared;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if(self){
+        contentsChanged = NO;
+        _favorites = [NSMutableDictionary dictionary];
+        NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *path = [documentDirectory stringByAppendingPathComponent:kFavoritesFileName];
+//        if([[NSFileManager defaultManager] fileExistsAtPath:path]){
+            NSData *JSONData = [NSData dataWithContentsOfFile:path];
+            if(JSONData){
+                NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
+                for(NSString *key in [dictionary allKeys]){
+                    NSArray *array = [dictionary valueForKey:key];
+                    NSMutableArray *transformedArray = [[MTLJSONAdapter modelsOfClass:[Chengyu class] fromJSONArray:array error:nil] mutableCopy];
+                    [_favorites setValue:transformedArray forKey:key];
+                }
+            }
+//        }
+    }
+    return self;
+}
+
 - (BOOL)addFavorite:(Chengyu *)chengyu {
     if([self hasFavorite:chengyu]){
         return NO;
     }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *dictionary = [[defaults dictionaryForKey:kFavorites] mutableCopy];
-    if(!dictionary){
-        dictionary = [NSMutableDictionary dictionary];
+    NSString *category = [chengyu.abbr substringToIndex:1];
+    NSMutableArray *array = [_favorites valueForKey:category];
+    if(!array){
+        array = [NSMutableArray array];
     }
-    NSString *firstLetter = [[chengyu.abbr substringToIndex:1] uppercaseString];
-    NSMutableArray *theArray = [NSMutableArray arrayWithArray:[dictionary objectForKey:firstLetter]];
-    [theArray addObject:chengyu.name];
-    [dictionary setObject:theArray forKey:firstLetter];
-    [defaults setObject:dictionary forKey:kFavorites];
-    [defaults synchronize];
-    NSLog(@"add: %@", chengyu.name);
+    NSLog(@"category %@ has %lu items", category, [array count]);
+    [array addObject:chengyu];
+    [_favorites setValue:array forKey:category];
+    contentsChanged = YES;
+    NSLog(@"chengyu %@ added", chengyu.name);
     return YES;
 }
 
@@ -46,44 +73,45 @@
     if(![self hasFavorite:chengyu]){
         return NO;
     }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *dictionary = [[defaults dictionaryForKey:kFavorites] mutableCopy];
-    NSString *firstLetter = [[chengyu.abbr substringToIndex:1] uppercaseString];
-    NSMutableArray *theArray = [NSMutableArray arrayWithArray:[dictionary objectForKey:firstLetter]];
-    [theArray removeObject:chengyu];
-    [dictionary setObject:theArray forKey:firstLetter];
-    [defaults setObject:dictionary forKey:kFavorites];
-    [defaults synchronize];
-    NSLog(@"remove: %@", chengyu.name);
+    NSString *category = [chengyu.abbr substringToIndex:1];
+    NSMutableArray *array = [_favorites valueForKey:category];
+    [array removeObject:chengyu];
+    [_favorites setValue:array forKey:category];
+    contentsChanged = YES;
+    NSLog(@"chengyu %@ removed", chengyu.name);
     return YES;
 }
 
 - (BOOL)hasFavorite:(Chengyu *)chengyu {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *dictionary = [[defaults dictionaryForKey:kFavorites] mutableCopy];
-    if(!chengyu || !dictionary || [dictionary count] == 0){
-        return NO;
+    for(NSArray *array in [_favorites allValues]){
+        for(Chengyu *cy in array){
+            if([cy.name isEqualToString:chengyu.name]){
+                return YES;
+            }
+        }
     }
-    NSString *firstLetter = [[chengyu.abbr substringToIndex:1] uppercaseString];
-    NSArray *theArray = [dictionary objectForKey:firstLetter];
-    return [theArray containsObject:chengyu.name];
+    return NO;
 }
 
-- (NSDictionary *)loadFavorites {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dictionaryWithNames = [defaults dictionaryForKey:kFavorites];
-    NSMutableDictionary *dictionaryWithChengyus = [NSMutableDictionary dictionaryWithCapacity:[dictionaryWithNames count]];
-    for(id key in [dictionaryWithNames allKeys]){
-        NSArray *arrayWithNames = [dictionaryWithNames objectForKey:key];
-        NSMutableArray *arrayWithChengyus = [NSMutableArray arrayWithCapacity:[arrayWithNames count]];
-        for(NSString *name in arrayWithNames){
-            Chengyu *chengyu = [[ChengyuHelper sharedInstance] getByName:name];
-            [arrayWithChengyus addObject:chengyu];
-        }
-        [dictionaryWithChengyus setObject:arrayWithChengyus forKey:key];
+- (BOOL)saveFavorites {
+    if(!contentsChanged){
+        return NO;
     }
-    NSLog(@"load %lu items", [dictionaryWithChengyus count]);
-    return dictionaryWithChengyus;
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    for(NSString *key in [_favorites allKeys]){
+        NSArray *array = [_favorites valueForKey:key];
+        NSArray *transformedArray = [MTLJSONAdapter JSONArrayFromModels:array];
+        [dictionary setValue:transformedArray forKey:key];
+    }
+    NSError *error = nil;
+    NSData *JSONdata = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
+    if(!JSONdata){
+        NSLog(@"error: %@", error);
+        return NO;
+    }
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *path = [documentDirectory stringByAppendingPathComponent:kFavoritesFileName];
+    return [JSONdata writeToFile:path atomically:YES];
 }
 
 @end

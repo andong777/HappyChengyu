@@ -11,11 +11,13 @@
 
 @interface FavoritesHelper : NSObject
 
+@property (nonatomic, strong) NSDictionary *favorites;
+
 + (FavoritesHelper *)sharedInstance;
 
 - (BOOL)addFavorite:(Chengyu *)chengyu;
 - (BOOL)removeFavorite:(Chengyu *)chengyu;
 - (BOOL)hasFavorite:(Chengyu *)chengyu;
-- (NSDictionary *)loadFavorites;
+- (BOOL)saveFavorites;
 
 @end
