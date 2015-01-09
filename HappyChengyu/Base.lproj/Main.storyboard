@@ -708,7 +708,13 @@
                             <outlet property="delegate" destination="qMk-bY-HET" id="Jzt-ac-Y1i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="结束" id="ndR-17-PyP"/>
+                    <navigationItem key="navigationItem" title="结束" id="ndR-17-PyP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="zZb-kv-KXc">
+                            <connections>
+                                <action selector="clickShare:" destination="qMk-bY-HET" id="G4h-F1-EUv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentText" destination="f4p-lE-m6c" id="Cb4-9O-5gj"/>
                         <outlet property="lengthText" destination="YYn-7v-zOg" id="Azh-xz-tSJ"/>

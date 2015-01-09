@@ -27,9 +27,9 @@
 		7658C35F1A58D01D0062C946 /* HappyChengyuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */; };
 		7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3711A58F0380062C946 /* ChengyuHelper.m */; };
 		766F4ED11A5A7E8B002FB3FF /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 766F4ED01A5A7E8B002FB3FF /* test.json */; };
+		768189181A60048A008DD226 /* FavoritesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 768189171A60048A008DD226 /* FavoritesHelper.m */; };
 		76DBF6DF1A5E72D0009543E4 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DBF6DE1A5E72D0009543E4 /* ResultViewController.m */; };
 		76DECBBB1A5ECB1000124AF4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DECBBA1A5ECB1000124AF4 /* FavoritesViewController.m */; };
-		76DECBBE1A5ECBBE00124AF4 /* FavoritesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DECBBD1A5ECBBE00124AF4 /* FavoritesHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,12 +80,12 @@
 		7658C3701A58F0380062C946 /* ChengyuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChengyuHelper.h; path = HappyChengyu/ChengyuHelper.h; sourceTree = "<group>"; };
 		7658C3711A58F0380062C946 /* ChengyuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChengyuHelper.m; path = HappyChengyu/ChengyuHelper.m; sourceTree = "<group>"; };
 		766F4ED01A5A7E8B002FB3FF /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		768189161A60048A008DD226 /* FavoritesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesHelper.h; path = HappyChengyu/FavoritesHelper.h; sourceTree = "<group>"; };
+		768189171A60048A008DD226 /* FavoritesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesHelper.m; path = HappyChengyu/FavoritesHelper.m; sourceTree = "<group>"; };
 		76DBF6DD1A5E72D0009543E4 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		76DBF6DE1A5E72D0009543E4 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		76DECBB91A5ECB1000124AF4 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		76DECBBA1A5ECB1000124AF4 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		76DECBBC1A5ECBBE00124AF4 /* FavoritesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesHelper.h; sourceTree = "<group>"; };
-		76DECBBD1A5ECBBE00124AF4 /* FavoritesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesHelper.m; sourceTree = "<group>"; };
 		D64B6ED411EC69097BCFD0FF /* Pods-HappyChengyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyChengyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyChengyu/Pods-HappyChengyu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,12 +207,12 @@
 		7658C3681A58EBDB0062C946 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				768189161A60048A008DD226 /* FavoritesHelper.h */,
+				768189171A60048A008DD226 /* FavoritesHelper.m */,
 				7658C3701A58F0380062C946 /* ChengyuHelper.h */,
 				7658C3711A58F0380062C946 /* ChengyuHelper.m */,
 				763D18E01A59479A00A3B3A5 /* Chengyu.h */,
 				763D18E11A59479A00A3B3A5 /* Chengyu.m */,
-				76DECBBC1A5ECBBE00124AF4 /* FavoritesHelper.h */,
-				76DECBBD1A5ECBBE00124AF4 /* FavoritesHelper.m */,
 			);
 			name = Models;
 			path = ..;
@@ -397,9 +397,9 @@
 				760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */,
 				760D65721A5CC5BA00232953 /* ChengyuSelectViewController.m in Sources */,
 				7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */,
-				76DECBBE1A5ECBBE00124AF4 /* FavoritesHelper.m in Sources */,
 				760D65881A5D0D7200232953 /* LetterCell.m in Sources */,
 				76DBF6DF1A5E72D0009543E4 /* ResultViewController.m in Sources */,
+				768189181A60048A008DD226 /* FavoritesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

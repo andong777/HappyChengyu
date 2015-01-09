@@ -10,7 +10,12 @@
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 
-@interface ResultViewController ()
+@interface ResultViewController (){
+    NSInteger length;
+    NSInteger minutes;
+    NSInteger seconds;
+    NSInteger percentage;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *lengthText;
 @property (weak, nonatomic) IBOutlet UITextView *contentText;
@@ -31,22 +36,35 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSArray *chengyus = [ChengyuHelper sharedInstance].appearedList;
-    _lengthText.text = [NSString stringWithFormat:@"%lu", (unsigned long)[chengyus count]];
-    NSMutableArray *chengyuNames = [NSMutableArray arrayWithCapacity:[chengyus count]];
+    length = [chengyus count];
+    _lengthText.text = [NSString stringWithFormat:@"%ld", length];
+    NSMutableArray *chengyuNames = [NSMutableArray arrayWithCapacity:length];
     for(Chengyu *cy in chengyus){
         [chengyuNames addObject:cy.name];
     }
     _contentText.text = [chengyuNames componentsJoinedByString:@" → "];
     NSInteger ti = (NSInteger)_timeInterval;
-    NSInteger seconds = ti % 60;
-    NSInteger minutes = (ti / 60) % 60;
-    _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", (long)minutes, (long)seconds];
-    _percentText.text = [NSString stringWithFormat:@"你打败了 %d%% 的人", 99];
+    seconds = ti % 60;
+    minutes = (ti / 60) % 60;
+    _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", minutes, seconds];
+    percentage = 99;
+    _percentText.text = [NSString stringWithFormat:@"你打败了 %ld%% 的人", percentage];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)clickShare:(id)sender {
+    dispatch_async(dispatch_queue_create("share", NULL), ^{
+        NSArray *activityItems = @[[NSString stringWithFormat:@"我在《开心成语接龙》玩成语接龙，接龙长度达到%ld，用时%ld分%ld秒，打败了%ld%%的人。", length, minutes, seconds, percentage]];
+        UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+        activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:activityController  animated:YES completion:nil];
+        });
+    });
 }
 
 @end

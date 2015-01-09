@@ -103,4 +103,24 @@
         [defaults setObject:@(NO) forKey:kSpeaker];
     }
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(indexPath.section == 2){
+        if(indexPath.row == 0){
+            NSString *appURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @""];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appURL]];
+        }else if(indexPath.row == 1){
+            dispatch_async(dispatch_queue_create("share", NULL), ^{
+                NSArray *activityItems = @[[NSString stringWithFormat:@"《开心成语接龙》是一个通过语音玩接龙的iOS应用，还可以查询和学习成语哦！"]];
+                UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+                activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self presentViewController:activityController  animated:YES completion:nil];
+                });
+                
+            });
+        }
+    }
+}
 @end
