@@ -74,6 +74,7 @@
     [defaults setObject:@(sender.isOn) forKey:kCharacter];
     if(sender.isOn){
         _toneSwitch.on = YES;
+        [defaults setObject:@(YES) forKey:kTone];
         _toneSwitch.enabled = NO;
     }else{
         _toneSwitch.enabled = YES;

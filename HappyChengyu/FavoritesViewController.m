@@ -30,6 +30,10 @@
     NSLog(@"favorites: %lu", [_favorites count]);
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,11 +64,12 @@
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return [_favorites allKeys];
+    return [[_favorites allKeys] sortedArrayUsingSelector:@selector(compare:)];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"%c", (char)(65+section)];
+    NSArray *sortedKeys = [[_favorites allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    return [sortedKeys objectAtIndex:section];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

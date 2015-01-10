@@ -111,6 +111,7 @@
     }
     NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *path = [documentDirectory stringByAppendingPathComponent:kFavoritesFileName];
+    NSLog(@"saving favorites...");
     return [JSONdata writeToFile:path atomically:YES];
 }
 
