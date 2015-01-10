@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *sourceText;
 @property (weak, nonatomic) IBOutlet UITextView *exampleText;
 
-- (IBAction)clickAdd:(id)sender;
+- (IBAction)clickAddOrRemove:(id)sender;
 @end
 
 @implementation ChengyuDetailViewController
@@ -31,13 +31,16 @@
     _meaningText.text = _chengyu.meaning;
     _sourceText.text = _chengyu.source;
     _exampleText.text = _chengyu.example;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    if(_fromFavorite){
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clickRemove)];
-    }else{  // from chengyu select view
-        if([[FavoritesHelper sharedInstance] hasFavorite:_chengyu]){
-            self.navigationItem.rightBarButtonItem.enabled = NO;
-        }
+    UIBarButtonItem *favoriteButton = self.navigationItem.rightBarButtonItem;
+    if([[FavoritesHelper sharedInstance] hasFavorite:_chengyu]){
+        favoriteButton.tintColor = [UIColor blueColor];
+    }else{
+        favoriteButton.tintColor = [UIColor lightGrayColor];
     }
 }
 
@@ -56,12 +59,18 @@
 }
 */
 
-- (IBAction)clickAdd:(id)sender {
-    [[FavoritesHelper sharedInstance] addFavorite:_chengyu];
-}
-
-- (void)clickRemove {
-    [[FavoritesHelper sharedInstance] removeFavorite:_chengyu];
+- (IBAction)clickAddOrRemove:(id)sender {
+    FavoritesHelper *helper = [FavoritesHelper sharedInstance];
+    if([helper hasFavorite:_chengyu]){
+        [helper removeFavorite:_chengyu];
+        if(_fromFavorite){
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
+    }else{
+        [helper addFavorite:_chengyu];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
+    }
 }
 
 @end

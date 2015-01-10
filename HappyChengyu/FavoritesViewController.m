@@ -31,6 +31,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self reloadData];
+}
+
+- (void)reloadData {
+    _favorites = [FavoritesHelper sharedInstance].favorites;
     [self.tableView reloadData];
 }
 
@@ -81,7 +86,7 @@
         NSString *key = [self tableView:tableView titleForHeaderInSection:indexPath.section];
         Chengyu *chengyu = [_favorites[key] objectAtIndex:indexPath.row];
         [[FavoritesHelper sharedInstance] removeFavorite:chengyu];
-        [self.tableView reloadData];
+        [self reloadData];
     }
 }
 

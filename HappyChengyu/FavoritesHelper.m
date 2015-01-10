@@ -76,7 +76,11 @@
     NSString *category = [chengyu.abbr substringToIndex:1];
     NSMutableArray *array = [_favorites valueForKey:category];
     [array removeObject:chengyu];
-    [_favorites setValue:array forKey:category];
+    if(array && [array count] > 0){
+        [_favorites setValue:array forKey:category];
+    }else{
+        [_favorites setValue:nil forKey:category];
+    }
     contentsChanged = YES;
     NSLog(@"chengyu %@ removed", chengyu.name);
     return YES;
@@ -100,8 +104,10 @@
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     for(NSString *key in [_favorites allKeys]){
         NSArray *array = [_favorites valueForKey:key];
-        NSArray *transformedArray = [MTLJSONAdapter JSONArrayFromModels:array];
-        [dictionary setValue:transformedArray forKey:key];
+        if(array && [array count] > 0){
+            NSArray *transformedArray = [MTLJSONAdapter JSONArrayFromModels:array];
+            [dictionary setValue:transformedArray forKey:key];
+        }
     }
     NSError *error = nil;
     NSData *JSONdata = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
