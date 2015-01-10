@@ -31,6 +31,17 @@
     _meaningText.text = _chengyu.meaning;
     _sourceText.text = _chengyu.source;
     _exampleText.text = _chengyu.example;
+    
+    if(_chengyu.source && [_chengyu.source length]){
+        _sourceText.text = _chengyu.source;
+    }else{
+//        [_sourceText removeFromSuperview];
+    }
+    if(_chengyu.example && [_chengyu.example length]){
+        _exampleText.text = _chengyu.example;
+    }else{
+//        [_exampleText removeFromSuperview];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
