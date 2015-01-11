@@ -32,9 +32,6 @@
     contentInset.top = 20;
     [self.tableView setContentInset:contentInset];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     NSArray *chengyus = [ChengyuHelper sharedInstance].appearedList;
     length = [chengyus count];
     _lengthText.text = [NSString stringWithFormat:@"%ld", length];
@@ -68,4 +65,7 @@
     });
 }
 
+- (IBAction)clickReturn:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

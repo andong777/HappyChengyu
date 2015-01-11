@@ -8,6 +8,7 @@
 
 #import "AnswerViewController.h"
 #import "ChengyuHelper.h"
+#import "FavoritesHelper.h"
 #import "Chengyu.h"
 #import "ResultViewController.h"
 #import <MBProgressHUD.h>
@@ -29,6 +30,8 @@
 - (IBAction)clickCheck:(UIButton *)sender;
 - (IBAction)clickRestart:(UIButton *)sender;
 - (IBAction)clickHint:(UIButton *)sender;
+- (IBAction)clickQuit:(id)sender;
+- (IBAction)clickAddOrRemove:(id)sender;
 
 @end
 
@@ -39,6 +42,16 @@
     
     _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if([[FavoritesHelper sharedInstance] hasFavorite:currentChengyu]){
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
+    }else{
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -157,6 +170,21 @@
     }
 }
 
+- (IBAction)clickQuit:(id)sender {
+    [self performSegueWithIdentifier:@"EndSegue" sender:self];
+}
+
+- (IBAction)clickAddOrRemove:(id)sender {
+    FavoritesHelper *helper = [FavoritesHelper sharedInstance];
+    if([helper hasFavorite:currentChengyu]){
+        [helper removeFavorite:currentChengyu];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
+    }else{
+        [helper addFavorite:currentChengyu];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
+    }
+}
+
 - (void)setContent {
     if(currentChengyu){
         _nameText.text = currentChengyu.name;
@@ -169,6 +197,12 @@
             default: text = currentChengyu.meaning;
         }
         _detailText.text = (text && [text length]>0) ? text : @"未收录";
+        
+        if([[FavoritesHelper sharedInstance] hasFavorite:currentChengyu]){
+            self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
+        }else{
+            self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
+        }
     }
     _answerText.text = nil;
 }
