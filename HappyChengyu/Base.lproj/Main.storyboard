@@ -743,6 +743,7 @@
                         <outlet property="checkButton" destination="4bo-ap-f7u" id="4Y4-eb-uC9"/>
                         <outlet property="detailSwitch" destination="6DC-bn-6Vi" id="Eg6-VX-QHD"/>
                         <outlet property="detailText" destination="7l2-tD-27G" id="O6c-OX-hfY"/>
+                        <outlet property="hintButton" destination="VUN-C8-txm" id="swh-MP-rh7"/>
                         <outlet property="nameText" destination="Jl0-i3-RIM" id="BoT-BR-y9I"/>
                         <outlet property="pinyinText" destination="S3r-0g-hvY" id="qVU-4z-m7P"/>
                         <outlet property="spinner" destination="OCQ-8v-9Mk" id="eUa-s8-ilj"/>

@@ -16,6 +16,7 @@
 @interface AnswerViewController () {
     Chengyu *currentChengyu;
     NSDate *startTime;
+    NSUInteger chances;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameText;
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *detailSwitch;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
+@property (weak, nonatomic) IBOutlet UIButton *hintButton;
 
 - (IBAction)switchDetail:(UISegmentedControl *)sender;
 - (IBAction)clickCheck:(UIButton *)sender;
@@ -42,6 +44,8 @@
     
     _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
+    
+    [_hintButton setTitle:[NSString stringWithFormat:@"提示（%lu）", chances] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,6 +64,8 @@
 }
 
 - (void)doRestart {
+    chances = 3;
+    _hintButton.enabled = YES;
     [[ChengyuHelper sharedInstance] reloadData];
     currentChengyu = [[ChengyuHelper sharedInstance] randomWithRemove:YES];
     [self setContent];
@@ -157,6 +163,11 @@
 }
 
 - (IBAction)clickHint:(UIButton *)sender {
+    chances--;
+    [_hintButton setTitle:[NSString stringWithFormat:@"提示（%lu）", chances] forState:UIControlStateNormal];
+    if(chances <= 0){
+        _hintButton.enabled = NO;
+    }
     Chengyu *answer = nil;
     if(_includeCharacter){
         NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
