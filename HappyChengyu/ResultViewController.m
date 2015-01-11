@@ -45,7 +45,7 @@
     minutes = (ti / 60) % 60;
     _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", minutes, seconds];
     // TODO: 真正实现获取百分比
-    percentage = 50 + length / 3 * 10;
+    percentage = length / 3 * 10;
     _percentText.text = [NSString stringWithFormat:@"你打败了 %ld%% 的人", percentage];
 }
 
