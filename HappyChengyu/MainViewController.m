@@ -27,7 +27,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"view will appear");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *includeCharacter = [defaults objectForKey:@"Character"];
     if(includeCharacter && [includeCharacter boolValue]){

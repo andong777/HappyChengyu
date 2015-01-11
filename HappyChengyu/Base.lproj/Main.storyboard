@@ -559,104 +559,7 @@
                     <view key="view" contentMode="scaleToFill" id="Psc-FV-fb0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="因祸得福" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoe-Ca-QFg">
-                                <rect key="frame" x="98" y="84" width="124" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="3bZ-Om-FX4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="yīn huò dé fú" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1N-cH-A2g">
-                                <rect key="frame" x="98" y="113" width="124" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="《史记·管晏列传》：“其为政也，善因祸为福，转败为功。”" translatesAutoresizingMaskIntoConstraints="NO" id="FpD-ln-a3k">
-                                <rect key="frame" x="16" y="273" width="288" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="ym7-cV-2Fq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="伯翁，你说我误事不误事，如今不是～吗？（清·姬文《市声》第六回）" translatesAutoresizingMaskIntoConstraints="NO" id="f2r-Vn-axg">
-                                <rect key="frame" x="16" y="395" width="288" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="变坏事为好事。" translatesAutoresizingMaskIntoConstraints="NO" id="948-iM-ElQ">
-                                <rect key="frame" x="16" y="180" width="288" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="rFR-Yp-eGm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="含义" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePx-cq-8v6">
-                                <rect key="frame" x="40" y="159" width="34" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="1jv-q0-wuf"/>
-                                    <constraint firstAttribute="height" constant="21" id="jmC-0K-2Rx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="例子" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-fO-bzC">
-                                <rect key="frame" x="40" y="374" width="34" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="7wf-ba-b8Z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="出处" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWE-tR-c6f">
-                                <rect key="frame" x="40" y="252" width="34" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zSL-sC-ovX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="jWE-tR-c6f" firstAttribute="leading" secondItem="ePx-cq-8v6" secondAttribute="leading" id="2Vr-uA-HSu"/>
-                            <constraint firstItem="cRD-Ia-Rts" firstAttribute="top" secondItem="f2r-Vn-axg" secondAttribute="bottom" constant="44" id="6os-1B-jLb"/>
-                            <constraint firstItem="jWE-tR-c6f" firstAttribute="trailing" secondItem="ePx-cq-8v6" secondAttribute="trailing" id="7Xt-2a-rYQ"/>
-                            <constraint firstItem="948-iM-ElQ" firstAttribute="leading" secondItem="FpD-ln-a3k" secondAttribute="leading" id="7eC-Up-dFr"/>
-                            <constraint firstItem="zoe-Ca-QFg" firstAttribute="leading" secondItem="y1N-cH-A2g" secondAttribute="leading" id="BTs-jY-zCP"/>
-                            <constraint firstItem="zoe-Ca-QFg" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" constant="82" id="BwV-iQ-jf0"/>
-                            <constraint firstItem="zoe-Ca-QFg" firstAttribute="trailing" secondItem="y1N-cH-A2g" secondAttribute="trailing" id="GQe-fK-w8m"/>
-                            <constraint firstItem="f2r-Vn-axg" firstAttribute="top" secondItem="pVv-fO-bzC" secondAttribute="bottom" id="J5Y-ko-FnD"/>
-                            <constraint firstItem="948-iM-ElQ" firstAttribute="trailing" secondItem="FpD-ln-a3k" secondAttribute="trailing" id="JKF-ia-eAo"/>
-                            <constraint firstItem="FpD-ln-a3k" firstAttribute="top" secondItem="jWE-tR-c6f" secondAttribute="bottom" id="MWZ-Rw-qpC"/>
-                            <constraint firstItem="y1N-cH-A2g" firstAttribute="centerX" secondItem="Psc-FV-fb0" secondAttribute="centerX" id="PdY-fC-ins"/>
-                            <constraint firstItem="jWE-tR-c6f" firstAttribute="top" secondItem="948-iM-ElQ" secondAttribute="bottom" constant="22" id="Px3-dr-N4E"/>
-                            <constraint firstItem="f2r-Vn-axg" firstAttribute="trailing" secondItem="FpD-ln-a3k" secondAttribute="trailing" id="QwG-de-7rP"/>
-                            <constraint firstItem="jWE-tR-c6f" firstAttribute="leading" secondItem="pVv-fO-bzC" secondAttribute="leading" id="TEf-A9-E1c"/>
-                            <constraint firstItem="jWE-tR-c6f" firstAttribute="trailing" secondItem="pVv-fO-bzC" secondAttribute="trailing" id="WQC-N4-b12"/>
-                            <constraint firstItem="f2r-Vn-axg" firstAttribute="leading" secondItem="FpD-ln-a3k" secondAttribute="leading" id="bEk-JQ-ype"/>
-                            <constraint firstItem="zoe-Ca-QFg" firstAttribute="top" secondItem="WiM-qc-MGK" secondAttribute="bottom" constant="45" id="fRA-dp-hoP"/>
-                            <constraint firstItem="ePx-cq-8v6" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" constant="24" id="gpr-qb-rCY"/>
-                            <constraint firstItem="948-iM-ElQ" firstAttribute="centerX" secondItem="y1N-cH-A2g" secondAttribute="centerX" id="mhh-FD-O92"/>
-                            <constraint firstItem="y1N-cH-A2g" firstAttribute="top" secondItem="zoe-Ca-QFg" secondAttribute="bottom" constant="8" symbolic="YES" id="nKp-qV-vcG"/>
-                            <constraint firstItem="FpD-ln-a3k" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="pBk-XO-qzZ"/>
-                            <constraint firstItem="ePx-cq-8v6" firstAttribute="top" secondItem="WiM-qc-MGK" secondAttribute="bottom" constant="107" id="xLa-fi-UuG"/>
-                            <constraint firstItem="948-iM-ElQ" firstAttribute="top" secondItem="ePx-cq-8v6" secondAttribute="bottom" id="xjU-ed-Vft"/>
-                            <constraint firstItem="pVv-fO-bzC" firstAttribute="top" secondItem="FpD-ln-a3k" secondAttribute="bottom" constant="21" id="xvJ-JF-tSy"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="成语" id="tkc-wR-ZkW">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="aKN-Cg-N6g">
@@ -666,13 +569,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="exampleText" destination="f2r-Vn-axg" id="alK-TA-Zwd"/>
-                        <outlet property="meaningText" destination="948-iM-ElQ" id="Z2W-e5-kbi"/>
-                        <outlet property="nameText" destination="zoe-Ca-QFg" id="Ob9-Ee-0we"/>
-                        <outlet property="pinyinText" destination="y1N-cH-A2g" id="a0J-Gl-yw5"/>
-                        <outlet property="sourceText" destination="FpD-ln-a3k" id="8S9-9j-uTS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw2-2H-3uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

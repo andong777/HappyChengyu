@@ -12,13 +12,13 @@
 
 @interface ChengyuDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *nameText;
-@property (weak, nonatomic) IBOutlet UILabel *pinyinText;
-@property (weak, nonatomic) IBOutlet UITextView *meaningText;
-@property (weak, nonatomic) IBOutlet UITextView *sourceText;
-@property (weak, nonatomic) IBOutlet UITextView *exampleText;
+@property (strong, nonatomic) UILabel *nameText;
+@property (strong, nonatomic) UILabel *pinyinText;
+@property (strong, nonatomic) UITextView *meaningText;
+@property (strong, nonatomic) UITextView *sourceText;
+@property (strong, nonatomic) UITextView *exampleText;
 
-- (IBAction)clickAddOrRemove:(id)sender;
+- (void)clickAddOrRemove:(id)sender;
 @end
 
 @implementation ChengyuDetailViewController
@@ -26,32 +26,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _nameText.text = _chengyu.name;
-    _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
-    _meaningText.text = _chengyu.meaning;
-    _sourceText.text = _chengyu.source;
-    _exampleText.text = _chengyu.example;
+    [self.navigationItem.rightBarButtonItem setAction:@selector(clickAddOrRemove:)];
     
+    CGRect headerFrame = [UIScreen mainScreen].bounds;
+    CGFloat inset = 20;
+    CGFloat beginHeight = 50;
+    CGFloat smallGap = 20;
+    CGFloat bigGap = 40;
+    CGFloat nameHeight = 50;
+    CGFloat pinyinHeight = 30;
+    CGFloat meaningHeight = 80;
+    CGFloat sourceHeight = 100;
+    CGFloat exampleHeight = 100;
+    
+    CGRect nameFrame = CGRectMake(inset, beginHeight + smallGap, headerFrame.size.width - 2 * inset, nameHeight);
+    _nameText = [[UILabel alloc] initWithFrame:nameFrame];
+    _nameText.text = _chengyu.name;
+    _nameText.textAlignment = NSTextAlignmentCenter;
+    _nameText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    [self.view addSubview:_nameText];
+    
+    CGRect pinyinFrame = CGRectMake(inset, nameFrame.origin.y + nameHeight + smallGap, headerFrame.size.width - 2 * inset, pinyinHeight);
+    _pinyinText = [[UILabel alloc] initWithFrame:pinyinFrame];
+    _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
+    _pinyinText.textAlignment = NSTextAlignmentCenter;
+    _pinyinText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+    [self.view addSubview:_pinyinText];
+    
+    CGRect meaningFrame = CGRectMake(inset, pinyinFrame.origin.y + pinyinHeight + bigGap, headerFrame.size.width - 2 * inset, meaningHeight);
+    _meaningText = [[UITextView alloc] initWithFrame:meaningFrame];
+    _meaningText.text = _chengyu.meaning;
+    _meaningText.textAlignment = NSTextAlignmentLeft;
+    _meaningText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    [self.view addSubview:_meaningText];
+    
+    CGRect otherFrame = CGRectMake(inset, meaningFrame.origin.y + meaningHeight + bigGap, headerFrame.size.width - 2 * inset, sourceHeight);
     if(_chengyu.source && [_chengyu.source length]){
+        _sourceText = [[UITextView alloc] initWithFrame:otherFrame];
         _sourceText.text = _chengyu.source;
-    }else{
-//        [_sourceText removeFromSuperview];
+        _sourceText.textAlignment = NSTextAlignmentLeft;
+        _sourceText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        [self.view addSubview:_sourceText];
+        otherFrame.origin.y += sourceHeight + bigGap;
+        otherFrame.size.height = exampleHeight;
     }
+    
     if(_chengyu.example && [_chengyu.example length]){
+        _exampleText = [[UITextView alloc] initWithFrame:otherFrame];
         _exampleText.text = _chengyu.example;
-    }else{
-//        [_exampleText removeFromSuperview];
+        _exampleText.textAlignment = NSTextAlignmentLeft;
+        _exampleText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        [self.view addSubview:_exampleText];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    UIBarButtonItem *favoriteButton = self.navigationItem.rightBarButtonItem;
     if([[FavoritesHelper sharedInstance] hasFavorite:_chengyu]){
-        favoriteButton.tintColor = [UIColor blueColor];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
     }else{
-        favoriteButton.tintColor = [UIColor lightGrayColor];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
     }
 }
 
