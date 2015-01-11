@@ -38,6 +38,7 @@
     CGFloat meaningHeight = 80;
     CGFloat sourceHeight = 100;
     CGFloat exampleHeight = 100;
+    CGFloat labelHeight = 20;
     
     CGRect nameFrame = CGRectMake(inset, beginHeight + smallGap, headerFrame.size.width - 2 * inset, nameHeight);
     _nameText = [[UILabel alloc] initWithFrame:nameFrame];
@@ -54,6 +55,13 @@
     [self.view addSubview:_pinyinText];
     
     CGRect meaningFrame = CGRectMake(inset, pinyinFrame.origin.y + pinyinHeight + bigGap, headerFrame.size.width - 2 * inset, meaningHeight);
+    CGRect meaningLabelFrame = meaningFrame;
+    meaningLabelFrame.origin.y -= labelHeight;
+    meaningLabelFrame.size.height = labelHeight;
+    UILabel *meaningLabel = [[UILabel alloc] initWithFrame:meaningLabelFrame];
+    meaningLabel.text = @"含义";
+    meaningLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+    [self.view addSubview:meaningLabel];
     _meaningText = [[UITextView alloc] initWithFrame:meaningFrame];
     _meaningText.text = _chengyu.meaning;
     _meaningText.textAlignment = NSTextAlignmentLeft;
@@ -62,16 +70,31 @@
     
     CGRect otherFrame = CGRectMake(inset, meaningFrame.origin.y + meaningHeight + bigGap, headerFrame.size.width - 2 * inset, sourceHeight);
     if(_chengyu.source && [_chengyu.source length]){
+        CGRect otherLabelFrame = otherFrame;
+        otherLabelFrame.origin.y -= labelHeight;
+        otherLabelFrame.size.height = labelHeight;
+        UILabel *otherLabel = [[UILabel alloc] initWithFrame:otherLabelFrame];
+        otherLabel.text = @"出处";
+        otherLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        [self.view addSubview:otherLabel];
         _sourceText = [[UITextView alloc] initWithFrame:otherFrame];
         _sourceText.text = _chengyu.source;
         _sourceText.textAlignment = NSTextAlignmentLeft;
         _sourceText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         [self.view addSubview:_sourceText];
+        
         otherFrame.origin.y += sourceHeight + bigGap;
         otherFrame.size.height = exampleHeight;
     }
     
     if(_chengyu.example && [_chengyu.example length]){
+        CGRect otherLabelFrame = otherFrame;
+        otherLabelFrame.origin.y -= labelHeight;
+        otherLabelFrame.size.height = labelHeight;
+        UILabel *otherLabel = [[UILabel alloc] initWithFrame:otherLabelFrame];
+        otherLabel.text = @"例子";
+        otherLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        [self.view addSubview:otherLabel];
         _exampleText = [[UITextView alloc] initWithFrame:otherFrame];
         _exampleText.text = _chengyu.example;
         _exampleText.textAlignment = NSTextAlignmentLeft;
@@ -95,17 +118,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)clickAddOrRemove:(id)sender {
+- (void)clickAddOrRemove:(id)sender {
     FavoritesHelper *helper = [FavoritesHelper sharedInstance];
     if([helper hasFavorite:_chengyu]){
         [helper removeFavorite:_chengyu];
