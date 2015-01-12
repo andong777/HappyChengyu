@@ -22,10 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIEdgeInsets contentInset = self.tableView.contentInset;
-    contentInset.top = 20;
-    [self.tableView setContentInset:contentInset];
-    
     startSet = [NSMutableOrderedSet orderedSetWithCapacity:1000];
     for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
         NSString *theCharacter = [cy.name substringToIndex:1];

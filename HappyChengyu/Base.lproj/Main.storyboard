@@ -114,7 +114,7 @@
         <scene sceneID="qNT-no-GMX">
             <objects>
                 <navigationController id="cDh-iS-JYf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="search" id="IqO-cF-pZX"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="history" id="IqO-cF-pZX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7mu-hj-ZRb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -126,6 +126,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAe-eZ-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1206" y="442"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Bu-2c-kc2">
+            <objects>
+                <navigationController id="jyG-p9-1Rd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="8ZQ-3B-3WD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Njr-BN-EfT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ke9-hE-OPx" kind="relationship" relationship="rootViewController" id="Oq9-Kx-xfI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1W-wb-jrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1206" y="1142"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Qm7-2x-Q3b">
+            <objects>
+                <tableViewController id="Ke9-hE-OPx" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1XS-a5-vdb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchReuseIdentifier" id="JIy-NC-6Zi">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JIy-NC-6Zi" id="GjX-Fc-VNX">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xSN-Ob-h53" kind="push" id="9NX-X3-Olz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ke9-hE-OPx" id="AMz-rU-sbT"/>
+                            <outlet property="delegate" destination="Ke9-hE-OPx" id="tn0-ry-fM2"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" id="1V6-EJ-hgO"/>
+                    <navigationItem key="navigationItem" id="YAD-bf-DiF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njb-Vo-SWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-754" y="1142"/>
         </scene>
         <!--选择首字母-->
         <scene sceneID="YAL-XN-H7E">
@@ -190,6 +238,7 @@
                     <connections>
                         <segue destination="CD1-7c-Msg" kind="relationship" relationship="viewControllers" id="k7R-lG-rFF"/>
                         <segue destination="cDh-iS-JYf" kind="relationship" relationship="viewControllers" id="Lvu-xY-R9X"/>
+                        <segue destination="jyG-p9-1Rd" kind="relationship" relationship="viewControllers" id="qMi-aw-xNY"/>
                         <segue destination="0GC-CT-jzS" kind="relationship" relationship="viewControllers" id="Qns-1e-4Jb"/>
                         <segue destination="K1b-3X-fhw" kind="relationship" relationship="viewControllers" id="lzR-fK-i6G"/>
                     </connections>
@@ -213,7 +262,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3i-Yq-BPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1206" y="1919"/>
+            <point key="canvasLocation" x="-1206" y="2557"/>
         </scene>
         <!--设置-->
         <scene sceneID="YJL-TN-gYF">
@@ -404,7 +453,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pm-bp-kC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754" y="1919"/>
+            <point key="canvasLocation" x="-754" y="2557"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2nD-MD-5Ku">
@@ -421,7 +470,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwn-0i-jL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1206" y="1179"/>
+            <point key="canvasLocation" x="-1206" y="1817"/>
         </scene>
         <!--我的收藏-->
         <scene sceneID="2Ce-Iv-yGy">
@@ -466,7 +515,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg6-ml-OiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754" y="1179"/>
+            <point key="canvasLocation" x="-754" y="1817"/>
         </scene>
         <!--选择首字-->
         <scene sceneID="Ot0-Sj-dIS">
@@ -571,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw2-2H-3uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="1179"/>
+            <point key="canvasLocation" x="-302" y="1817"/>
         </scene>
         <!--成语接龙-->
         <scene sceneID="ufC-wZ-h7g">
@@ -908,6 +957,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0VX-r6-nyS"/>
+        <segue reference="9NX-X3-Olz"/>
     </inferredMetricsTieBreakers>
 </document>

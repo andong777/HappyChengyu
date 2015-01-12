@@ -43,7 +43,6 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
             [startSet addObject:firstCharacter];
         }
     }
-//    self.title = _firstLetter;
 }
 
 - (void)didReceiveMemoryWarning {

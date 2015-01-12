@@ -21,10 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    UIEdgeInsets contentInset = self.tableView.contentInset;
-    contentInset.top = 20;
-    [self.tableView setContentInset:contentInset];
     
     _favorites = [FavoritesHelper sharedInstance].favorites;
     NSLog(@"favorites: %lu", [_favorites count]);
