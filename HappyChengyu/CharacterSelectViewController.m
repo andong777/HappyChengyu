@@ -25,10 +25,7 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIEdgeInsets contentInset = self.collectionView.contentInset;
-    contentInset.top = 20;
-    [self.collectionView setContentInset:contentInset];
+
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 10, 20, 10);
     
@@ -86,6 +83,13 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
         return headerView;
     }
     return nil;
+}
+
+
+#pragma mark <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(60, 60);
 }
 
 @end

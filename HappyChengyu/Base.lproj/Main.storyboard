@@ -197,9 +197,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-cJ-caO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-cJ-caO">
+                                            <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -207,6 +207,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AUa-cJ-caO" firstAttribute="top" secondItem="yPM-sD-b7g" secondAttribute="topMargin" id="bdQ-dx-yg4"/>
+                                    <constraint firstItem="AUa-cJ-caO" firstAttribute="leading" secondItem="yPM-sD-b7g" secondAttribute="leadingMargin" id="eOE-sd-69O"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="AUa-cJ-caO" secondAttribute="bottom" id="uFq-07-Svc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="AUa-cJ-caO" secondAttribute="trailing" id="vg0-BT-Ipm"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="label" destination="AUa-cJ-caO" id="5DW-Vq-yNc"/>
                                     <segue destination="pQY-Bk-0jA" kind="push" identifier="LetterSelectedSegue" id="9Ki-K2-OLl"/>
@@ -539,9 +545,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="马" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-Tm-z4N">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="马" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-Tm-z4N">
+                                            <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="32"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -549,6 +555,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ELO-Tm-z4N" secondAttribute="bottom" id="IbU-jf-S1p"/>
+                                    <constraint firstItem="ELO-Tm-z4N" firstAttribute="top" secondItem="OZ9-u8-XzE" secondAttribute="topMargin" id="oVO-uK-JZv"/>
+                                    <constraint firstItem="ELO-Tm-z4N" firstAttribute="leading" secondItem="OZ9-u8-XzE" secondAttribute="leadingMargin" id="qpb-OT-fMZ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ELO-Tm-z4N" secondAttribute="trailing" id="xJ5-5N-pN2"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="label" destination="ELO-Tm-z4N" id="aob-qb-c4t"/>
                                     <segue destination="6NM-qR-6er" kind="push" identifier="CharacterSelectedSegue" id="KZJ-6o-m3f"/>

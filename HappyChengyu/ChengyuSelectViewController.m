@@ -29,7 +29,6 @@
             [startSet addObject:cy.name];
         }
     }
-//    self.title = _firstCharacter;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

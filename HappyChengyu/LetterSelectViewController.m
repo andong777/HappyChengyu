@@ -24,10 +24,7 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIEdgeInsets contentInset = self.collectionView.contentInset;
-    contentInset.top = 20;
-    [self.collectionView setContentInset:contentInset];
+
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 10, 20, 10);
     
@@ -69,6 +66,13 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
     CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [startSet objectAtIndex:indexPath.row];
     return cell;
+}
+
+
+#pragma mark <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(77, 77);
 }
 
 @end

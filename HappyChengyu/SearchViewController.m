@@ -86,6 +86,8 @@
                 [searchResults addObject:cy];
             }else if([cy.abbr caseInsensitiveCompare:searchText] == NSOrderedSame){
                 [searchResults addObject:cy];
+            }else if([cy.pinyin containsObject:searchText]){
+                [searchResults addObject:cy];
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
