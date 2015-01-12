@@ -8,7 +8,7 @@
 
 #import "LetterSelectViewController.h"
 #import "CharacterSelectViewController.h"
-#import "CharacterCell.h"
+#import "CustomCell.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 
@@ -66,7 +66,7 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CharacterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [startSet objectAtIndex:indexPath.row];
     return cell;
 }

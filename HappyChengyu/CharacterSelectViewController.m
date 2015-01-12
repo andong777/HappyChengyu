@@ -10,7 +10,7 @@
 #import "ChengyuSelectViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
-#import "CharacterCell.h"
+#import "CustomCell.h"
 
 @interface CharacterSelectViewController (){
     NSMutableOrderedSet *startSet;
@@ -21,6 +21,7 @@
 @implementation CharacterSelectViewController
 
 static NSString * const reuseIdentifier = @"CellReuseIdentifier";
+static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +31,9 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
     [self.collectionView setContentInset:contentInset];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 10, 20, 10);
+    
+    flowLayout.headerReferenceSize = CGSizeMake(100, 25);
+    [self.collectionView registerClass:[CustomCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier];
     
     startSet = [NSMutableOrderedSet orderedSetWithCapacity:100];
     for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
@@ -71,9 +75,18 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CharacterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [startSet objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if([kind isEqualToString:UICollectionElementKindSectionHeader]){
+        CustomCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier forIndexPath:indexPath];
+        headerView.label.text = _firstLetter;
+        return headerView;
+    }
+    return nil;
 }
 
 @end

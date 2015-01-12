@@ -67,6 +67,7 @@
     _meaningText.text = _chengyu.meaning;
     _meaningText.textAlignment = NSTextAlignmentLeft;
     _meaningText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    _meaningText.editable = NO;
     [self.view addSubview:_meaningText];
     
     CGRect otherFrame = CGRectMake(inset, meaningFrame.origin.y + meaningHeight + bigGap, headerFrame.size.width - 2 * inset, sourceHeight);
@@ -82,6 +83,7 @@
         _sourceText.text = _chengyu.source;
         _sourceText.textAlignment = NSTextAlignmentLeft;
         _sourceText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        _sourceText.editable = NO;
         [self.view addSubview:_sourceText];
         
         otherFrame.origin.y += sourceHeight + bigGap;
@@ -100,6 +102,7 @@
         _exampleText.text = _chengyu.example;
         _exampleText.textAlignment = NSTextAlignmentLeft;
         _exampleText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        _exampleText.editable = NO;
         [self.view addSubview:_exampleText];
     }
 }

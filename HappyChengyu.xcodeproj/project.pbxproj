@@ -12,8 +12,6 @@
 		760D65751A5CFC7E00232953 /* CharacterSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65741A5CFC7E00232953 /* CharacterSelectViewController.m */; };
 		760D65781A5CFCE100232953 /* ChengyuDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */; };
 		760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65811A5D0A8A00232953 /* LetterSelectViewController.m */; };
-		760D65881A5D0D7200232953 /* LetterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65861A5D0D7200232953 /* LetterCell.m */; };
-		760D658C1A5D23E800232953 /* CharacterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D658B1A5D23E800232953 /* CharacterCell.m */; };
 		761B5FF21A5FB341003BDE01 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761B5FF11A5FB341003BDE01 /* SettingsViewController.m */; };
 		762AAED71A5E1D1900EF6804 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762AAED61A5E1D1900EF6804 /* MainViewController.m */; };
 		763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */ = {isa = PBXBuildFile; fileRef = 763D18E11A59479A00A3B3A5 /* Chengyu.m */; };
@@ -27,6 +25,7 @@
 		7658C35F1A58D01D0062C946 /* HappyChengyuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */; };
 		7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3711A58F0380062C946 /* ChengyuHelper.m */; };
 		766F4ED11A5A7E8B002FB3FF /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 766F4ED01A5A7E8B002FB3FF /* test.json */; };
+		767AD4F41A6398F9002B9E9C /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4F31A6398F9002B9E9C /* CustomCell.m */; };
 		768189181A60048A008DD226 /* FavoritesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 768189171A60048A008DD226 /* FavoritesHelper.m */; };
 		76DBF6DF1A5E72D0009543E4 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DBF6DE1A5E72D0009543E4 /* ResultViewController.m */; };
 		76DECBBB1A5ECB1000124AF4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DECBBA1A5ECB1000124AF4 /* FavoritesViewController.m */; };
@@ -53,10 +52,6 @@
 		760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChengyuDetailViewController.m; sourceTree = "<group>"; };
 		760D65801A5D0A8A00232953 /* LetterSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterSelectViewController.h; sourceTree = "<group>"; };
 		760D65811A5D0A8A00232953 /* LetterSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterSelectViewController.m; sourceTree = "<group>"; };
-		760D65851A5D0D7200232953 /* LetterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterCell.h; sourceTree = "<group>"; };
-		760D65861A5D0D7200232953 /* LetterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterCell.m; sourceTree = "<group>"; };
-		760D658A1A5D23E800232953 /* CharacterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterCell.h; sourceTree = "<group>"; };
-		760D658B1A5D23E800232953 /* CharacterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterCell.m; sourceTree = "<group>"; };
 		761B5FF01A5FB341003BDE01 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		761B5FF11A5FB341003BDE01 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		762AAED51A5E1D1900EF6804 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -80,6 +75,8 @@
 		7658C3701A58F0380062C946 /* ChengyuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChengyuHelper.h; path = HappyChengyu/ChengyuHelper.h; sourceTree = "<group>"; };
 		7658C3711A58F0380062C946 /* ChengyuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChengyuHelper.m; path = HappyChengyu/ChengyuHelper.m; sourceTree = "<group>"; };
 		766F4ED01A5A7E8B002FB3FF /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		767AD4F21A6398F9002B9E9C /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		767AD4F31A6398F9002B9E9C /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		768189161A60048A008DD226 /* FavoritesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesHelper.h; path = HappyChengyu/FavoritesHelper.h; sourceTree = "<group>"; };
 		768189171A60048A008DD226 /* FavoritesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesHelper.m; path = HappyChengyu/FavoritesHelper.m; sourceTree = "<group>"; };
 		76DBF6DD1A5E72D0009543E4 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
@@ -119,10 +116,8 @@
 		760D65791A5D035400232953 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				760D65851A5D0D7200232953 /* LetterCell.h */,
-				760D65861A5D0D7200232953 /* LetterCell.m */,
-				760D658A1A5D23E800232953 /* CharacterCell.h */,
-				760D658B1A5D23E800232953 /* CharacterCell.m */,
+				767AD4F21A6398F9002B9E9C /* CustomCell.h */,
+				767AD4F31A6398F9002B9E9C /* CustomCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -388,7 +383,6 @@
 				763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */,
 				76DECBBB1A5ECB1000124AF4 /* FavoritesViewController.m in Sources */,
 				761B5FF21A5FB341003BDE01 /* SettingsViewController.m in Sources */,
-				760D658C1A5D23E800232953 /* CharacterCell.m in Sources */,
 				7658C34B1A58D01D0062C946 /* AnswerViewController.m in Sources */,
 				7658C3481A58D01D0062C946 /* AppDelegate.m in Sources */,
 				7658C3451A58D01D0062C946 /* main.m in Sources */,
@@ -397,9 +391,9 @@
 				760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */,
 				760D65721A5CC5BA00232953 /* ChengyuSelectViewController.m in Sources */,
 				7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */,
-				760D65881A5D0D7200232953 /* LetterCell.m in Sources */,
 				76DBF6DF1A5E72D0009543E4 /* ResultViewController.m in Sources */,
 				768189181A60048A008DD226 /* FavoritesHelper.m in Sources */,
+				767AD4F41A6398F9002B9E9C /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
