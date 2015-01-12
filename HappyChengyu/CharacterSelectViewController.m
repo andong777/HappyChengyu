@@ -39,7 +39,7 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
             [startSet addObject:firstCharacter];
         }
     }
-    self.title = _firstLetter;
+//    self.title = _firstLetter;
 }
 
 - (void)didReceiveMemoryWarning {

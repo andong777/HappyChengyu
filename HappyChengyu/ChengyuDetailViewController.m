@@ -30,11 +30,11 @@
     
     CGRect headerFrame = [UIScreen mainScreen].bounds;
     CGFloat inset = 20;
-    CGFloat beginHeight = 50;
-    CGFloat smallGap = 20;
+    CGFloat beginHeight = 70;
+    CGFloat smallGap = 10;
     CGFloat bigGap = 40;
-    CGFloat nameHeight = 50;
-    CGFloat pinyinHeight = 30;
+    CGFloat nameHeight = 40;
+    CGFloat pinyinHeight = 15;
     CGFloat meaningHeight = 80;
     CGFloat sourceHeight = 100;
     CGFloat exampleHeight = 100;
@@ -44,14 +44,15 @@
     _nameText = [[UILabel alloc] initWithFrame:nameFrame];
     _nameText.text = _chengyu.name;
     _nameText.textAlignment = NSTextAlignmentCenter;
-    _nameText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+//    _nameText.font = [UIFont fontWithName:@"STHeitiSC-Light" size:32.f];
+    _nameText.font = [UIFont systemFontOfSize:32.f];
     [self.view addSubview:_nameText];
     
     CGRect pinyinFrame = CGRectMake(inset, nameFrame.origin.y + nameHeight + smallGap, headerFrame.size.width - 2 * inset, pinyinHeight);
     _pinyinText = [[UILabel alloc] initWithFrame:pinyinFrame];
     _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
     _pinyinText.textAlignment = NSTextAlignmentCenter;
-    _pinyinText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+    _pinyinText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     [self.view addSubview:_pinyinText];
     
     CGRect meaningFrame = CGRectMake(inset, pinyinFrame.origin.y + pinyinHeight + bigGap, headerFrame.size.width - 2 * inset, meaningHeight);

@@ -58,7 +58,7 @@
     dispatch_async(dispatch_queue_create("share", NULL), ^{
         NSArray *activityItems = @[[NSString stringWithFormat:@"我在《开心成语接龙》玩成语接龙，接龙长度达到%ld，用时%ld分%ld秒，打败了%ld%%的人。", length, minutes, seconds, percentage]];
         UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-        activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
+        activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self presentViewController:activityController  animated:YES completion:nil];
         });

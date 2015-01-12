@@ -33,7 +33,7 @@
             [startSet addObject:cy.name];
         }
     }
-    self.title = _firstCharacter;
+//    self.title = _firstCharacter;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,6 +67,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [startSet count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return _firstCharacter;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
