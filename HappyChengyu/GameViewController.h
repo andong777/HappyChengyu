@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnswerViewController : UIViewController
+@interface GameViewController : UIViewController
 
 @property (nonatomic, assign) BOOL includeCharacter;
 @property (nonatomic, assign) BOOL includeTone;

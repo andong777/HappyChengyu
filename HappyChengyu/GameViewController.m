@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 AN Dong. All rights reserved.
 //
 
-#import "AnswerViewController.h"
+#import "GameViewController.h"
 #import "ChengyuHelper.h"
 #import "FavoritesHelper.h"
 #import "Chengyu.h"
@@ -20,7 +20,7 @@
 #import <iflyMSC/IFlySpeechError.h>
 #import "Constants.h"
 
-@interface AnswerViewController ()<IFlySpeechSynthesizerDelegate, IFlyRecognizerViewDelegate> {
+@interface GameViewController ()<IFlySpeechSynthesizerDelegate, IFlyRecognizerViewDelegate> {
     Chengyu *currentChengyu;
     NSDate *startTime;
     NSUInteger chances;
@@ -47,7 +47,7 @@
 
 @end
 
-@implementation AnswerViewController
+@implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

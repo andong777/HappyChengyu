@@ -13,12 +13,12 @@
 		760D65781A5CFCE100232953 /* ChengyuDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */; };
 		760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760D65811A5D0A8A00232953 /* LetterSelectViewController.m */; };
 		761B5FF21A5FB341003BDE01 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761B5FF11A5FB341003BDE01 /* SettingsViewController.m */; };
-		762AAED71A5E1D1900EF6804 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762AAED61A5E1D1900EF6804 /* MainViewController.m */; };
+		762AAED71A5E1D1900EF6804 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762AAED61A5E1D1900EF6804 /* MenuViewController.m */; };
 		763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */ = {isa = PBXBuildFile; fileRef = 763D18E11A59479A00A3B3A5 /* Chengyu.m */; };
 		763D18FF1A59926D00A3B3A5 /* chengyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 763D18FE1A59926D00A3B3A5 /* chengyu.json */; };
 		7658C3451A58D01D0062C946 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3441A58D01D0062C946 /* main.m */; };
 		7658C3481A58D01D0062C946 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3471A58D01D0062C946 /* AppDelegate.m */; };
-		7658C34B1A58D01D0062C946 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C34A1A58D01D0062C946 /* AnswerViewController.m */; };
+		7658C34B1A58D01D0062C946 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C34A1A58D01D0062C946 /* GameViewController.m */; };
 		7658C34E1A58D01D0062C946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7658C34C1A58D01D0062C946 /* Main.storyboard */; };
 		7658C3501A58D01D0062C946 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7658C34F1A58D01D0062C946 /* Images.xcassets */; };
 		7658C3531A58D01D0062C946 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7658C3511A58D01D0062C946 /* LaunchScreen.xib */; };
@@ -62,8 +62,8 @@
 		760D65811A5D0A8A00232953 /* LetterSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterSelectViewController.m; sourceTree = "<group>"; };
 		761B5FF01A5FB341003BDE01 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		761B5FF11A5FB341003BDE01 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		762AAED51A5E1D1900EF6804 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		762AAED61A5E1D1900EF6804 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		762AAED51A5E1D1900EF6804 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		762AAED61A5E1D1900EF6804 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		763D18E01A59479A00A3B3A5 /* Chengyu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chengyu.h; path = HappyChengyu/Chengyu.h; sourceTree = "<group>"; };
 		763D18E11A59479A00A3B3A5 /* Chengyu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chengyu.m; path = HappyChengyu/Chengyu.m; sourceTree = "<group>"; };
 		763D18FE1A59926D00A3B3A5 /* chengyu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chengyu.json; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		7658C3441A58D01D0062C946 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7658C3461A58D01D0062C946 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7658C3471A58D01D0062C946 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7658C3491A58D01D0062C946 /* AnswerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
-		7658C34A1A58D01D0062C946 /* AnswerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		7658C3491A58D01D0062C946 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		7658C34A1A58D01D0062C946 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		7658C34D1A58D01D0062C946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7658C34F1A58D01D0062C946 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7658C3521A58D01D0062C946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -157,6 +157,8 @@
 		761B5FEF1A5FB2B6003BDE01 /* Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
+				760D65761A5CFCE100232953 /* ChengyuDetailViewController.h */,
+				760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */,
 				760D65701A5CC5BA00232953 /* ChengyuSelectViewController.h */,
 				760D65711A5CC5BA00232953 /* ChengyuSelectViewController.m */,
 				760D65731A5CFC7E00232953 /* CharacterSelectViewController.h */,
@@ -249,23 +251,53 @@
 		7658C3691A58EBFE0062C946 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				767AB2511A6577E600800ED2 /* Settings */,
+				767AB2501A6577D700800ED2 /* Search */,
+				767AB24F1A6577C600800ED2 /* Favorites */,
+				767AB24E1A65774D00800ED2 /* Game */,
 				761B5FEF1A5FB2B6003BDE01 /* Encyclopedia */,
-				7658C3491A58D01D0062C946 /* AnswerViewController.h */,
-				7658C34A1A58D01D0062C946 /* AnswerViewController.m */,
-				760D65761A5CFCE100232953 /* ChengyuDetailViewController.h */,
-				760D65771A5CFCE100232953 /* ChengyuDetailViewController.m */,
-				762AAED51A5E1D1900EF6804 /* MainViewController.h */,
-				762AAED61A5E1D1900EF6804 /* MainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		767AB24E1A65774D00800ED2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				7658C3491A58D01D0062C946 /* GameViewController.h */,
+				7658C34A1A58D01D0062C946 /* GameViewController.m */,
+				762AAED51A5E1D1900EF6804 /* MenuViewController.h */,
+				762AAED61A5E1D1900EF6804 /* MenuViewController.m */,
 				76DBF6DD1A5E72D0009543E4 /* ResultViewController.h */,
 				76DBF6DE1A5E72D0009543E4 /* ResultViewController.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		767AB24F1A6577C600800ED2 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
 				76DECBB91A5ECB1000124AF4 /* FavoritesViewController.h */,
 				76DECBBA1A5ECB1000124AF4 /* FavoritesViewController.m */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		767AB2501A6577D700800ED2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
 				767AD4F51A63B10D002B9E9C /* SearchViewController.h */,
 				767AD4F61A63B10D002B9E9C /* SearchViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		767AB2511A6577E600800ED2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
 				761B5FF01A5FB341003BDE01 /* SettingsViewController.h */,
 				761B5FF11A5FB341003BDE01 /* SettingsViewController.m */,
 			);
-			name = Controllers;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		F2210E4AFAE34295220D4909 /* Pods */ = {
@@ -418,12 +450,12 @@
 				763D18E21A59479A00A3B3A5 /* Chengyu.m in Sources */,
 				76DECBBB1A5ECB1000124AF4 /* FavoritesViewController.m in Sources */,
 				761B5FF21A5FB341003BDE01 /* SettingsViewController.m in Sources */,
-				7658C34B1A58D01D0062C946 /* AnswerViewController.m in Sources */,
+				7658C34B1A58D01D0062C946 /* GameViewController.m in Sources */,
 				7658C3481A58D01D0062C946 /* AppDelegate.m in Sources */,
 				767AD4F71A63B10D002B9E9C /* SearchViewController.m in Sources */,
 				7658C3451A58D01D0062C946 /* main.m in Sources */,
 				760D65781A5CFCE100232953 /* ChengyuDetailViewController.m in Sources */,
-				762AAED71A5E1D1900EF6804 /* MainViewController.m in Sources */,
+				762AAED71A5E1D1900EF6804 /* MenuViewController.m in Sources */,
 				760D65821A5D0A8A00232953 /* LetterSelectViewController.m in Sources */,
 				760D65721A5CC5BA00232953 /* ChengyuSelectViewController.m in Sources */,
 				7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */,

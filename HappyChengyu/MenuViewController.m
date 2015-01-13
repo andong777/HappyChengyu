@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 AN Dong. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "AnswerViewController.h"
+#import "MenuViewController.h"
+#import "GameViewController.h"
 #import "Constants.h"
 
-@interface MainViewController ()
+@interface MenuViewController ()
 
 @property (weak, nonatomic) IBOutlet UISwitch *characterSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *toneSwitch;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation MainViewController
+@implementation MenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,7 +64,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"StartSegue"]){
-        AnswerViewController *vc = segue.destinationViewController;
+        GameViewController *vc = segue.destinationViewController;
         vc.includeCharacter = _characterSwitch.isOn;
         vc.includeTone = !_characterSwitch.isOn && _toneSwitch.isOn;
     }
