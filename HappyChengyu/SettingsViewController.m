@@ -7,11 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-
-#define kCharacter @"Character"
-#define kTone @"Tone"
-#define kReading @"Reading"
-#define kSpeaker @"Speaker"
+#import "Constants.h"
 
 @interface SettingsViewController ()
 

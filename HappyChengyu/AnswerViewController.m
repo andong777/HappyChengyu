@@ -14,14 +14,18 @@
 #import <MBProgressHUD.h>
 #import <iflyMSC/IFlySpeechSynthesizerDelegate.h>
 #import <iflyMSC/IFlySpeechSynthesizer.h>
+#import <iflyMSC/IFlyRecognizerViewDelegate.h>
+#import <iflyMSC/IFlyRecognizerView.h>
 #import <iflyMSC/IFlySpeechConstant.h>
 #import <iflyMSC/IFlySpeechError.h>
+#import "Constants.h"
 
-@interface AnswerViewController ()<IFlySpeechSynthesizerDelegate> {
+@interface AnswerViewController ()<IFlySpeechSynthesizerDelegate, IFlyRecognizerViewDelegate> {
     Chengyu *currentChengyu;
     NSDate *startTime;
     NSUInteger chances;
     IFlySpeechSynthesizer *_iFlySpeechSynthesizer;
+    IFlyRecognizerView *_iflyRecognizerView;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameText;
@@ -39,6 +43,7 @@
 - (IBAction)clickHint:(UIButton *)sender;
 - (IBAction)clickQuit:(id)sender;
 - (IBAction)clickAddOrRemove:(id)sender;
+- (IBAction)clickRecord:(id)sender;
 
 @end
 
@@ -48,6 +53,7 @@
     [super viewDidLoad];
     
     [self setupSpeechSynthesizer];
+    [self setupSpeechRecognizer];
     
     _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
@@ -107,10 +113,7 @@
             case UsedNameError: errorInfo = @"已经用过了"; break;
             default: errorInfo = @"未知错误";
         }
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = errorInfo;
-        [hud hide:YES afterDelay:1];
+        [self setErrorInfo:errorInfo];
     }
 }
 
@@ -204,6 +207,10 @@
     }
 }
 
+- (IBAction)clickRecord:(id)sender {
+    [_iflyRecognizerView start];
+}
+
 - (void)setContent {
     if(currentChengyu){
         _nameText.text = currentChengyu.name;
@@ -224,6 +231,13 @@
         }
     }
     _answerText.text = nil;
+}
+
+- (void)setErrorInfo:(NSString *)errorInfo {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = errorInfo;
+    [hud hide:YES afterDelay:1];
 }
 
 - (IBAction)backgroundTap:(id)sender {
@@ -255,17 +269,38 @@
 }
 
 - (void)setupSpeechSynthesizer {
-    _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
-    _iFlySpeechSynthesizer.delegate = self;
-    [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
-    [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
-    [_iFlySpeechSynthesizer setParameter:@"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
-    [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
-    [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
+    BOOL reading = [[[NSUserDefaults standardUserDefaults] objectForKey:kReading] boolValue];
+    BOOL speaker = [[[NSUserDefaults standardUserDefaults] objectForKey:kSpeaker] boolValue];
+    if(reading){
+        _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+        _iFlySpeechSynthesizer.delegate = self;
+        [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
+        [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
+        [_iFlySpeechSynthesizer setParameter:speaker ? @"xiaoyu" : @"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+        [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
+        [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
+    }
 }
 
 - (void) onCompleted:(IFlySpeechError *) error {
     NSLog(@"play done");
+}
+
+- (void)setupSpeechRecognizer {
+    _iflyRecognizerView = [[IFlyRecognizerView alloc] initWithCenter:self.view.center]; _iflyRecognizerView.delegate = self;
+    [_iflyRecognizerView setParameter:@"iat" forKey: [IFlySpeechConstant IFLY_DOMAIN]];
+    [_iflyRecognizerView setParameter:nil forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
+}
+
+- (void)onResult: (NSArray *)resultArray isLast:(BOOL) isLast {
+    NSDictionary *result = [resultArray objectAtIndex:0];
+    NSString *string = [[result allKeys] firstObject];
+    NSLog(@"data: %@", string);
+}
+
+- (void)onError: (IFlySpeechError *) error {
+    NSLog(@"recognize error: %@", error.errorDesc);
+    [self setErrorInfo:@"识别失败！"];
 }
 
 @end

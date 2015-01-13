@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "AnswerViewController.h"
+#import "Constants.h"
 
 @interface MainViewController ()
 
@@ -27,7 +28,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *includeCharacter = [defaults objectForKey:@"Character"];
+    NSNumber *includeCharacter = [defaults objectForKey:kCharacter];
     if(includeCharacter && [includeCharacter boolValue]){
         _characterSwitch.on = YES;
         _toneSwitch.enabled = NO;
@@ -35,7 +36,7 @@
     }else{
         _characterSwitch.on = NO;
         _toneSwitch.enabled = YES;
-        NSNumber *includeTone = [defaults objectForKey:@"Tone"];
+        NSNumber *includeTone = [defaults objectForKey:kTone];
         if(includeTone && [includeTone boolValue]){
             _toneSwitch.on = YES;
         }else{

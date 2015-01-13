@@ -90,6 +90,7 @@
 		766F4ED01A5A7E8B002FB3FF /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		767AB2451A6564B300800ED2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		767AB2491A65658500800ED2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		767AB24D1A65725600800ED2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		767AD4F21A6398F9002B9E9C /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		767AD4F31A6398F9002B9E9C /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		767AD4F51A63B10D002B9E9C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				760D65791A5D035400232953 /* UI */,
+				767AB24D1A65725600800ED2 /* Constants.h */,
 				766F4ED01A5A7E8B002FB3FF /* test.json */,
 				763D18FE1A59926D00A3B3A5 /* chengyu.json */,
 				7658C3691A58EBFE0062C946 /* Controllers */,
@@ -247,8 +249,6 @@
 		7658C3691A58EBFE0062C946 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				761B5FF01A5FB341003BDE01 /* SettingsViewController.h */,
-				761B5FF11A5FB341003BDE01 /* SettingsViewController.m */,
 				761B5FEF1A5FB2B6003BDE01 /* Encyclopedia */,
 				7658C3491A58D01D0062C946 /* AnswerViewController.h */,
 				7658C34A1A58D01D0062C946 /* AnswerViewController.m */,
@@ -262,6 +262,8 @@
 				76DECBBA1A5ECB1000124AF4 /* FavoritesViewController.m */,
 				767AD4F51A63B10D002B9E9C /* SearchViewController.h */,
 				767AD4F61A63B10D002B9E9C /* SearchViewController.m */,
+				761B5FF01A5FB341003BDE01 /* SettingsViewController.h */,
+				761B5FF11A5FB341003BDE01 /* SettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
