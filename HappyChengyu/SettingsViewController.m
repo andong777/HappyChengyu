@@ -90,6 +90,7 @@
     }else{
         _speakerSwitch.enabled = NO;
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"VoiceSettingsChanged" object:self];
 }
 
 - (IBAction)switchSpeaker:(UISegmentedControl *)sender {
@@ -99,6 +100,7 @@
     }else{
         [defaults setObject:@(NO) forKey:kSpeaker];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"VoiceSettingsChanged" object:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

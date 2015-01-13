@@ -280,6 +280,25 @@
         [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
         [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVoiceSettingsChanged:) name:@"VoiceSettingsChanged" object:nil];
+}
+
+- (void)onVoiceSettingsChanged:(NSNotification *)notification {
+    BOOL reading = [[[NSUserDefaults standardUserDefaults] objectForKey:kReading] boolValue];
+    BOOL speaker = [[[NSUserDefaults standardUserDefaults] objectForKey:kSpeaker] boolValue];
+    if(reading && !_iFlySpeechSynthesizer){
+        _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+        _iFlySpeechSynthesizer.delegate = self;
+        [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
+        [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
+        [_iFlySpeechSynthesizer setParameter:speaker ? @"xiaoyu" : @"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+        [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
+        [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
+    }else if(reading){
+        [_iFlySpeechSynthesizer setParameter:speaker ? @"xiaoyu" : @"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+    }else if(!reading && _iFlySpeechSynthesizer){
+        _iFlySpeechSynthesizer = nil;
+    }
 }
 
 - (void) onCompleted:(IFlySpeechError *) error {
