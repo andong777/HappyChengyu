@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FavoritesHelper.h"
+#import <iflyMSC/IFlySpeechUtility.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",@" 54b4720d"];
+    [IFlySpeechUtility createUtility:initString];
     return YES;
 }
 

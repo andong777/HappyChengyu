@@ -12,11 +12,16 @@
 #import "Chengyu.h"
 #import "ResultViewController.h"
 #import <MBProgressHUD.h>
+#import <iflyMSC/IFlySpeechSynthesizerDelegate.h>
+#import <iflyMSC/IFlySpeechSynthesizer.h>
+#import <iflyMSC/IFlySpeechConstant.h>
+#import <iflyMSC/IFlySpeechError.h>
 
-@interface AnswerViewController () {
+@interface AnswerViewController ()<IFlySpeechSynthesizerDelegate> {
     Chengyu *currentChengyu;
     NSDate *startTime;
     NSUInteger chances;
+    IFlySpeechSynthesizer *_iFlySpeechSynthesizer;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameText;
@@ -42,9 +47,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupSpeechSynthesizer];
+    
     _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
-    
     [_hintButton setTitle:[NSString stringWithFormat:@"提示(%lu)", (unsigned long)chances] forState:UIControlStateNormal];
 }
 
@@ -68,8 +74,9 @@
     _hintButton.enabled = YES;
     [[ChengyuHelper sharedInstance] reloadData];
     currentChengyu = [[ChengyuHelper sharedInstance] randomWithRemove:YES];
-    [self setContent];
     startTime = [NSDate date];
+    [_iFlySpeechSynthesizer startSpeaking:currentChengyu.name];
+    [self setContent];
 }
 
 - (void)doCheck {
@@ -131,6 +138,7 @@
             _checkButton.enabled = YES;
             if(answer){
                 currentChengyu = answer;
+                [_iFlySpeechSynthesizer startSpeaking:answer.name];
                 [self setContent];
             }
             if(!answer || !candidatesAfterAnswer || [candidatesAfterAnswer count] == 0){
@@ -244,6 +252,20 @@
     [UIView setAnimationDuration: movementDuration];
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
+}
+
+- (void)setupSpeechSynthesizer {
+    _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+    _iFlySpeechSynthesizer.delegate = self;
+    [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
+    [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
+    [_iFlySpeechSynthesizer setParameter:@"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+    [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
+    [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
+}
+
+- (void) onCompleted:(IFlySpeechError *) error {
+    NSLog(@"play done");
 }
 
 @end

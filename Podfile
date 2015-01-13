@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'HappyChengyu' do
-	pod "Mantle"
+	pod 'Mantle'
 	pod 'MBProgressHUD', '~> 0.8'
 end
 

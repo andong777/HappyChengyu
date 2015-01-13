@@ -25,6 +25,13 @@
 		7658C35F1A58D01D0062C946 /* HappyChengyuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */; };
 		7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3711A58F0380062C946 /* ChengyuHelper.m */; };
 		766F4ED11A5A7E8B002FB3FF /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 766F4ED01A5A7E8B002FB3FF /* test.json */; };
+		767AB2401A65639400800ED2 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664EE201A6559D100FA09DA /* iflyMSC.framework */; };
+		767AB2411A6563AC00800ED2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664EE221A655A5300FA09DA /* AddressBook.framework */; };
+		767AB2421A6563AC00800ED2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664EE231A655A5300FA09DA /* AudioToolbox.framework */; };
+		767AB2431A6563AC00800ED2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664EE241A655A5300FA09DA /* AVFoundation.framework */; };
+		767AB2441A6563AC00800ED2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664EE251A655A5300FA09DA /* SystemConfiguration.framework */; };
+		767AB24B1A6565AF00800ED2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AB2491A65658500800ED2 /* libz.dylib */; };
+		767AB24C1A65661500800ED2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AB2451A6564B300800ED2 /* CoreTelephony.framework */; };
 		767AD4F41A6398F9002B9E9C /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4F31A6398F9002B9E9C /* CustomCell.m */; };
 		767AD4F71A63B10D002B9E9C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4F61A63B10D002B9E9C /* SearchViewController.m */; };
 		768189181A60048A008DD226 /* FavoritesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 768189171A60048A008DD226 /* FavoritesHelper.m */; };
@@ -75,7 +82,14 @@
 		7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyChengyuTests.m; sourceTree = "<group>"; };
 		7658C3701A58F0380062C946 /* ChengyuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChengyuHelper.h; path = HappyChengyu/ChengyuHelper.h; sourceTree = "<group>"; };
 		7658C3711A58F0380062C946 /* ChengyuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChengyuHelper.m; path = HappyChengyu/ChengyuHelper.m; sourceTree = "<group>"; };
+		7664EE201A6559D100FA09DA /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = ../../Desktop/iOS_voice_1.095_54b4720d/lib/iflyMSC.framework; sourceTree = "<group>"; };
+		7664EE221A655A5300FA09DA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		7664EE231A655A5300FA09DA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7664EE241A655A5300FA09DA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7664EE251A655A5300FA09DA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		766F4ED01A5A7E8B002FB3FF /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		767AB2451A6564B300800ED2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		767AB2491A65658500800ED2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		767AD4F21A6398F9002B9E9C /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		767AD4F31A6398F9002B9E9C /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		767AD4F51A63B10D002B9E9C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -94,6 +108,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767AB2401A65639400800ED2 /* iflyMSC.framework in Frameworks */,
+				767AB2431A6563AC00800ED2 /* AVFoundation.framework in Frameworks */,
+				767AB2411A6563AC00800ED2 /* AddressBook.framework in Frameworks */,
+				767AB2441A6563AC00800ED2 /* SystemConfiguration.framework in Frameworks */,
+				767AB2421A6563AC00800ED2 /* AudioToolbox.framework in Frameworks */,
+				767AB24C1A65661500800ED2 /* CoreTelephony.framework in Frameworks */,
+				767AB24B1A6565AF00800ED2 /* libz.dylib in Frameworks */,
 				232032561813581BC85534D2 /* libPods-HappyChengyu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +132,13 @@
 		028481FE6F9DFE32AE5D4CA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				767AB2491A65658500800ED2 /* libz.dylib */,
+				767AB2451A6564B300800ED2 /* CoreTelephony.framework */,
+				7664EE221A655A5300FA09DA /* AddressBook.framework */,
+				7664EE231A655A5300FA09DA /* AudioToolbox.framework */,
+				7664EE241A655A5300FA09DA /* AVFoundation.framework */,
+				7664EE251A655A5300FA09DA /* SystemConfiguration.framework */,
+				7664EE201A6559D100FA09DA /* iflyMSC.framework */,
 				1D05E294BE556E10B24FEECB /* libPods-HappyChengyu.a */,
 			);
 			name = Frameworks;
@@ -521,8 +549,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D64B6ED411EC69097BCFD0FF /* Pods-HappyChengyu.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../lib",
+				);
 				INFOPLIST_FILE = HappyChengyu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -534,8 +567,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 313EA5ED9F43FAE07D308963 /* Pods-HappyChengyu.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../lib",
+				);
 				INFOPLIST_FILE = HappyChengyu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
