@@ -28,13 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIEdgeInsets contentInset = self.tableView.contentInset;
-    contentInset.top = 20;
-    [self.tableView setContentInset:contentInset];
-    
     NSArray *chengyus = [ChengyuHelper sharedInstance].appearedList;
     length = [chengyus count];
-    _lengthText.text = [NSString stringWithFormat:@"%ld", length];
+    _lengthText.text = [NSString stringWithFormat:@"%ld", (long)length];
     NSMutableArray *chengyuNames = [NSMutableArray arrayWithCapacity:length];
     for(Chengyu *cy in chengyus){
         [chengyuNames addObject:cy.name];
@@ -43,10 +39,10 @@
     NSInteger ti = (NSInteger)_timeInterval;
     seconds = ti % 60;
     minutes = (ti / 60) % 60;
-    _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", minutes, seconds];
+    _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", (long)minutes, (long)seconds];
     // TODO: 真正实现获取百分比
     percentage = length / 3 * 10;
-    _percentText.text = [NSString stringWithFormat:@"你打败了 %ld%% 的人", percentage];
+    _percentText.text = [NSString stringWithFormat:@"你打败了 %ld%% 的人", (long)percentage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +52,7 @@
 
 - (IBAction)clickShare:(id)sender {
     dispatch_async(dispatch_queue_create("share", NULL), ^{
-        NSArray *activityItems = @[[NSString stringWithFormat:@"我在《开心成语接龙》玩成语接龙，接龙长度达到%ld，用时%ld分%ld秒，打败了%ld%%的人。", length, minutes, seconds, percentage]];
+        NSArray *activityItems = @[[NSString stringWithFormat:@"我在《开心成语接龙》玩成语接龙，接龙长度达到%ld，用时%ld分%ld秒，打败了%ld%%的人。", (long)length, (long)minutes, (long)seconds, (long)percentage]];
         UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
         activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList];
         dispatch_async(dispatch_get_main_queue(), ^{

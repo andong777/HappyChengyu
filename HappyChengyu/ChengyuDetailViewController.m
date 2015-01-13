@@ -28,19 +28,18 @@
     
     [self.navigationItem.rightBarButtonItem setAction:@selector(clickAddOrRemove:)];
     
-    CGRect headerFrame = [UIScreen mainScreen].bounds;
-    CGFloat inset = 20;
-    CGFloat beginHeight = 70;
-    CGFloat smallGap = 10;
-    CGFloat bigGap = 40;
+    CGRect headerFrame = self.view.bounds;
+    CGFloat inset = 15;
+    CGFloat beginHeight = MAX(headerFrame.size.height / 8, 60);
+    CGFloat bigGap = 20;
     CGFloat nameHeight = 40;
-    CGFloat pinyinHeight = 15;
-    CGFloat meaningHeight = 80;
-    CGFloat sourceHeight = 100;
-    CGFloat exampleHeight = 100;
+    CGFloat pinyinHeight = 20;
+    CGFloat meaningHeight = MAX(headerFrame.size.height / 6, 50);
+    CGFloat sourceHeight = MAX(headerFrame.size.height / 6, 60);
+    CGFloat exampleHeight = MAX(headerFrame.size.height / 6, 60);
     CGFloat labelHeight = 20;
     
-    CGRect nameFrame = CGRectMake(inset, beginHeight + smallGap, headerFrame.size.width - 2 * inset, nameHeight);
+    CGRect nameFrame = CGRectMake(inset, beginHeight, headerFrame.size.width - 2 * inset, nameHeight);
     _nameText = [[UILabel alloc] initWithFrame:nameFrame];
     _nameText.text = _chengyu.name;
     _nameText.textAlignment = NSTextAlignmentCenter;
@@ -48,7 +47,7 @@
     _nameText.font = [UIFont systemFontOfSize:32.f];
     [self.view addSubview:_nameText];
     
-    CGRect pinyinFrame = CGRectMake(inset, nameFrame.origin.y + nameHeight + smallGap, headerFrame.size.width - 2 * inset, pinyinHeight);
+    CGRect pinyinFrame = CGRectMake(inset, nameFrame.origin.y + nameHeight, headerFrame.size.width - 2 * inset, pinyinHeight);
     _pinyinText = [[UILabel alloc] initWithFrame:pinyinFrame];
     _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
     _pinyinText.textAlignment = NSTextAlignmentCenter;

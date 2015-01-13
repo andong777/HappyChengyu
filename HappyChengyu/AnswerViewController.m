@@ -45,7 +45,7 @@
     _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
     
-    [_hintButton setTitle:[NSString stringWithFormat:@"提示（%lu）", chances] forState:UIControlStateNormal];
+    [_hintButton setTitle:[NSString stringWithFormat:@"提示(%lu)", (unsigned long)chances] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -164,7 +164,7 @@
 
 - (IBAction)clickHint:(UIButton *)sender {
     chances--;
-    [_hintButton setTitle:[NSString stringWithFormat:@"提示（%lu）", chances] forState:UIControlStateNormal];
+    [_hintButton setTitle:[NSString stringWithFormat:@"提示(%lu)", (unsigned long)chances] forState:UIControlStateNormal];
     if(chances <= 0){
         _hintButton.enabled = NO;
     }

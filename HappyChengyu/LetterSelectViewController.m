@@ -25,9 +25,6 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    flowLayout.sectionInset = UIEdgeInsetsMake(20, 10, 20, 10);
-    
     startSet = [NSMutableOrderedSet orderedSetWithCapacity:26];
     for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
         NSString *firstLetter = [cy.abbr substringToIndex:1];
@@ -66,13 +63,6 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
     CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [startSet objectAtIndex:indexPath.row];
     return cell;
-}
-
-
-#pragma mark <UICollectionViewDelegateFlowLayout>
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(77, 77);
 }
 
 @end

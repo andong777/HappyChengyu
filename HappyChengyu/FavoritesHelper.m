@@ -61,7 +61,7 @@
     if(!array){
         array = [NSMutableArray array];
     }
-    NSLog(@"category %@ has %lu items", category, [array count]);
+    NSLog(@"category %@ has %lu items", category, (unsigned long)[array count]);
     [array addObject:chengyu];
     [_favorites setValue:array forKey:category];
     contentsChanged = YES;
