@@ -57,7 +57,6 @@
     
     _detailSwitch.selectedSegmentIndex = 0;
     [self doRestart];
-    [_hintButton setTitle:[NSString stringWithFormat:@"提示(%lu)", (unsigned long)chances] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,6 +69,14 @@
     }
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [_iflyRecognizerView cancel];
+    [_iflyRecognizerView setDelegate:nil];
+    
+    [super viewWillDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,6 +85,7 @@
 - (void)doRestart {
     chances = 3;
     _hintButton.enabled = YES;
+    [_hintButton setTitle:[NSString stringWithFormat:@"提示(%lu)", (unsigned long)chances] forState:UIControlStateNormal];
     [[ChengyuHelper sharedInstance] reloadData];
     currentChengyu = [[ChengyuHelper sharedInstance] randomWithRemove:YES];
     startTime = [NSDate date];
@@ -208,6 +216,7 @@
 }
 
 - (IBAction)clickRecord:(id)sender {
+    _answerText.text = nil;
     [_iflyRecognizerView start];
 }
 
@@ -308,18 +317,24 @@
 - (void)setupSpeechRecognizer {
     _iflyRecognizerView = [[IFlyRecognizerView alloc] initWithCenter:self.view.center]; _iflyRecognizerView.delegate = self;
     [_iflyRecognizerView setParameter:@"iat" forKey: [IFlySpeechConstant IFLY_DOMAIN]];
+    [_iflyRecognizerView setParameter:@"0" forKey:@"asr_ptt"]; // 无标点
+    [_iflyRecognizerView setParameter:@"1000" forKey:@"vad_eos"]; // 关闭听写时间
+    [_iflyRecognizerView setParameter:@"plain" forKey:[IFlySpeechConstant RESULT_TYPE]];
     [_iflyRecognizerView setParameter:nil forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
 }
 
 - (void)onResult: (NSArray *)resultArray isLast:(BOOL) isLast {
-    NSDictionary *result = [resultArray objectAtIndex:0];
-    NSString *string = [[result allKeys] firstObject];
-    NSLog(@"data: %@", string);
+    NSMutableString *result = [[NSMutableString alloc] init];
+    NSDictionary *dic = [resultArray objectAtIndex:0];
+    for (NSString *key in dic) {
+        [result appendFormat:@"%@",key];
+    }
+    _answerText.text = [NSString stringWithFormat:@"%@%@", _answerText.text, result];
 }
 
 - (void)onError: (IFlySpeechError *) error {
+    [self setErrorInfo:@"识别结束"];
     NSLog(@"recognize error: %@", error.errorDesc);
-    [self setErrorInfo:@"识别失败！"];
 }
 
 @end

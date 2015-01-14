@@ -193,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				760D65791A5D035400232953 /* UI */,
+				7658C3461A58D01D0062C946 /* AppDelegate.h */,
+				7658C3471A58D01D0062C946 /* AppDelegate.m */,
 				767AB24D1A65725600800ED2 /* Constants.h */,
 				766F4ED01A5A7E8B002FB3FF /* test.json */,
 				763D18FE1A59926D00A3B3A5 /* chengyu.json */,
@@ -209,8 +211,6 @@
 		7658C3421A58D01D0062C946 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7658C3461A58D01D0062C946 /* AppDelegate.h */,
-				7658C3471A58D01D0062C946 /* AppDelegate.m */,
 				7658C3431A58D01D0062C946 /* Info.plist */,
 				7658C3441A58D01D0062C946 /* main.m */,
 			);

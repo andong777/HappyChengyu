@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",@" 54b4720d"];
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@, timeout=%@",@"54b4720d", @"20000"];
     [IFlySpeechUtility createUtility:initString];
     return YES;
 }
