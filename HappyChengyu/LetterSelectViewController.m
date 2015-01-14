@@ -11,8 +11,9 @@
 #import "CustomCell.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
+#import <VCTransitionsLibrary/CEExplodeAnimationController.h>
 
-@interface LetterSelectViewController (){
+@interface LetterSelectViewController ()<UINavigationControllerDelegate>{
     NSMutableOrderedSet *startSet;
 }
 
@@ -33,6 +34,8 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
     [startSet sortUsingComparator:^(id obj1, id obj2) {
         return [obj1 compare:obj2];
     }];
+    
+    self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +66,22 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
     CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [startSet objectAtIndex:indexPath.row];
     return cell;
+}
+
+
+#pragma mark <UINavigationControllerDelegate>
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:
+(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation                                               fromViewController:(UIViewController *)fromVC                                                  toViewController:(UIViewController *)toVC {
+    // reverse the animation for 'pop' transitions
+    CEReversibleAnimationController *animator = [self animator];
+    animator.duration = 1;
+    animator.reverse = (operation == UINavigationControllerOperationPush);
+    return animator;
+}
+
+- (CEReversibleAnimationController *)animator {
+    return [CEExplodeAnimationController new];
 }
 
 @end

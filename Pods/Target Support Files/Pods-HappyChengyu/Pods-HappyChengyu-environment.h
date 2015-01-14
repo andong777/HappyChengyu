@@ -6,6 +6,12 @@
 // project.
 
 
+// ChameleonFramework
+#define COCOAPODS_POD_AVAILABLE_ChameleonFramework
+#define COCOAPODS_VERSION_MAJOR_ChameleonFramework 1
+#define COCOAPODS_VERSION_MINOR_ChameleonFramework 1
+#define COCOAPODS_VERSION_PATCH_ChameleonFramework 1
+
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
@@ -23,4 +29,10 @@
 #define COCOAPODS_VERSION_MAJOR_Mantle_extobjc 1
 #define COCOAPODS_VERSION_MINOR_Mantle_extobjc 5
 #define COCOAPODS_VERSION_PATCH_Mantle_extobjc 1
+
+// VCTransitionsLibrary
+#define COCOAPODS_POD_AVAILABLE_VCTransitionsLibrary
+#define COCOAPODS_VERSION_MAJOR_VCTransitionsLibrary 1
+#define COCOAPODS_VERSION_MINOR_VCTransitionsLibrary 5
+#define COCOAPODS_VERSION_PATCH_VCTransitionsLibrary 0
 

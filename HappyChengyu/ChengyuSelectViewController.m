@@ -12,7 +12,7 @@
 #import "Chengyu.h"
 
 @interface ChengyuSelectViewController (){
-    NSMutableOrderedSet *startSet;
+    NSMutableArray *chengyus;
 }
 
 @end
@@ -22,13 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    startSet = [NSMutableOrderedSet orderedSetWithCapacity:1000];
-    for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
-        NSString *theCharacter = [cy.name substringToIndex:1];
-        if([theCharacter isEqualToString:_firstCharacter]){
-            [startSet addObject:cy.name];
-        }
-    }
+    chengyus = [[[ChengyuHelper sharedInstance] findAllWithFirstCharacter:_firstCharacter] mutableCopy];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,10 +40,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"ChengyuSelectedSegue"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *chengyuName = [startSet objectAtIndex:indexPath.row];
-        Chengyu *theChengyu = [[ChengyuHelper sharedInstance] getByName:chengyuName];
         ChengyuDetailViewController *vc = segue.destinationViewController;
-        vc.chengyu = theChengyu;
+        vc.chengyu = [chengyus objectAtIndex:indexPath.row];
     }
 }
 
@@ -61,7 +53,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [startSet count];
+    return [chengyus count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -71,7 +63,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"ChengyuCellReuseIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.textLabel.text = [startSet objectAtIndex:indexPath.row];
+    Chengyu *chengyu = [chengyus objectAtIndex:indexPath.row];
+    cell.textLabel.text = chengyu.name;
+    cell.detailTextLabel.text = [chengyu.pinyin componentsJoinedByString:@" "];
     return cell;
 }
 

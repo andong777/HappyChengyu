@@ -1,764 +1,3879 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0F43043752D1CCD97E5E1934 /* NSArray+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1518761B3AE1CEE464D1FDDD /* NSArray+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		10F61D5BBDDC2F9EFFF0CA20 /* NSArray+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FD1A5992B961C17567AE5394 /* NSArray+MTLManipulationAdditions.h */; };
-		19D150B3AF8157972ECF689D /* metamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 11DBB9FF27EC306C74859A2A /* metamacros.h */; };
-		1DD7E2DC0F1B4A2153EA3A50 /* MTLManagedObjectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 300796C41E6526642D096F46 /* MTLManagedObjectAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		253E4BE7414EC6CDAE9320F3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 828583C7CE7B7A4F03950BA2 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		29F031E4F9804A09110F7397 /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC95CEFC3A69B80D093C43E4 /* NSObject+MTLComparisonAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		32588F4A01E43160D977FB09 /* MTLManagedObjectAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = B4417CC64443B73F0A6490C4 /* MTLManagedObjectAdapter.h */; };
-		331122A1EB2633BE6DD56FE4 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2666A76DBCAFF0F5A89139 /* EXTScope.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		36AF136177721471FD59A11D /* Pods-HappyChengyu-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6D885312A8CEBBC536F0 /* Pods-HappyChengyu-MBProgressHUD-dummy.m */; };
-		44A49D309B412EB4581C5287 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E02C6DA0DB928E71F6C13633 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4C774A5CF1F468FDFD0880F4 /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = EFFD5500BA684E777EE84653 /* MTLJSONAdapter.h */; };
-		4CFF482EE5BB04EFF68BE5CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EC515162AE1706BE314718 /* Foundation.framework */; };
-		52C23AC42424F195869D6C5B /* EXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C73A471B4E3399F2ABD72E /* EXTRuntimeExtensions.h */; };
-		59A3ECF2FA14F5819B5E5354 /* NSError+MTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = A429C3C7A3059A9A9ADAE1FF /* NSError+MTLModelException.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		67A0E5C6B0C43EADFA2D9516 /* Pods-HappyChengyu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4EB541079CB938784192A /* Pods-HappyChengyu-dummy.m */; };
-		67AD794C6DB5E1D5CBB7C1F2 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 086FE20D38273B04EE34FE8E /* NSValueTransformer+MTLInversionAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6B92BF233ECE892ACA5FB0FB /* MTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8CAA49D4A3ECB01850C77F /* MTLModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6DD06D5589BDA715EEC02D4E /* MTLModel+NSCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A89F39BEDDA88D78DC4C41C /* MTLModel+NSCoding.h */; };
-		6E4959C910EDC3C7DF36BDFE /* MTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F1585D9AF277487C315F958 /* MTLModel.h */; };
-		73F84646990B886E2FEEC9AE /* NSDictionary+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F7E6201C3AF5A2BD8BF9C /* NSDictionary+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8E58BD0AE9BE2538C86A06C7 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C11F8B2B96103F80DEF4620F /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */; };
-		9617DEA6801EEC5988874BEE /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EED17B9B00F854DEE947F8 /* EXTRuntimeExtensions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		97C699622E2C4BA8D96574AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EC515162AE1706BE314718 /* Foundation.framework */; };
-		9ACA0DF846971984BB2FD8B1 /* EXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = E09CE83843971C88FA3904F3 /* EXTKeyPathCoding.h */; };
-		9BC18989FC23F86146C69C5B /* MTLValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 167695DCD4A2FCB453B897A9 /* MTLValueTransformer.h */; };
-		A71DDA6E4C585A294A46D22A /* NSObject+MTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F20B52CA72FED4F0887633D1 /* NSObject+MTLComparisonAdditions.h */; };
-		ABEE1EC117C7BF7231D5EE1E /* MTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5825D6312F9DFBAF203C48E5 /* MTLReflection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B620EFFB3570BCDA0FB82460 /* Mantle.h in Headers */ = {isa = PBXBuildFile; fileRef = D03CA1DBDB51674DBE41FE66 /* Mantle.h */; };
-		B801EF37FBA84067340678D1 /* NSValueTransformer+MTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B9680D5D1EA5856D29A844FE /* NSValueTransformer+MTLInversionAdditions.h */; };
-		C18966BF59FE5DB1DD545106 /* Pods-HappyChengyu-Mantle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ADA9FCF7CEA4058B9B535E /* Pods-HappyChengyu-Mantle-dummy.m */; };
-		C7C8BE9224E51022AB34490D /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AACA0A373D1679862E07BC32 /* MTLJSONAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DE30DC99DF51F6B1E5E87D40 /* NSDictionary+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1454782E76DC9BD5067646FD /* NSDictionary+MTLManipulationAdditions.h */; };
-		DEF887398040400687B5F6CA /* MTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9D95916C23091C14A31F /* MTLModel+NSCoding.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E29645E9890A8D82C33547E9 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FC75E400F396EB1173A81A8 /* MBProgressHUD.h */; };
-		E2C721DCE38B189FD768D894 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF835DB5E117F9188DBA60A /* CoreGraphics.framework */; };
-		E9F28E5B5A380ABFD5B82FC6 /* NSError+MTLModelException.h in Headers */ = {isa = PBXBuildFile; fileRef = 85503DE918220E604A8C8FE0 /* NSError+MTLModelException.h */; };
-		F37DC821438024F1B3D359B5 /* MTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = F76FB3678A5E8E55AE05B2C7 /* MTLReflection.h */; };
-		F4128E6AA0C7E3754E9707F5 /* MTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 206129595B5BB42F5724D12A /* MTLValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F6076C9803BADFB0C0271855 /* EXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = B912450FA5A60A70F1467610 /* EXTScope.h */; };
-		FB535E0FD7755C68B10CFD7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EC515162AE1706BE314718 /* Foundation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		017876FEC4F53C05D4A55F2B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E3251E1CD0FFD894610F85A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 804DE38B6FCA011292417D85;
-			remoteInfo = "Pods-HappyChengyu-Mantle";
-		};
-		834700E3087B12BA28DBD0FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E3251E1CD0FFD894610F85A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4FC03B357CF3E5053145B71;
-			remoteInfo = "Pods-HappyChengyu-MBProgressHUD";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		07EC515162AE1706BE314718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		086FE20D38273B04EE34FE8E /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLInversionAdditions.m"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
-		09EED17B9B00F854DEE947F8 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTRuntimeExtensions.m; path = Mantle/extobjc/EXTRuntimeExtensions.m; sourceTree = "<group>"; };
-		0E2666A76DBCAFF0F5A89139 /* EXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = Mantle/extobjc/EXTScope.m; sourceTree = "<group>"; };
-		11DBB9FF27EC306C74859A2A /* metamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = Mantle/extobjc/metamacros.h; sourceTree = "<group>"; };
-		1454782E76DC9BD5067646FD /* NSDictionary+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MTLManipulationAdditions.h"; path = "Mantle/NSDictionary+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
-		1518761B3AE1CEE464D1FDDD /* NSArray+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MTLManipulationAdditions.m"; path = "Mantle/NSArray+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
-		167695DCD4A2FCB453B897A9 /* MTLValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLValueTransformer.h; path = Mantle/MTLValueTransformer.h; sourceTree = "<group>"; };
-		206129595B5BB42F5724D12A /* MTLValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLValueTransformer.m; path = Mantle/MTLValueTransformer.m; sourceTree = "<group>"; };
-		2A89F39BEDDA88D78DC4C41C /* MTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTLModel+NSCoding.h"; path = "Mantle/MTLModel+NSCoding.h"; sourceTree = "<group>"; };
-		2CBAEE7E3A949775404E368A /* Pods-HappyChengyu-Mantle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappyChengyu-Mantle.xcconfig"; sourceTree = "<group>"; };
-		300796C41E6526642D096F46 /* MTLManagedObjectAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLManagedObjectAdapter.m; path = Mantle/MTLManagedObjectAdapter.m; sourceTree = "<group>"; };
-		3DE4EB541079CB938784192A /* Pods-HappyChengyu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HappyChengyu-dummy.m"; sourceTree = "<group>"; };
-		422A9D95916C23091C14A31F /* MTLModel+NSCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MTLModel+NSCoding.m"; path = "Mantle/MTLModel+NSCoding.m"; sourceTree = "<group>"; };
-		49BE58D378165872EA65F0F2 /* Pods-HappyChengyu-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HappyChengyu-resources.sh"; sourceTree = "<group>"; };
-		4FC75E400F396EB1173A81A8 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		5825D6312F9DFBAF203C48E5 /* MTLReflection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLReflection.m; path = Mantle/MTLReflection.m; sourceTree = "<group>"; };
-		5E5F6D885312A8CEBBC536F0 /* Pods-HappyChengyu-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HappyChengyu-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		6DB87023116D7CC04BAEDBA1 /* Pods-HappyChengyu-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HappyChengyu-environment.h"; sourceTree = "<group>"; };
-		78ADA9FCF7CEA4058B9B535E /* Pods-HappyChengyu-Mantle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HappyChengyu-Mantle-dummy.m"; sourceTree = "<group>"; };
-		7A0F7E6201C3AF5A2BD8BF9C /* NSDictionary+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MTLManipulationAdditions.m"; path = "Mantle/NSDictionary+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
-		7FDEE07B52768DDBC3A39613 /* libPods-HappyChengyu-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyChengyu-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FEA393431CF836BE29D1BB1 /* libPods-HappyChengyu-Mantle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyChengyu-Mantle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		828583C7CE7B7A4F03950BA2 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		85503DE918220E604A8C8FE0 /* NSError+MTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+MTLModelException.h"; path = "Mantle/NSError+MTLModelException.h"; sourceTree = "<group>"; };
-		88C73A471B4E3399F2ABD72E /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTRuntimeExtensions.h; path = Mantle/extobjc/EXTRuntimeExtensions.h; sourceTree = "<group>"; };
-		8F0D2965BDE7B57C0C9B422C /* Pods-HappyChengyu-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappyChengyu-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
-		8F1585D9AF277487C315F958 /* MTLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLModel.h; path = Mantle/MTLModel.h; sourceTree = "<group>"; };
-		96840AB43400D9520052BBB5 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D1C982276D52CD81112F657 /* Pods-HappyChengyu-Mantle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HappyChengyu-Mantle-prefix.pch"; sourceTree = "<group>"; };
-		A429C3C7A3059A9A9ADAE1FF /* NSError+MTLModelException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+MTLModelException.m"; path = "Mantle/NSError+MTLModelException.m"; sourceTree = "<group>"; };
-		AA8CAA49D4A3ECB01850C77F /* MTLModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLModel.m; path = Mantle/MTLModel.m; sourceTree = "<group>"; };
-		AACA0A373D1679862E07BC32 /* MTLJSONAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLJSONAdapter.m; path = Mantle/MTLJSONAdapter.m; sourceTree = "<group>"; };
-		B4417CC64443B73F0A6490C4 /* MTLManagedObjectAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLManagedObjectAdapter.h; path = Mantle/MTLManagedObjectAdapter.h; sourceTree = "<group>"; };
-		B912450FA5A60A70F1467610 /* EXTScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = Mantle/extobjc/EXTScope.h; sourceTree = "<group>"; };
-		B9680D5D1EA5856D29A844FE /* NSValueTransformer+MTLInversionAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLInversionAdditions.h"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.h"; sourceTree = "<group>"; };
-		C11F8B2B96103F80DEF4620F /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
-		C44707B9A006C503BBFE604A /* Pods-HappyChengyu-Mantle-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappyChengyu-Mantle-Private.xcconfig"; sourceTree = "<group>"; };
-		CEF835DB5E117F9188DBA60A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		CF9A03DB20334C461D5610DC /* Pods-HappyChengyu-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappyChengyu-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
-		D03CA1DBDB51674DBE41FE66 /* Mantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mantle.h; path = Mantle/Mantle.h; sourceTree = "<group>"; };
-		D0DE3BE53256CAD21609D3D8 /* Pods-HappyChengyu-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HappyChengyu-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		DADC08002D46AB88A2602DBE /* Pods-HappyChengyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappyChengyu.debug.xcconfig"; sourceTree = "<group>"; };
-		DE870D215EC2E2C972252AED /* libPods-HappyChengyu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyChengyu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E02C6DA0DB928E71F6C13633 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
-		E09CE83843971C88FA3904F3 /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTKeyPathCoding.h; path = Mantle/extobjc/EXTKeyPathCoding.h; sourceTree = "<group>"; };
-		EC95CEFC3A69B80D093C43E4 /* NSObject+MTLComparisonAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MTLComparisonAdditions.m"; path = "Mantle/NSObject+MTLComparisonAdditions.m"; sourceTree = "<group>"; };
-		EFFD5500BA684E777EE84653 /* MTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLJSONAdapter.h; path = Mantle/MTLJSONAdapter.h; sourceTree = "<group>"; };
-		F20B52CA72FED4F0887633D1 /* NSObject+MTLComparisonAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MTLComparisonAdditions.h"; path = "Mantle/NSObject+MTLComparisonAdditions.h"; sourceTree = "<group>"; };
-		F2F68917AA23BC7D219863B4 /* Pods-HappyChengyu-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HappyChengyu-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F3833D866DDD98FC1D41C857 /* Pods-HappyChengyu-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HappyChengyu-acknowledgements.plist"; sourceTree = "<group>"; };
-		F76FB3678A5E8E55AE05B2C7 /* MTLReflection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLReflection.h; path = Mantle/MTLReflection.h; sourceTree = "<group>"; };
-		FACFBEA9B1DF2C93C3DAE1F9 /* Pods-HappyChengyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappyChengyu.release.xcconfig"; sourceTree = "<group>"; };
-		FD1A5992B961C17567AE5394 /* NSArray+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MTLManipulationAdditions.h"; path = "Mantle/NSArray+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		1A2F7C90F84C4195B2633B65 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97C699622E2C4BA8D96574AC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9CB8C01F94FED99A09DE0AA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CFF482EE5BB04EFF68BE5CC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBAD22004266DE0E137AED4A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2C721DCE38B189FD768D894 /* CoreGraphics.framework in Frameworks */,
-				FB535E0FD7755C68B10CFD7E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		05981C16E2AFDB65B8AB2238 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BC31887D1F6E7FF7051C3BFD /* MBProgressHUD */,
-				77AFCD08B9A35FDB61A82EAD /* Mantle */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		0E64D3B5C35F710BF759F8B4 = {
-			isa = PBXGroup;
-			children = (
-				96840AB43400D9520052BBB5 /* Podfile */,
-				8646AC8FC7A57F04E244E23E /* Frameworks */,
-				05981C16E2AFDB65B8AB2238 /* Pods */,
-				21EB38E7DE930B5B0524F83B /* Products */,
-				7047DD961C29759A35B2C9F0 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		0EBCE9D6A738FA27B8E4D5F1 /* extobjc */ = {
-			isa = PBXGroup;
-			children = (
-				E09CE83843971C88FA3904F3 /* EXTKeyPathCoding.h */,
-				88C73A471B4E3399F2ABD72E /* EXTRuntimeExtensions.h */,
-				09EED17B9B00F854DEE947F8 /* EXTRuntimeExtensions.m */,
-				B912450FA5A60A70F1467610 /* EXTScope.h */,
-				0E2666A76DBCAFF0F5A89139 /* EXTScope.m */,
-				11DBB9FF27EC306C74859A2A /* metamacros.h */,
-			);
-			name = extobjc;
-			sourceTree = "<group>";
-		};
-		18D3A47D9D57F2C3519109F5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8F0D2965BDE7B57C0C9B422C /* Pods-HappyChengyu-MBProgressHUD.xcconfig */,
-				CF9A03DB20334C461D5610DC /* Pods-HappyChengyu-MBProgressHUD-Private.xcconfig */,
-				5E5F6D885312A8CEBBC536F0 /* Pods-HappyChengyu-MBProgressHUD-dummy.m */,
-				D0DE3BE53256CAD21609D3D8 /* Pods-HappyChengyu-MBProgressHUD-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-HappyChengyu-MBProgressHUD";
-			sourceTree = "<group>";
-		};
-		21EB38E7DE930B5B0524F83B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DE870D215EC2E2C972252AED /* libPods-HappyChengyu.a */,
-				7FDEE07B52768DDBC3A39613 /* libPods-HappyChengyu-MBProgressHUD.a */,
-				7FEA393431CF836BE29D1BB1 /* libPods-HappyChengyu-Mantle.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		44360C39E1A7480ECABF370A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2CBAEE7E3A949775404E368A /* Pods-HappyChengyu-Mantle.xcconfig */,
-				C44707B9A006C503BBFE604A /* Pods-HappyChengyu-Mantle-Private.xcconfig */,
-				78ADA9FCF7CEA4058B9B535E /* Pods-HappyChengyu-Mantle-dummy.m */,
-				9D1C982276D52CD81112F657 /* Pods-HappyChengyu-Mantle-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-HappyChengyu-Mantle";
-			sourceTree = "<group>";
-		};
-		7047DD961C29759A35B2C9F0 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FB9533C93C977B38106AD3A3 /* Pods-HappyChengyu */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		77AFCD08B9A35FDB61A82EAD /* Mantle */ = {
-			isa = PBXGroup;
-			children = (
-				EFFD5500BA684E777EE84653 /* MTLJSONAdapter.h */,
-				AACA0A373D1679862E07BC32 /* MTLJSONAdapter.m */,
-				B4417CC64443B73F0A6490C4 /* MTLManagedObjectAdapter.h */,
-				300796C41E6526642D096F46 /* MTLManagedObjectAdapter.m */,
-				8F1585D9AF277487C315F958 /* MTLModel.h */,
-				AA8CAA49D4A3ECB01850C77F /* MTLModel.m */,
-				2A89F39BEDDA88D78DC4C41C /* MTLModel+NSCoding.h */,
-				422A9D95916C23091C14A31F /* MTLModel+NSCoding.m */,
-				F76FB3678A5E8E55AE05B2C7 /* MTLReflection.h */,
-				5825D6312F9DFBAF203C48E5 /* MTLReflection.m */,
-				167695DCD4A2FCB453B897A9 /* MTLValueTransformer.h */,
-				206129595B5BB42F5724D12A /* MTLValueTransformer.m */,
-				D03CA1DBDB51674DBE41FE66 /* Mantle.h */,
-				FD1A5992B961C17567AE5394 /* NSArray+MTLManipulationAdditions.h */,
-				1518761B3AE1CEE464D1FDDD /* NSArray+MTLManipulationAdditions.m */,
-				1454782E76DC9BD5067646FD /* NSDictionary+MTLManipulationAdditions.h */,
-				7A0F7E6201C3AF5A2BD8BF9C /* NSDictionary+MTLManipulationAdditions.m */,
-				85503DE918220E604A8C8FE0 /* NSError+MTLModelException.h */,
-				A429C3C7A3059A9A9ADAE1FF /* NSError+MTLModelException.m */,
-				F20B52CA72FED4F0887633D1 /* NSObject+MTLComparisonAdditions.h */,
-				EC95CEFC3A69B80D093C43E4 /* NSObject+MTLComparisonAdditions.m */,
-				B9680D5D1EA5856D29A844FE /* NSValueTransformer+MTLInversionAdditions.h */,
-				086FE20D38273B04EE34FE8E /* NSValueTransformer+MTLInversionAdditions.m */,
-				C11F8B2B96103F80DEF4620F /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */,
-				E02C6DA0DB928E71F6C13633 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */,
-				44360C39E1A7480ECABF370A /* Support Files */,
-				0EBCE9D6A738FA27B8E4D5F1 /* extobjc */,
-			);
-			path = Mantle;
-			sourceTree = "<group>";
-		};
-		800CBC3D6350300B5D342849 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEF835DB5E117F9188DBA60A /* CoreGraphics.framework */,
-				07EC515162AE1706BE314718 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		8646AC8FC7A57F04E244E23E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				800CBC3D6350300B5D342849 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BC31887D1F6E7FF7051C3BFD /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				4FC75E400F396EB1173A81A8 /* MBProgressHUD.h */,
-				828583C7CE7B7A4F03950BA2 /* MBProgressHUD.m */,
-				18D3A47D9D57F2C3519109F5 /* Support Files */,
-			);
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		FB9533C93C977B38106AD3A3 /* Pods-HappyChengyu */ = {
-			isa = PBXGroup;
-			children = (
-				F2F68917AA23BC7D219863B4 /* Pods-HappyChengyu-acknowledgements.markdown */,
-				F3833D866DDD98FC1D41C857 /* Pods-HappyChengyu-acknowledgements.plist */,
-				3DE4EB541079CB938784192A /* Pods-HappyChengyu-dummy.m */,
-				6DB87023116D7CC04BAEDBA1 /* Pods-HappyChengyu-environment.h */,
-				49BE58D378165872EA65F0F2 /* Pods-HappyChengyu-resources.sh */,
-				DADC08002D46AB88A2602DBE /* Pods-HappyChengyu.debug.xcconfig */,
-				FACFBEA9B1DF2C93C3DAE1F9 /* Pods-HappyChengyu.release.xcconfig */,
-			);
-			name = "Pods-HappyChengyu";
-			path = "Target Support Files/Pods-HappyChengyu";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		D3BC26D18505E9C1D0099877 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29645E9890A8D82C33547E9 /* MBProgressHUD.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5685551AD8D667BD98413A9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9ACA0DF846971984BB2FD8B1 /* EXTKeyPathCoding.h in Headers */,
-				52C23AC42424F195869D6C5B /* EXTRuntimeExtensions.h in Headers */,
-				F6076C9803BADFB0C0271855 /* EXTScope.h in Headers */,
-				4C774A5CF1F468FDFD0880F4 /* MTLJSONAdapter.h in Headers */,
-				32588F4A01E43160D977FB09 /* MTLManagedObjectAdapter.h in Headers */,
-				6DD06D5589BDA715EEC02D4E /* MTLModel+NSCoding.h in Headers */,
-				6E4959C910EDC3C7DF36BDFE /* MTLModel.h in Headers */,
-				F37DC821438024F1B3D359B5 /* MTLReflection.h in Headers */,
-				9BC18989FC23F86146C69C5B /* MTLValueTransformer.h in Headers */,
-				B620EFFB3570BCDA0FB82460 /* Mantle.h in Headers */,
-				10F61D5BBDDC2F9EFFF0CA20 /* NSArray+MTLManipulationAdditions.h in Headers */,
-				DE30DC99DF51F6B1E5E87D40 /* NSDictionary+MTLManipulationAdditions.h in Headers */,
-				E9F28E5B5A380ABFD5B82FC6 /* NSError+MTLModelException.h in Headers */,
-				A71DDA6E4C585A294A46D22A /* NSObject+MTLComparisonAdditions.h in Headers */,
-				B801EF37FBA84067340678D1 /* NSValueTransformer+MTLInversionAdditions.h in Headers */,
-				8E58BD0AE9BE2538C86A06C7 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */,
-				19D150B3AF8157972ECF689D /* metamacros.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		09A56496E1DD7A765AB80777 /* Pods-HappyChengyu */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9408986B1CDD30FFC1E5440D /* Build configuration list for PBXNativeTarget "Pods-HappyChengyu" */;
-			buildPhases = (
-				580CF7F9B7AE0B118B33E64E /* Sources */,
-				B9CB8C01F94FED99A09DE0AA /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C83FB867CE181A832CFF90FB /* PBXTargetDependency */,
-				B85CB5DB865E77F71A2B3314 /* PBXTargetDependency */,
-			);
-			name = "Pods-HappyChengyu";
-			productName = "Pods-HappyChengyu";
-			productReference = DE870D215EC2E2C972252AED /* libPods-HappyChengyu.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		804DE38B6FCA011292417D85 /* Pods-HappyChengyu-Mantle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C26EF4CDB44FD3199E09EB0B /* Build configuration list for PBXNativeTarget "Pods-HappyChengyu-Mantle" */;
-			buildPhases = (
-				3EC19DB3DA775193EA74BB2F /* Sources */,
-				1A2F7C90F84C4195B2633B65 /* Frameworks */,
-				D5685551AD8D667BD98413A9 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-HappyChengyu-Mantle";
-			productName = "Pods-HappyChengyu-Mantle";
-			productReference = 7FEA393431CF836BE29D1BB1 /* libPods-HappyChengyu-Mantle.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A4FC03B357CF3E5053145B71 /* Pods-HappyChengyu-MBProgressHUD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 74EC4B34B97C56E0BCC5903F /* Build configuration list for PBXNativeTarget "Pods-HappyChengyu-MBProgressHUD" */;
-			buildPhases = (
-				1A218FF2ECF29462F1FF7E56 /* Sources */,
-				CBAD22004266DE0E137AED4A /* Frameworks */,
-				D3BC26D18505E9C1D0099877 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-HappyChengyu-MBProgressHUD";
-			productName = "Pods-HappyChengyu-MBProgressHUD";
-			productReference = 7FDEE07B52768DDBC3A39613 /* libPods-HappyChengyu-MBProgressHUD.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		3E3251E1CD0FFD894610F85A /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0510;
-			};
-			buildConfigurationList = ED47996124C3CCB304D0DE9D /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 0E64D3B5C35F710BF759F8B4;
-			productRefGroup = 21EB38E7DE930B5B0524F83B /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				09A56496E1DD7A765AB80777 /* Pods-HappyChengyu */,
-				A4FC03B357CF3E5053145B71 /* Pods-HappyChengyu-MBProgressHUD */,
-				804DE38B6FCA011292417D85 /* Pods-HappyChengyu-Mantle */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		1A218FF2ECF29462F1FF7E56 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				253E4BE7414EC6CDAE9320F3 /* MBProgressHUD.m in Sources */,
-				36AF136177721471FD59A11D /* Pods-HappyChengyu-MBProgressHUD-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3EC19DB3DA775193EA74BB2F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9617DEA6801EEC5988874BEE /* EXTRuntimeExtensions.m in Sources */,
-				331122A1EB2633BE6DD56FE4 /* EXTScope.m in Sources */,
-				C7C8BE9224E51022AB34490D /* MTLJSONAdapter.m in Sources */,
-				1DD7E2DC0F1B4A2153EA3A50 /* MTLManagedObjectAdapter.m in Sources */,
-				DEF887398040400687B5F6CA /* MTLModel+NSCoding.m in Sources */,
-				6B92BF233ECE892ACA5FB0FB /* MTLModel.m in Sources */,
-				ABEE1EC117C7BF7231D5EE1E /* MTLReflection.m in Sources */,
-				F4128E6AA0C7E3754E9707F5 /* MTLValueTransformer.m in Sources */,
-				0F43043752D1CCD97E5E1934 /* NSArray+MTLManipulationAdditions.m in Sources */,
-				73F84646990B886E2FEEC9AE /* NSDictionary+MTLManipulationAdditions.m in Sources */,
-				59A3ECF2FA14F5819B5E5354 /* NSError+MTLModelException.m in Sources */,
-				29F031E4F9804A09110F7397 /* NSObject+MTLComparisonAdditions.m in Sources */,
-				67AD794C6DB5E1D5CBB7C1F2 /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
-				44A49D309B412EB4581C5287 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
-				C18966BF59FE5DB1DD545106 /* Pods-HappyChengyu-Mantle-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		580CF7F9B7AE0B118B33E64E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				67A0E5C6B0C43EADFA2D9516 /* Pods-HappyChengyu-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B85CB5DB865E77F71A2B3314 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-HappyChengyu-Mantle";
-			target = 804DE38B6FCA011292417D85 /* Pods-HappyChengyu-Mantle */;
-			targetProxy = 017876FEC4F53C05D4A55F2B /* PBXContainerItemProxy */;
-		};
-		C83FB867CE181A832CFF90FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-HappyChengyu-MBProgressHUD";
-			target = A4FC03B357CF3E5053145B71 /* Pods-HappyChengyu-MBProgressHUD */;
-			targetProxy = 834700E3087B12BA28DBD0FF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		121B49953D00403369B75F3E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DADC08002D46AB88A2602DBE /* Pods-HappyChengyu.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/andong/Desktop/iOS_voice_1.095_54b4720d/lib,
-				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6E73ED64306E49878CB03CDE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-			};
-			name = Debug;
-		};
-		70A4A201F99451023BFE2870 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF9A03DB20334C461D5610DC /* Pods-HappyChengyu-MBProgressHUD-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-HappyChengyu-MBProgressHUD/Pods-HappyChengyu-MBProgressHUD-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		744CFCA12E8B1FA1A7BB93E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		89BCFCEA097CAE75A48D983F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C44707B9A006C503BBFE604A /* Pods-HappyChengyu-Mantle-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-HappyChengyu-Mantle/Pods-HappyChengyu-Mantle-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		91104AA3982ED51BB0A2496B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C44707B9A006C503BBFE604A /* Pods-HappyChengyu-Mantle-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-HappyChengyu-Mantle/Pods-HappyChengyu-Mantle-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D3B0FEBB56366F1C068A7F1E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF9A03DB20334C461D5610DC /* Pods-HappyChengyu-MBProgressHUD-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-HappyChengyu-MBProgressHUD/Pods-HappyChengyu-MBProgressHUD-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		F58A5D76FD7CF6B8B7C3FD40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FACFBEA9B1DF2C93C3DAE1F9 /* Pods-HappyChengyu.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/andong/Desktop/iOS_voice_1.095_54b4720d/lib,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		74EC4B34B97C56E0BCC5903F /* Build configuration list for PBXNativeTarget "Pods-HappyChengyu-MBProgressHUD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3B0FEBB56366F1C068A7F1E /* Debug */,
-				70A4A201F99451023BFE2870 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9408986B1CDD30FFC1E5440D /* Build configuration list for PBXNativeTarget "Pods-HappyChengyu" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				121B49953D00403369B75F3E /* Debug */,
-				F58A5D76FD7CF6B8B7C3FD40 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C26EF4CDB44FD3199E09EB0B /* Build configuration list for PBXNativeTarget "Pods-HappyChengyu-Mantle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				89BCFCEA097CAE75A48D983F /* Debug */,
-				91104AA3982ED51BB0A2496B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ED47996124C3CCB304D0DE9D /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E73ED64306E49878CB03CDE /* Debug */,
-				744CFCA12E8B1FA1A7BB93E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 3E3251E1CD0FFD894610F85A /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>001EBABA60FCD6E54BBB3AEB</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-HappyChengyu-ChameleonFramework.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>005BC35CEA9B42AD4E2D0132</key>
+		<dict>
+			<key>fileRef</key>
+			<string>56305869D89425E7792ED1B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0085ABD6EF635C403EF51CAC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>702173F0FBA486FDA659A15A</string>
+				<string>1A1E508F26DF122D0CACA871</string>
+				<string>95502BF55F61B601AAE9CE65</string>
+				<string>8A83122E832E101A8B13D297</string>
+				<string>5FA2A92657707A4074532DFC</string>
+				<string>005BC35CEA9B42AD4E2D0132</string>
+				<string>5BCDE03D6F3D1207674158E1</string>
+				<string>E64CAE587D7703D224609FC6</string>
+				<string>03560DA4B6AE3B04501B9ADA</string>
+				<string>63BAD0E6E010B56DEC76DA8A</string>
+				<string>CC31E7C3F235D17E574B42CF</string>
+				<string>492EE77D97EFB05600B1D375</string>
+				<string>9CF76C2A08D50C62E8A003B8</string>
+				<string>8EBA8190077D66D9E03AA212</string>
+				<string>97DEB41491F96703E8C228D8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>00BBB1FEF74CBFA88B9A584A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSDictionary+MTLManipulationAdditions.m</string>
+			<key>path</key>
+			<string>Mantle/NSDictionary+MTLManipulationAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>012BA077A7083979A01CA940</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4E9835D1DE06F59B88847D50</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-ChameleonFramework/Pods-HappyChengyu-ChameleonFramework-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>01B9E1B01E6EA66FAD858820</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0E1FBCFC89433122A608D81</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01E8BC9B2828B9E944AB3DEC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIColor+CIELAB.h</string>
+			<key>path</key>
+			<string>Chameleon/UIColor+CIELAB.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>021B6B80DC98CC36020EE65B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3D48F85D2B2A166BB0078AF7</string>
+				<string>C908AE76F6E97F7A3C97187A</string>
+				<string>BFE6A2B5C588B5D663CEDD90</string>
+				<string>EF78CD7F56219A8D7C9B151B</string>
+				<string>E942C249989C26AEF1E181D9</string>
+				<string>24A53BCDD15A676432D98EBE</string>
+				<string>E1AC4674C163E6D987680E58</string>
+				<string>315192079B1F28449A9686A3</string>
+				<string>669960DBEFFECA30BF591463</string>
+				<string>DB3C81D5D3C2A49B558E1BB4</string>
+				<string>56305869D89425E7792ED1B5</string>
+				<string>25937FBB244A9A096DCF2740</string>
+				<string>0B628BE3E9426D52D7B569DF</string>
+				<string>75DC65C73C1F1222BF22C302</string>
+				<string>ED5DC3B6B30EA7776142A96E</string>
+				<string>2BF96E1CEC40CF2813669604</string>
+				<string>A0EA14CB071DC478784A14C3</string>
+				<string>9F4566D5BAB2FA9E96D71ADE</string>
+				<string>CF37BB82E3CCB43CCF2530EB</string>
+				<string>58B98DAC1A99A9649073E9EA</string>
+				<string>0F540D7194B9A263B11E1FEE</string>
+				<string>9499D5D31BACFACEB289EEA9</string>
+				<string>A2F6087C0D14F9A953906F2F</string>
+				<string>E4BBCFC5318F5AC4F0DA92DD</string>
+				<string>5A4ABA7EBB8528AD486C266C</string>
+				<string>A3038255CC96B17353A476B8</string>
+				<string>2CDE9588C4CF9AEA0864DB4D</string>
+				<string>ACF97274F76FF26F09E4A283</string>
+				<string>A903BD1A8D43AF978D33F893</string>
+				<string>B4D7881202F71C4282FB86F8</string>
+				<string>E30D53A8C0549BAA1994D1F7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>VCTransitionsLibrary</string>
+			<key>path</key>
+			<string>VCTransitionsLibrary</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>025B230422EBC659994F51CD</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>6DA2EF567D9E6A966975E581</string>
+			<key>buildPhases</key>
+			<array>
+				<string>DA0DB62FB5C374DBBAF3A9D7</string>
+				<string>63D995DAA8BBE40979ECF894</string>
+				<string>3E815A08970B6BBD8338E0E5</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-ChameleonFramework</string>
+			<key>productName</key>
+			<string>Pods-HappyChengyu-ChameleonFramework</string>
+			<key>productReference</key>
+			<string>001EBABA60FCD6E54BBB3AEB</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>03560DA4B6AE3B04501B9ADA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A0EA14CB071DC478784A14C3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>03E39A5E38A9F1D261AC0530</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MTLReflection.h</string>
+			<key>path</key>
+			<string>Mantle/MTLReflection.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>07A6ADD1124460EBA7ADF198</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-MBProgressHUD.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0925B4055DE179A1D1D880EB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AF4F5DBD847E68A24FC9D67</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0AF1835B179DDED8F783887C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>75DC65C73C1F1222BF22C302</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>0B03C31B8A23ADCF6807C069</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MTLValueTransformer.m</string>
+			<key>path</key>
+			<string>Mantle/MTLValueTransformer.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0B628BE3E9426D52D7B569DF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEFoldAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CEFoldAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0C111DD7830688980C4960FB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F72CFB5477694A350FE1575D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0CCFE4B0AE8D640095D76307</key>
+		<dict>
+			<key>fileRef</key>
+			<string>98A95339DFF14784F92F05B2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>0F540D7194B9A263B11E1FEE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEPinchInteractionController.h</string>
+			<key>path</key>
+			<string>InteractionControllers/CEPinchInteractionController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>102B7A121185C07DC8817826</key>
+		<dict>
+			<key>fileRef</key>
+			<string>24A51B19157420BFCAF6D0F7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1092ADFD90570996C1E00F0D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ChameleonMacros.h</string>
+			<key>path</key>
+			<string>Chameleon/ChameleonMacros.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>10E0AC59BD354ACDECF5A68F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A3038255CC96B17353A476B8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>128187F589E76A4B1F2A3E72</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-Mantle-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>12B08624EF0052881D9A051F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary</string>
+			<key>target</key>
+			<string>EDAC19E79B8DBBD3AC19E0AA</string>
+			<key>targetProxy</key>
+			<string>58E0F87D2FD4E29CCD9D643A</string>
+		</dict>
+		<key>13A70CC1B556DA029122872D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1B555DDFB32E8DE16C72A3DA</string>
+				<string>31F833E34AE2E3902D3DC4B3</string>
+				<string>58203187EFA5899D7CC57399</string>
+				<string>F5A8A64F8F84FF1D6AC9E147</string>
+				<string>5DB2AF7D3CBD10B5161DEA87</string>
+				<string>700E87CDEDC8E2B27ABF058E</string>
+				<string>38963AB08A958F461E9633C4</string>
+				<string>E26B88AD61E275A362730527</string>
+				<string>BA875734E007C4BD3C094B15</string>
+				<string>A4EF883411C9EB13654242CC</string>
+				<string>4829FAF3C96314116FDF08B7</string>
+				<string>2A43A0A72341F9F8602C1A0C</string>
+				<string>0C111DD7830688980C4960FB</string>
+				<string>6B73AB4585BD542930E23706</string>
+				<string>66BD721FB24CE50A41964364</string>
+				<string>63A9181F3A977C8A2284A9E6</string>
+				<string>53CB1ED8D87E93FE9343A58A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>142A663BBFC40C29319F2471</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30DC8D7F6A85CBC84FBD17F7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>16FCCE6D54D9CD6FF4451B0D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3D3670D81D32505931955DAE</string>
+				<string>4E9835D1DE06F59B88847D50</string>
+				<string>3B752085B45167B15D471976</string>
+				<string>410C11FBB45B410F2361622E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-HappyChengyu-ChameleonFramework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>19B2FC5FE9C0ADBA47EB6CA7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>19E6B0A0A5C28671C9469336</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Mantle.h</string>
+			<key>path</key>
+			<string>Mantle/Mantle.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A1E508F26DF122D0CACA871</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BFE6A2B5C588B5D663CEDD90</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1B555DDFB32E8DE16C72A3DA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ADDF0D26A0CEC4322B8C36EB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1DC5C37AEDBF721972DFCAEA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA230C48EF9E447E21CD3C6B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2148761D5770209435EF6E3D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1092ADFD90570996C1E00F0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>214E09E63815FB63791972CD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3F2ADC301EA1751807E06EBC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>222A3BB10145B135A25F46E5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DB3C81D5D3C2A49B558E1BB4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>227992DDF54419D37414AFE8</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>22825FBBDCC1E8CCAD289CBD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>22C3C4429FC49F24628F3DB6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BA0ADA081F5ACE92CA7323EF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>24619CF7C68B2750CBF19F3C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C4AD59D91728AF57865B0267</string>
+				<string>2666E89861527E0FE71B5BD2</string>
+				<string>30DC8D7F6A85CBC84FBD17F7</string>
+				<string>3C89AA450CC7395E6F51E33E</string>
+				<string>376DD8F7C4BCC77A7F3085BD</string>
+				<string>6596B534E67B7F03DA34A885</string>
+				<string>3D1604DCA88253F9120F00DD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-HappyChengyu</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24A51B19157420BFCAF6D0F7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIColor+CIELAB.m</string>
+			<key>path</key>
+			<string>Chameleon/UIColor+CIELAB.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24A53BCDD15A676432D98EBE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CECrossfadeAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CECrossfadeAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>25937FBB244A9A096DCF2740</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEFlipAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CEFlipAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2666E89861527E0FE71B5BD2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27B24490B57F5B2A9251DE91</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSDictionary+MTLManipulationAdditions.h</string>
+			<key>path</key>
+			<string>Mantle/NSDictionary+MTLManipulationAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2947E93C6B5A2C28E426E112</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A50610D02A97AE30014431C</string>
+				<string>001EBABA60FCD6E54BBB3AEB</string>
+				<string>64CD303A4EFAF1045DABAAAE</string>
+				<string>9F967F327BE58ED7F872AFC9</string>
+				<string>6075307A440D74738A77529A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>29A768CC0872CAE8526FB46E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C908AE76F6E97F7A3C97187A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>29CA6AC8EE9F218A9FFC7A08</key>
+		<dict>
+			<key>fileRef</key>
+			<string>24A53BCDD15A676432D98EBE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2A43A0A72341F9F8602C1A0C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27B24490B57F5B2A9251DE91</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2BBB4553FCCC12AF231368C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MTLJSONAdapter.m</string>
+			<key>path</key>
+			<string>Mantle/MTLJSONAdapter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2BF96E1CEC40CF2813669604</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEHorizontalSwipeInteractionController.m</string>
+			<key>path</key>
+			<string>InteractionControllers/CEHorizontalSwipeInteractionController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2CDE9588C4CF9AEA0864DB4D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CETurnAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CETurnAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2E8193C3E6AB7DA46C3519AB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B4D7881202F71C4282FB86F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>30DC8D7F6A85CBC84FBD17F7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>315192079B1F28449A9686A3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CECubeAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CECubeAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>31F833E34AE2E3902D3DC4B3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4477FF0EEE19FB9601FF79AF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>32491237FCB3A1C7F7B2A219</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EF78CD7F56219A8D7C9B151B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>33AE3D06609132579EF57563</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F3807DFE1B119F69870B8119</string>
+				<string>570D3B09F0A7F5986F27DD22</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>376DD8F7C4BCC77A7F3085BD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>38963AB08A958F461E9633C4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B07D1E6A429DFFBD4D2BE792</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3A418E22B9D4FEF3EFCDC720</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>metamacros.h</string>
+			<key>path</key>
+			<string>Mantle/extobjc/metamacros.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B752085B45167B15D471976</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-ChameleonFramework-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3C160E041F5E8260233982F9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0B03C31B8A23ADCF6807C069</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>3C39E1E1045F46E881A1ABC5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C1977FB13F04AC4863ADB376</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-Mantle/Pods-HappyChengyu-Mantle-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3C5D955799A4AB3CA437D120</key>
+		<dict>
+			<key>fileRef</key>
+			<string>00BBB1FEF74CBFA88B9A584A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>3C89AA450CC7395E6F51E33E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-environment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3CE9F2CC0211B9F5F05C31AD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7198775AB833522D91C70BEA</string>
+				<string>7B1839137264CB6F9F660EE3</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3D1604DCA88253F9120F00DD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D3670D81D32505931955DAE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-ChameleonFramework.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D48F85D2B2A166BB0078AF7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEBaseInteractionController.h</string>
+			<key>path</key>
+			<string>InteractionControllers/CEBaseInteractionController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D93083777C8EF60B1268083</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FB6F58F790D1CBF6F67B1584</string>
+				<string>2BBB4553FCCC12AF231368C8</string>
+				<string>825DBCD0DCBF1AC67825319E</string>
+				<string>83C02014C4DC24C55E109ECE</string>
+				<string>B07D1E6A429DFFBD4D2BE792</string>
+				<string>993D8ED17CC811B06BFCBC5E</string>
+				<string>9227C47D7562F25F06AD6A94</string>
+				<string>A7A8D85848C6A6A78E6EFCE2</string>
+				<string>03E39A5E38A9F1D261AC0530</string>
+				<string>7E67719E937E062AD0DD51DC</string>
+				<string>88EB5993B75896CE05CED574</string>
+				<string>0B03C31B8A23ADCF6807C069</string>
+				<string>19E6B0A0A5C28671C9469336</string>
+				<string>5D97CF8C505D00E28AC8F017</string>
+				<string>CA230C48EF9E447E21CD3C6B</string>
+				<string>27B24490B57F5B2A9251DE91</string>
+				<string>00BBB1FEF74CBFA88B9A584A</string>
+				<string>F72CFB5477694A350FE1575D</string>
+				<string>3F2ADC301EA1751807E06EBC</string>
+				<string>931C5AA2B7774A6258DDA125</string>
+				<string>466E55171AB09AFDE01751F4</string>
+				<string>766D38BF4DC10077BE8B88B2</string>
+				<string>86FBA6190A68B99D17938FD4</string>
+				<string>474F51D00605C43A42BF0D2E</string>
+				<string>E345D83181C616C05E104A92</string>
+				<string>817107DD4FFC12F22925EF26</string>
+				<string>B223BE1170F3693991F9745B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Mantle</string>
+			<key>path</key>
+			<string>Mantle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E815A08970B6BBD8338E0E5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D01D0DC72F7F9AD0914DA782</string>
+				<string>2148761D5770209435EF6E3D</string>
+				<string>4792314DF4ED764E62709B5F</string>
+				<string>596B65B6C13CC5B3685E47DD</string>
+				<string>BDAD64124F7A8BE238860682</string>
+				<string>860B329417AA7D6259E2C24E</string>
+				<string>C246ED0B4F1D6C33CCA20DB9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3F2ADC301EA1751807E06EBC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSError+MTLModelException.m</string>
+			<key>path</key>
+			<string>Mantle/NSError+MTLModelException.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>410C11FBB45B410F2361622E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-ChameleonFramework-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>428899424E34468C89C8E951</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9499D5D31BACFACEB289EEA9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>43523C45FA7810940FD4BBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>01B9E1B01E6EA66FAD858820</string>
+				<string>7688F86C0477DD1DDB3895F2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4477FF0EEE19FB9601FF79AF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EXTRuntimeExtensions.h</string>
+			<key>path</key>
+			<string>Mantle/extobjc/EXTRuntimeExtensions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>44A969CDE3C8911CD4C8EC57</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF9D4A436A510FBB43653053</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>465EF65E35AA4EB67A1AF358</key>
+		<dict>
+			<key>fileRef</key>
+			<string>54FDB2F521FB5D6F2622DE3A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>466E55171AB09AFDE01751F4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSObject+MTLComparisonAdditions.m</string>
+			<key>path</key>
+			<string>Mantle/NSObject+MTLComparisonAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>474F51D00605C43A42BF0D2E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSValueTransformer+MTLPredefinedTransformerAdditions.h</string>
+			<key>path</key>
+			<string>Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4792314DF4ED764E62709B5F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>760AB042D06339BA1B6595B4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4829FAF3C96314116FDF08B7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5D97CF8C505D00E28AC8F017</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>492EE77D97EFB05600B1D375</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A2F6087C0D14F9A953906F2F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A521E234D0B79DF3F63452E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>819E2DC81624C19A122AEE1C</string>
+				<string>9E5089E2094A0DB180F057A2</string>
+				<string>3D93083777C8EF60B1268083</string>
+				<string>021B6B80DC98CC36020EE65B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4E61CE794AA20BBFEC2F322A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9C5F0E42E03EFCEB4714FEA0</string>
+				<string>227992DDF54419D37414AFE8</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>4E9835D1DE06F59B88847D50</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-ChameleonFramework-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>505A96C64BD4E3798880C862</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3D1604DCA88253F9120F00DD</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>523C340775C13165AB1C9F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>466E55171AB09AFDE01751F4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>531D750038EEF7C28A8028C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Chameleon.h</string>
+			<key>path</key>
+			<string>Chameleon/Chameleon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>53CB1ED8D87E93FE9343A58A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3A418E22B9D4FEF3EFCDC720</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>544CF073E33573B41DE46618</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FB1B94FCEE963ECB72028567</string>
+				<string>505A96C64BD4E3798880C862</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>54B60686B41C966F494FAC1D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>83C02014C4DC24C55E109ECE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>54FDB2F521FB5D6F2622DE3A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIViewController+Chameleon.m</string>
+			<key>path</key>
+			<string>Chameleon/UIViewController+Chameleon.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>55E426652AE018815F578BB6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>29A768CC0872CAE8526FB46E</string>
+				<string>32491237FCB3A1C7F7B2A219</string>
+				<string>29CA6AC8EE9F218A9FFC7A08</string>
+				<string>5AEEB1EDBEE2F1DBA496DE5E</string>
+				<string>222A3BB10145B135A25F46E5</string>
+				<string>660585F8450F4216840730E9</string>
+				<string>0AF1835B179DDED8F783887C</string>
+				<string>D0230E5539D43CCA686C0125</string>
+				<string>A530F14A48B0F43DC21A8F83</string>
+				<string>99182CA2978C5DB70A7ACC46</string>
+				<string>428899424E34468C89C8E951</string>
+				<string>F0297D15EDDEB3DC4556C846</string>
+				<string>10E0AC59BD354ACDECF5A68F</string>
+				<string>DAFC39DC2712BEAFDF51E8E2</string>
+				<string>2E8193C3E6AB7DA46C3519AB</string>
+				<string>5D8A7A3AF1F1A7A7B0015F22</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>56305869D89425E7792ED1B5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEFlipAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CEFlipAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>570D3B09F0A7F5986F27DD22</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9DCEAA0BAF6AD29EEFC0B4F4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>58203187EFA5899D7CC57399</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8E0F39EA00888375FD6C0597</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>58B98DAC1A99A9649073E9EA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEPanAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CEPanAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>58E0F87D2FD4E29CCD9D643A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>FFF7A28812C7FDD1F368730A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>EDAC19E79B8DBBD3AC19E0AA</string>
+			<key>remoteInfo</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary</string>
+		</dict>
+		<key>594101794B420F716871A952</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-MBProgressHUD-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>596B65B6C13CC5B3685E47DD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9D08BF9989554035B65C9ECB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5A4ABA7EBB8528AD486C266C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEReversibleAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CEReversibleAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5AEEB1EDBEE2F1DBA496DE5E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>315192079B1F28449A9686A3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5BCDE03D6F3D1207674158E1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0B628BE3E9426D52D7B569DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5C64AF57C4A5AE718DDCD231</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E345D83181C616C05E104A92</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5D8A7A3AF1F1A7A7B0015F22</key>
+		<dict>
+			<key>fileRef</key>
+			<string>22825FBBDCC1E8CCAD289CBD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5D97CF8C505D00E28AC8F017</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+MTLManipulationAdditions.h</string>
+			<key>path</key>
+			<string>Mantle/NSArray+MTLManipulationAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5DB2AF7D3CBD10B5161DEA87</key>
+		<dict>
+			<key>fileRef</key>
+			<string>825DBCD0DCBF1AC67825319E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5FA2A92657707A4074532DFC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>669960DBEFFECA30BF591463</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6075307A440D74738A77529A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-HappyChengyu-VCTransitionsLibrary.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>62F0A4535EFAA9E2D58488EF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>81EB99C5EC30A911E9DC73F9</string>
+				<string>0CCFE4B0AE8D640095D76307</string>
+				<string>CBF65001678E06D8DC934E65</string>
+				<string>54B60686B41C966F494FAC1D</string>
+				<string>83C3E64F4ACC0F0FE962EED9</string>
+				<string>B23349D8CCF1E82FF759515B</string>
+				<string>9C48C3F059C0EDCA690AF40A</string>
+				<string>3C160E041F5E8260233982F9</string>
+				<string>1DC5C37AEDBF721972DFCAEA</string>
+				<string>3C5D955799A4AB3CA437D120</string>
+				<string>214E09E63815FB63791972CD</string>
+				<string>523C340775C13165AB1C9F03</string>
+				<string>839BE6C826767AB00611FBB2</string>
+				<string>5C64AF57C4A5AE718DDCD231</string>
+				<string>D63D2246F3E653645986E4B7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>63A9181F3A977C8A2284A9E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>474F51D00605C43A42BF0D2E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63BAD0E6E010B56DEC76DA8A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CF37BB82E3CCB43CCF2530EB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63D995DAA8BBE40979ECF894</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B5084B241937A3B73286ACB9</string>
+				<string>D2C3E89E028BD1EDFD432923</string>
+				<string>8857D6291A868F83498C8BAE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>64CD303A4EFAF1045DABAAAE</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-HappyChengyu-MBProgressHUD.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>64D37BC4FCF5541E98B86448</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6501E3336C840E24D04B3C81</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6501E3336C840E24D04B3C81</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E0E1FBCFC89433122A608D81</string>
+				<string>DF9D4A436A510FBB43653053</string>
+				<string>B48860A316FF8F7BF5C88F2C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6596B534E67B7F03DA34A885</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>65C7ECAEE7BB18FE16CDAA6D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>85BD9D7E420A841A75290366</string>
+			<key>buildPhases</key>
+			<array>
+				<string>33AE3D06609132579EF57563</string>
+				<string>43523C45FA7810940FD4BBC5</string>
+				<string>D5B7E3144CBB50239922BAFA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-MBProgressHUD</string>
+			<key>productName</key>
+			<string>Pods-HappyChengyu-MBProgressHUD</string>
+			<key>productReference</key>
+			<string>64CD303A4EFAF1045DABAAAE</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>660585F8450F4216840730E9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>25937FBB244A9A096DCF2740</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>669960DBEFFECA30BF591463</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEExplodeAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CEExplodeAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>66BD721FB24CE50A41964364</key>
+		<dict>
+			<key>fileRef</key>
+			<string>766D38BF4DC10077BE8B88B2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6931D5D5D5D7BD9BA6C64BCA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>24619CF7C68B2750CBF19F3C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A50610D02A97AE30014431C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-HappyChengyu.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>6AF4F5DBD847E68A24FC9D67</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIColor+Chameleon.m</string>
+			<key>path</key>
+			<string>Chameleon/UIColor+Chameleon.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B73AB4585BD542930E23706</key>
+		<dict>
+			<key>fileRef</key>
+			<string>931C5AA2B7774A6258DDA125</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6C17BE5517A032E24513FFF5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-MBProgressHUD-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6D26A541B9E2332BE1702D0D</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>FFF7A28812C7FDD1F368730A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>025B230422EBC659994F51CD</string>
+			<key>remoteInfo</key>
+			<string>Pods-HappyChengyu-ChameleonFramework</string>
+		</dict>
+		<key>6DA2EF567D9E6A966975E581</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>012BA077A7083979A01CA940</string>
+				<string>D8547767186AED6CCD511188</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>6EDEB2CED44463534E01EBF9</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>544CF073E33573B41DE46618</string>
+			<key>buildPhases</key>
+			<array>
+				<string>E1E8B92EEE4CFA154E0179BB</string>
+				<string>DB712E868B0CF9F9B13B59DE</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>BA5BD2744331BDB12DE8DA97</string>
+				<string>8FD07320559F11D830A6CD3A</string>
+				<string>E60BD04F04B748D045DD48BE</string>
+				<string>12B08624EF0052881D9A051F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu</string>
+			<key>productName</key>
+			<string>Pods-HappyChengyu</string>
+			<key>productReference</key>
+			<string>6A50610D02A97AE30014431C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>6F19203E6C0BB75F8DF8C4D9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBProgressHUD.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>700E87CDEDC8E2B27ABF058E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9227C47D7562F25F06AD6A94</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>702173F0FBA486FDA659A15A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3D48F85D2B2A166BB0078AF7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>70E9CBCBA6A81CE95B239FC1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7198775AB833522D91C70BEA</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>19B2FC5FE9C0ADBA47EB6CA7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-VCTransitionsLibrary/Pods-HappyChengyu-VCTransitionsLibrary-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>75DC65C73C1F1222BF22C302</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEFoldAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CEFoldAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>760AB042D06339BA1B6595B4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ChameleonStatusBar.h</string>
+			<key>path</key>
+			<string>Chameleon/ChameleonStatusBar.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>766D38BF4DC10077BE8B88B2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSValueTransformer+MTLInversionAdditions.h</string>
+			<key>path</key>
+			<string>Mantle/NSValueTransformer+MTLInversionAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7688F86C0477DD1DDB3895F2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF9D4A436A510FBB43653053</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>77976327706C27BBCA07E394</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A9C6F4D05E82E7776E24CFB8</string>
+			<key>buildPhases</key>
+			<array>
+				<string>62F0A4535EFAA9E2D58488EF</string>
+				<string>F6FE4D539FE19E95D20A73B3</string>
+				<string>13A70CC1B556DA029122872D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-Mantle</string>
+			<key>productName</key>
+			<string>Pods-HappyChengyu-Mantle</string>
+			<key>productReference</key>
+			<string>9F967F327BE58ED7F872AFC9</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>7B1839137264CB6F9F660EE3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>19B2FC5FE9C0ADBA47EB6CA7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-VCTransitionsLibrary/Pods-HappyChengyu-VCTransitionsLibrary-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7DD72C3288D21C3B5FADE283</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C1977FB13F04AC4863ADB376</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-Mantle/Pods-HappyChengyu-Mantle-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>7E67719E937E062AD0DD51DC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MTLReflection.m</string>
+			<key>path</key>
+			<string>Mantle/MTLReflection.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>817107DD4FFC12F22925EF26</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>866612945814B899C44F6384</string>
+				<string>C1977FB13F04AC4863ADB376</string>
+				<string>128187F589E76A4B1F2A3E72</string>
+				<string>C67418777B63CFD79B2ACB9B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-HappyChengyu-Mantle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>819E2DC81624C19A122AEE1C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>531D750038EEF7C28A8028C8</string>
+				<string>1092ADFD90570996C1E00F0D</string>
+				<string>760AB042D06339BA1B6595B4</string>
+				<string>F2B61A48B817C8204EE5FA18</string>
+				<string>9D08BF9989554035B65C9ECB</string>
+				<string>BA0ADA081F5ACE92CA7323EF</string>
+				<string>01E8BC9B2828B9E944AB3DEC</string>
+				<string>24A51B19157420BFCAF6D0F7</string>
+				<string>8D86657A3DBDDEDE5C727109</string>
+				<string>6AF4F5DBD847E68A24FC9D67</string>
+				<string>A10F963D863BE0C65C3F2BF5</string>
+				<string>54FDB2F521FB5D6F2622DE3A</string>
+				<string>16FCCE6D54D9CD6FF4451B0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ChameleonFramework</string>
+			<key>path</key>
+			<string>ChameleonFramework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EB99C5EC30A911E9DC73F9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D3018B25B4ED813AA43025D1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>825DBCD0DCBF1AC67825319E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MTLManagedObjectAdapter.h</string>
+			<key>path</key>
+			<string>Mantle/MTLManagedObjectAdapter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839BE6C826767AB00611FBB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>86FBA6190A68B99D17938FD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>83C02014C4DC24C55E109ECE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MTLManagedObjectAdapter.m</string>
+			<key>path</key>
+			<string>Mantle/MTLManagedObjectAdapter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>83C3E64F4ACC0F0FE962EED9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A7A8D85848C6A6A78E6EFCE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>85BD9D7E420A841A75290366</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>ED7A6F0ECA1755CC1398E2A1</string>
+				<string>B2996020673A465B10F2BC99</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>860B329417AA7D6259E2C24E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D86657A3DBDDEDE5C727109</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>866612945814B899C44F6384</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-Mantle.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86FBA6190A68B99D17938FD4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSValueTransformer+MTLInversionAdditions.m</string>
+			<key>path</key>
+			<string>Mantle/NSValueTransformer+MTLInversionAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8857D6291A868F83498C8BAE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B48860A316FF8F7BF5C88F2C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>88EB5993B75896CE05CED574</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MTLValueTransformer.h</string>
+			<key>path</key>
+			<string>Mantle/MTLValueTransformer.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A83122E832E101A8B13D297</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E1AC4674C163E6D987680E58</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8BB0F264EC62DA4056F7A6F2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF9D4A436A510FBB43653053</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8D86657A3DBDDEDE5C727109</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIColor+Chameleon.h</string>
+			<key>path</key>
+			<string>Chameleon/UIColor+Chameleon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E0F39EA00888375FD6C0597</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EXTScope.h</string>
+			<key>path</key>
+			<string>Mantle/extobjc/EXTScope.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8EBA8190077D66D9E03AA212</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2CDE9588C4CF9AEA0864DB4D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8FD07320559F11D830A6CD3A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-MBProgressHUD</string>
+			<key>target</key>
+			<string>65C7ECAEE7BB18FE16CDAA6D</string>
+			<key>targetProxy</key>
+			<string>D7E951684E2BB1FECE8D4FED</string>
+		</dict>
+		<key>9227C47D7562F25F06AD6A94</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MTLModel+NSCoding.h</string>
+			<key>path</key>
+			<string>Mantle/MTLModel+NSCoding.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>931C5AA2B7774A6258DDA125</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSObject+MTLComparisonAdditions.h</string>
+			<key>path</key>
+			<string>Mantle/NSObject+MTLComparisonAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9499D5D31BACFACEB289EEA9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEPinchInteractionController.m</string>
+			<key>path</key>
+			<string>InteractionControllers/CEPinchInteractionController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95502BF55F61B601AAE9CE65</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E942C249989C26AEF1E181D9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>97DEB41491F96703E8C228D8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A903BD1A8D43AF978D33F893</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>98A95339DFF14784F92F05B2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EXTScope.m</string>
+			<key>path</key>
+			<string>Mantle/extobjc/EXTScope.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>99182CA2978C5DB70A7ACC46</key>
+		<dict>
+			<key>fileRef</key>
+			<string>58B98DAC1A99A9649073E9EA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>993D8ED17CC811B06BFCBC5E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MTLModel.m</string>
+			<key>path</key>
+			<string>Mantle/MTLModel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9C48C3F059C0EDCA690AF40A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E67719E937E062AD0DD51DC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>9C5F0E42E03EFCEB4714FEA0</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>9CF76C2A08D50C62E8A003B8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5A4ABA7EBB8528AD486C266C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9D08BF9989554035B65C9ECB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+Chameleon.h</string>
+			<key>path</key>
+			<string>Chameleon/NSArray+Chameleon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9DCEAA0BAF6AD29EEFC0B4F4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-MBProgressHUD-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9E5089E2094A0DB180F057A2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AAE4E33B9022E3345F334349</string>
+				<string>6F19203E6C0BB75F8DF8C4D9</string>
+				<string>F910B2D39B9E30827ACE4A67</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MBProgressHUD</string>
+			<key>path</key>
+			<string>MBProgressHUD</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9E6CC072E9694218B86B557C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>FFF7A28812C7FDD1F368730A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>77976327706C27BBCA07E394</string>
+			<key>remoteInfo</key>
+			<string>Pods-HappyChengyu-Mantle</string>
+		</dict>
+		<key>9F4566D5BAB2FA9E96D71ADE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CENatGeoAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CENatGeoAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F967F327BE58ED7F872AFC9</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-HappyChengyu-Mantle.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A0EA14CB071DC478784A14C3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CENatGeoAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CENatGeoAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A10F963D863BE0C65C3F2BF5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIViewController+Chameleon.h</string>
+			<key>path</key>
+			<string>Chameleon/UIViewController+Chameleon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A2F6087C0D14F9A953906F2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEPortalAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CEPortalAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A3038255CC96B17353A476B8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEReversibleAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CEReversibleAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A4EF883411C9EB13654242CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>19E6B0A0A5C28671C9469336</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A530F14A48B0F43DC21A8F83</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F4566D5BAB2FA9E96D71ADE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>A7A8D85848C6A6A78E6EFCE2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MTLModel+NSCoding.m</string>
+			<key>path</key>
+			<string>Mantle/MTLModel+NSCoding.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A903BD1A8D43AF978D33F893</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEVerticalSwipeInteractionController.h</string>
+			<key>path</key>
+			<string>InteractionControllers/CEVerticalSwipeInteractionController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9C6F4D05E82E7776E24CFB8</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7DD72C3288D21C3B5FADE283</string>
+				<string>3C39E1E1045F46E881A1ABC5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AAE4E33B9022E3345F334349</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBProgressHUD.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ACF97274F76FF26F09E4A283</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CETurnAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CETurnAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ADDF0D26A0CEC4322B8C36EB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EXTKeyPathCoding.h</string>
+			<key>path</key>
+			<string>Mantle/extobjc/EXTKeyPathCoding.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B07D1E6A429DFFBD4D2BE792</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MTLModel.h</string>
+			<key>path</key>
+			<string>Mantle/MTLModel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B223BE1170F3693991F9745B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>ADDF0D26A0CEC4322B8C36EB</string>
+				<string>4477FF0EEE19FB9601FF79AF</string>
+				<string>D3018B25B4ED813AA43025D1</string>
+				<string>8E0F39EA00888375FD6C0597</string>
+				<string>98A95339DFF14784F92F05B2</string>
+				<string>3A418E22B9D4FEF3EFCDC720</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>extobjc</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B23349D8CCF1E82FF759515B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>993D8ED17CC811B06BFCBC5E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>B2996020673A465B10F2BC99</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>594101794B420F716871A952</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-MBProgressHUD/Pods-HappyChengyu-MBProgressHUD-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B48860A316FF8F7BF5C88F2C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>QuartzCore.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>B4D7881202F71C4282FB86F8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEVerticalSwipeInteractionController.m</string>
+			<key>path</key>
+			<string>InteractionControllers/CEVerticalSwipeInteractionController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B5084B241937A3B73286ACB9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0E1FBCFC89433122A608D81</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B847F1F3A9AD9CEAB4454BE7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F2B61A48B817C8204EE5FA18</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BA0ADA081F5ACE92CA7323EF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSArray+Chameleon.m</string>
+			<key>path</key>
+			<string>Chameleon/NSArray+Chameleon.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA5BD2744331BDB12DE8DA97</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-ChameleonFramework</string>
+			<key>target</key>
+			<string>025B230422EBC659994F51CD</string>
+			<key>targetProxy</key>
+			<string>6D26A541B9E2332BE1702D0D</string>
+		</dict>
+		<key>BA875734E007C4BD3C094B15</key>
+		<dict>
+			<key>fileRef</key>
+			<string>88EB5993B75896CE05CED574</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BB854193F64AFCA19B2DA6DF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B752085B45167B15D471976</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BDAD64124F7A8BE238860682</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01E8BC9B2828B9E944AB3DEC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BFE6A2B5C588B5D663CEDD90</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CECardsAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CECardsAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C1977FB13F04AC4863ADB376</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-Mantle-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C246ED0B4F1D6C33CCA20DB9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A10F963D863BE0C65C3F2BF5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C3EDD65F047D59544804E00A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF9D4A436A510FBB43653053</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C4AD59D91728AF57865B0267</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C5B2BD8C743D7B5470410E7D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>C67418777B63CFD79B2ACB9B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-Mantle-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C908AE76F6E97F7A3C97187A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEBaseInteractionController.m</string>
+			<key>path</key>
+			<string>InteractionControllers/CEBaseInteractionController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA230C48EF9E447E21CD3C6B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSArray+MTLManipulationAdditions.m</string>
+			<key>path</key>
+			<string>Mantle/NSArray+MTLManipulationAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CBF65001678E06D8DC934E65</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BBB4553FCCC12AF231368C8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>CC31E7C3F235D17E574B42CF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0F540D7194B9A263B11E1FEE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CC3590B2B0ED99D70C8D93D0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C5B2BD8C743D7B5470410E7D</string>
+				<string>64D37BC4FCF5541E98B86448</string>
+				<string>4A521E234D0B79DF3F63452E</string>
+				<string>2947E93C6B5A2C28E426E112</string>
+				<string>6931D5D5D5D7BD9BA6C64BCA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CE27F58F16A5E85379A5467A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AAE4E33B9022E3345F334349</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CF37BB82E3CCB43CCF2530EB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEPanAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CEPanAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D01D0DC72F7F9AD0914DA782</key>
+		<dict>
+			<key>fileRef</key>
+			<string>531D750038EEF7C28A8028C8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D0230E5539D43CCA686C0125</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BF96E1CEC40CF2813669604</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>D2C3E89E028BD1EDFD432923</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF9D4A436A510FBB43653053</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D3018B25B4ED813AA43025D1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EXTRuntimeExtensions.m</string>
+			<key>path</key>
+			<string>Mantle/extobjc/EXTRuntimeExtensions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D5B7E3144CBB50239922BAFA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CE27F58F16A5E85379A5467A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D63D2246F3E653645986E4B7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>128187F589E76A4B1F2A3E72</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D7E951684E2BB1FECE8D4FED</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>FFF7A28812C7FDD1F368730A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>65C7ECAEE7BB18FE16CDAA6D</string>
+			<key>remoteInfo</key>
+			<string>Pods-HappyChengyu-MBProgressHUD</string>
+		</dict>
+		<key>D8547767186AED6CCD511188</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4E9835D1DE06F59B88847D50</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-ChameleonFramework/Pods-HappyChengyu-ChameleonFramework-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>DA0DB62FB5C374DBBAF3A9D7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B847F1F3A9AD9CEAB4454BE7</string>
+				<string>22C3C4429FC49F24628F3DB6</string>
+				<string>BB854193F64AFCA19B2DA6DF</string>
+				<string>102B7A121185C07DC8817826</string>
+				<string>0925B4055DE179A1D1D880EB</string>
+				<string>465EF65E35AA4EB67A1AF358</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DAFC39DC2712BEAFDF51E8E2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ACF97274F76FF26F09E4A283</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>DB3C81D5D3C2A49B558E1BB4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEExplodeAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CEExplodeAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB712E868B0CF9F9B13B59DE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8BB0F264EC62DA4056F7A6F2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DF9D4A436A510FBB43653053</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>E0E1FBCFC89433122A608D81</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>E1AC4674C163E6D987680E58</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CECubeAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CECubeAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E1E8B92EEE4CFA154E0179BB</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>142A663BBFC40C29319F2471</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E26B88AD61E275A362730527</key>
+		<dict>
+			<key>fileRef</key>
+			<string>03E39A5E38A9F1D261AC0530</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E30D53A8C0549BAA1994D1F7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>70E9CBCBA6A81CE95B239FC1</string>
+				<string>19B2FC5FE9C0ADBA47EB6CA7</string>
+				<string>22825FBBDCC1E8CCAD289CBD</string>
+				<string>E7DC6105B403BFD0CD50BF37</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-HappyChengyu-VCTransitionsLibrary</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E345D83181C616C05E104A92</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSValueTransformer+MTLPredefinedTransformerAdditions.m</string>
+			<key>path</key>
+			<string>Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E4BBCFC5318F5AC4F0DA92DD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CEPortalAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CEPortalAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E60BD04F04B748D045DD48BE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-Mantle</string>
+			<key>target</key>
+			<string>77976327706C27BBCA07E394</string>
+			<key>targetProxy</key>
+			<string>9E6CC072E9694218B86B557C</string>
+		</dict>
+		<key>E64CAE587D7703D224609FC6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ED5DC3B6B30EA7776142A96E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E7DC6105B403BFD0CD50BF37</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E942C249989C26AEF1E181D9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CECrossfadeAnimationController.h</string>
+			<key>path</key>
+			<string>AnimationControllers/CECrossfadeAnimationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ED1E9F1024C560AD22E24DB3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C3EDD65F047D59544804E00A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>ED5DC3B6B30EA7776142A96E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CEHorizontalSwipeInteractionController.h</string>
+			<key>path</key>
+			<string>InteractionControllers/CEHorizontalSwipeInteractionController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ED7A6F0ECA1755CC1398E2A1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>594101794B420F716871A952</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-HappyChengyu-MBProgressHUD/Pods-HappyChengyu-MBProgressHUD-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>EDAC19E79B8DBBD3AC19E0AA</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3CE9F2CC0211B9F5F05C31AD</string>
+			<key>buildPhases</key>
+			<array>
+				<string>55E426652AE018815F578BB6</string>
+				<string>ED1E9F1024C560AD22E24DB3</string>
+				<string>0085ABD6EF635C403EF51CAC</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary</string>
+			<key>productName</key>
+			<string>Pods-HappyChengyu-VCTransitionsLibrary</string>
+			<key>productReference</key>
+			<string>6075307A440D74738A77529A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>EF78CD7F56219A8D7C9B151B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CECardsAnimationController.m</string>
+			<key>path</key>
+			<string>AnimationControllers/CECardsAnimationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F0297D15EDDEB3DC4556C846</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E4BBCFC5318F5AC4F0DA92DD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F2B61A48B817C8204EE5FA18</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ChameleonStatusBar.m</string>
+			<key>path</key>
+			<string>Chameleon/ChameleonStatusBar.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F3807DFE1B119F69870B8119</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6F19203E6C0BB75F8DF8C4D9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F5A8A64F8F84FF1D6AC9E147</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FB6F58F790D1CBF6F67B1584</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6FE4D539FE19E95D20A73B3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>44A969CDE3C8911CD4C8EC57</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F72CFB5477694A350FE1575D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSError+MTLModelException.h</string>
+			<key>path</key>
+			<string>Mantle/NSError+MTLModelException.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F910B2D39B9E30827ACE4A67</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>07A6ADD1124460EBA7ADF198</string>
+				<string>594101794B420F716871A952</string>
+				<string>9DCEAA0BAF6AD29EEFC0B4F4</string>
+				<string>6C17BE5517A032E24513FFF5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-HappyChengyu-MBProgressHUD</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FB1B94FCEE963ECB72028567</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6596B534E67B7F03DA34A885</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FB6F58F790D1CBF6F67B1584</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MTLJSONAdapter.h</string>
+			<key>path</key>
+			<string>Mantle/MTLJSONAdapter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFF7A28812C7FDD1F368730A</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>4E61CE794AA20BBFEC2F322A</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>CC3590B2B0ED99D70C8D93D0</string>
+			<key>productRefGroup</key>
+			<string>2947E93C6B5A2C28E426E112</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>6EDEB2CED44463534E01EBF9</string>
+				<string>025B230422EBC659994F51CD</string>
+				<string>65C7ECAEE7BB18FE16CDAA6D</string>
+				<string>77976327706C27BBCA07E394</string>
+				<string>EDAC19E79B8DBBD3AC19E0AA</string>
+			</array>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>FFF7A28812C7FDD1F368730A</string>
+</dict>
+</plist>

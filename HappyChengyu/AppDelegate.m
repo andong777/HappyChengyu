@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 #import "FavoritesHelper.h"
 #import <iflyMSC/IFlySpeechUtility.h>
+#import <VCTransitionsLibrary/CECrossfadeAnimationController.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -18,7 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // 指定Tab Bar Controller的delegate
+    UITabBarController *tabBarController = (UITabBarController *)(self.window.rootViewController);
+    tabBarController.delegate = self;
+    
+    // 初始化语音朗读和语音识别组件
     NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@, timeout=%@",@"54b4720d", @"20000"];
     [IFlySpeechUtility createUtility:initString];
     return YES;
@@ -45,6 +50,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark <UITabBarControllerDelegate>
+
+- (id<UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
+    NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
+    CEReversibleAnimationController *animator = [CECrossfadeAnimationController new];
+    animator.duration = 0.5;
+    animator.reverse = fromVCIndex < toVCIndex;
+    return animator;
 }
 
 @end
