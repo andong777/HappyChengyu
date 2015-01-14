@@ -52,16 +52,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchReuseIdentifier" forIndexPath:indexPath];
     Chengyu *chengyu = [searchResults objectAtIndex:indexPath.row];
-    NSDictionary *attrs = @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]};
-    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:chengyu.name attributes:attrs];
+    NSMutableAttributedString *nameAttributedString = [[NSMutableAttributedString alloc] initWithString:chengyu.name attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]}];
+    NSString *pinyin = [[[NSString alloc]
+                        initWithData:
+                        [[chengyu.pinyin componentsJoinedByString:@" "] dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES]
+                        encoding:NSASCIIStringEncoding] uppercaseString];
+    NSMutableAttributedString *pinyinAttributedString = [[NSMutableAttributedString alloc] initWithString:pinyin attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]}];
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[NSString stringWithFormat:@"(%@)", self.searchBar.text] options:kNilOptions error:nil];
-    NSRange range = NSMakeRange(0, [chengyu.name length]);
-    [regex enumerateMatchesInString:chengyu.name options:kNilOptions range:range usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+    [regex enumerateMatchesInString:chengyu.name options:kNilOptions range:NSMakeRange(0, [chengyu.name length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
         NSRange subStringRange = [result rangeAtIndex:1];
-        [mutableAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:subStringRange];
+        [nameAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:subStringRange];
     }];
-    cell.textLabel.attributedText = mutableAttributedString;
-//    cell.textLabel.text = chengyu.name;
+    [regex enumerateMatchesInString:pinyin options:kNilOptions range:NSMakeRange(0, [pinyin length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        NSRange subStringRange = [result rangeAtIndex:1];
+        [pinyinAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:subStringRange];
+    }];
+    cell.textLabel.attributedText = nameAttributedString;
+    cell.detailTextLabel.attributedText = pinyinAttributedString;
     return cell;
 }
 
@@ -82,12 +89,18 @@
     dispatch_async(queue, ^{
         [searchResults removeAllObjects];
         for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
-            if([cy.name containsString:searchText]){
+            // search name, abbreviation and pinyin.
+//            if([cy.name containsString:searchText]){  // iOS 8 only
+            if([cy.name rangeOfString:searchText].location != NSNotFound){
                 [searchResults addObject:cy];
             }else if([cy.abbr caseInsensitiveCompare:searchText] == NSOrderedSame){
                 [searchResults addObject:cy];
-            }else if([cy.pinyin containsObject:searchText]){
-                [searchResults addObject:cy];
+            }else{
+                for(NSString *py in cy.pinyin){
+                    if([py compare:searchText                                 options:NSDiacriticInsensitiveSearch | NSCaseInsensitiveSearch] == NSOrderedSame){
+                        [searchResults addObject:cy];
+                    }
+                }
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
