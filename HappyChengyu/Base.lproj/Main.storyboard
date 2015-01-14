@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ajw-Ts-3L2">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -289,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="成语接龙设置" id="4Fe-6o-789">
+                            <tableViewSection headerTitle="成语接龙参数" id="4Fe-6o-789">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jOo-vF-fs8">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -388,10 +389,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jCY-AY-xnb">
-                                                    <rect key="frame" x="189" y="8" width="123" height="29"/>
+                                                    <rect key="frame" x="177" y="8" width="135" height="29"/>
                                                     <segments>
                                                         <segment title="男声"/>
                                                         <segment title="女声"/>
+                                                        <segment title="童声"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="switchSpeaker:" destination="EoU-x2-dBq" eventType="valueChanged" id="NaM-W6-GiC"/>
@@ -399,12 +401,12 @@
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="top" secondItem="7h1-cG-JtZ" secondAttribute="topMargin" id="AxC-1y-mud"/>
-                                                <constraint firstItem="I63-LC-mdr" firstAttribute="leading" secondItem="7h1-cG-JtZ" secondAttribute="leadingMargin" constant="12" id="ElA-lU-GAr"/>
-                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="firstBaseline" secondItem="I63-LC-mdr" secondAttribute="firstBaseline" id="Ip5-5C-oF9"/>
-                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="trailing" secondItem="7h1-cG-JtZ" secondAttribute="trailingMargin" id="tEv-Hb-gOS"/>
-                                                <constraint firstItem="I63-LC-mdr" firstAttribute="centerY" secondItem="7h1-cG-JtZ" secondAttribute="centerY" id="uC8-W3-wDi"/>
-                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="leading" secondItem="I63-LC-mdr" secondAttribute="trailing" constant="84" id="vEu-FW-AqU"/>
+                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="leading" secondItem="I63-LC-mdr" secondAttribute="trailing" constant="72" id="4TN-ey-5Dg"/>
+                                                <constraint firstItem="I63-LC-mdr" firstAttribute="leading" secondItem="7h1-cG-JtZ" secondAttribute="leadingMargin" constant="12" id="6vr-4J-362"/>
+                                                <constraint firstItem="I63-LC-mdr" firstAttribute="firstBaseline" secondItem="jCY-AY-xnb" secondAttribute="firstBaseline" id="Gy7-xR-zmQ"/>
+                                                <constraint firstItem="I63-LC-mdr" firstAttribute="centerY" secondItem="7h1-cG-JtZ" secondAttribute="centerY" id="bvp-4I-vJN"/>
+                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="trailing" secondItem="7h1-cG-JtZ" secondAttribute="trailingMargin" id="kks-S7-pRK"/>
+                                                <constraint firstItem="jCY-AY-xnb" firstAttribute="top" secondItem="7h1-cG-JtZ" secondAttribute="topMargin" id="vmF-sD-dua"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

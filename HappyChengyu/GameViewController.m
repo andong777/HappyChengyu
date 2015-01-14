@@ -69,14 +69,6 @@
     }
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    [_iflyRecognizerView cancel];
-    [_iflyRecognizerView setDelegate:nil];
-    
-    [super viewWillDisappear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -294,17 +286,29 @@
 
 - (void)onVoiceSettingsChanged:(NSNotification *)notification {
     BOOL reading = [[[NSUserDefaults standardUserDefaults] objectForKey:kReading] boolValue];
-    BOOL speaker = [[[NSUserDefaults standardUserDefaults] objectForKey:kSpeaker] boolValue];
+    NSString *speaker = [[NSUserDefaults standardUserDefaults] stringForKey:kSpeaker];
     if(reading && !_iFlySpeechSynthesizer){
         _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
         _iFlySpeechSynthesizer.delegate = self;
         [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
         [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
-        [_iFlySpeechSynthesizer setParameter:speaker ? @"xiaoyu" : @"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+        NSString *voice = @"xiaoyan";
+        if([speaker isEqualToString:@"man"]){
+            voice = @"xiaoyu";
+        }else if([speaker isEqualToString:@"child"]){
+            voice = @"vinn";
+        }
+        [_iFlySpeechSynthesizer setParameter:voice forKey: [IFlySpeechConstant VOICE_NAME]];
         [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
         [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
     }else if(reading){
-        [_iFlySpeechSynthesizer setParameter:speaker ? @"xiaoyu" : @"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+        NSString *voice = @"xiaoyan";
+        if([speaker isEqualToString:@"man"]){
+            voice = @"xiaoyu";
+        }else if([speaker isEqualToString:@"child"]){
+            voice = @"vinn";
+        }
+        [_iFlySpeechSynthesizer setParameter:voice forKey: [IFlySpeechConstant VOICE_NAME]];
     }else if(!reading && _iFlySpeechSynthesizer){
         _iFlySpeechSynthesizer = nil;
     }

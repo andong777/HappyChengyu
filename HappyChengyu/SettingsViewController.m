@@ -52,12 +52,19 @@
         _readingSwitch.on = NO;
         _speakerSwitch.enabled = NO;
     }
-    NSNumber *speaker = [defaults objectForKey:kSpeaker];
-    if(speaker && [speaker boolValue]){
-        _speakerSwitch.selectedSegmentIndex = 0;    // YES: man
+    NSString *speaker = [defaults stringForKey:kSpeaker];
+    if([speaker isEqualToString:@"man"]){
+        _speakerSwitch.selectedSegmentIndex = 0;
+    }else if ([speaker isEqualToString:@"child"]){
+        _speakerSwitch.selectedSegmentIndex = 2;
     }else{
-        _speakerSwitch.selectedSegmentIndex = 1;    // NO: woman
+        _speakerSwitch.selectedSegmentIndex = 1; // woman by default
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,9 +103,11 @@
 - (IBAction)switchSpeaker:(UISegmentedControl *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(sender.selectedSegmentIndex == 0){
-        [defaults setObject:@(YES) forKey:kSpeaker];
+        [defaults setObject:@"man" forKey:kSpeaker];
+    }else if(sender.selectedSegmentIndex == 2){
+        [defaults setObject:@"child" forKey:kSpeaker];
     }else{
-        [defaults setObject:@(NO) forKey:kSpeaker];
+        [defaults setObject:@"woman" forKey:kSpeaker];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"VoiceSettingsChanged" object:self];
 }
