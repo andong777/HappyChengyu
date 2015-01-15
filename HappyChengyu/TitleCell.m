@@ -16,7 +16,6 @@
         self.label = [[UILabel alloc] init];
         self.label.opaque = NO;
         self.label.textAlignment = NSTextAlignmentCenter;
-        self.label.font = [UIFont systemFontOfSize:24.f];
         [self.contentView addSubview:self.label];
     }
     return self;

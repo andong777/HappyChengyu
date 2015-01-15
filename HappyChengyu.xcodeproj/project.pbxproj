@@ -34,6 +34,7 @@
 		767AB24C1A65661500800ED2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AB2451A6564B300800ED2 /* CoreTelephony.framework */; };
 		767AD4F41A6398F9002B9E9C /* TitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4F31A6398F9002B9E9C /* TitleCell.m */; };
 		767AD4F71A63B10D002B9E9C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4F61A63B10D002B9E9C /* SearchViewController.m */; };
+		767CEB9C1A680FAD0047688C /* 方正清刻本悦宋简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 767CEB9B1A680FAD0047688C /* 方正清刻本悦宋简体.TTF */; };
 		768189181A60048A008DD226 /* FavoritesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 768189171A60048A008DD226 /* FavoritesHelper.m */; };
 		76DBF6DF1A5E72D0009543E4 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DBF6DE1A5E72D0009543E4 /* ResultViewController.m */; };
 		76DECBBB1A5ECB1000124AF4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DECBBA1A5ECB1000124AF4 /* FavoritesViewController.m */; };
@@ -95,6 +96,7 @@
 		767AD4F31A6398F9002B9E9C /* TitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleCell.m; sourceTree = "<group>"; };
 		767AD4F51A63B10D002B9E9C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		767AD4F61A63B10D002B9E9C /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		767CEB9B1A680FAD0047688C /* 方正清刻本悦宋简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "方正清刻本悦宋简体.TTF"; path = "../../../Desktop/方正清刻本悦宋简体.TTF"; sourceTree = "<group>"; };
 		768189161A60048A008DD226 /* FavoritesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesHelper.h; path = HappyChengyu/FavoritesHelper.h; sourceTree = "<group>"; };
 		768189171A60048A008DD226 /* FavoritesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesHelper.m; path = HappyChengyu/FavoritesHelper.m; sourceTree = "<group>"; };
 		76DBF6DD1A5E72D0009543E4 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		7658C3421A58D01D0062C946 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				767CEB9B1A680FAD0047688C /* 方正清刻本悦宋简体.TTF */,
 				7658C3431A58D01D0062C946 /* Info.plist */,
 				7658C3441A58D01D0062C946 /* main.m */,
 			);
@@ -392,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7658C34E1A58D01D0062C946 /* Main.storyboard in Resources */,
+				767CEB9C1A680FAD0047688C /* 方正清刻本悦宋简体.TTF in Resources */,
 				7658C3531A58D01D0062C946 /* LaunchScreen.xib in Resources */,
 				766F4ED11A5A7E8B002FB3FF /* test.json in Resources */,
 				7658C3501A58D01D0062C946 /* Images.xcassets in Resources */,

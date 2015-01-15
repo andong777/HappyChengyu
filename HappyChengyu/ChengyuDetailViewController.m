@@ -10,6 +10,7 @@
 #import "FavoritesHelper.h"
 #import "Chengyu.h"
 #import <ChameleonFramework/Chameleon.h>
+#import "Constants.h"
 
 @interface ChengyuDetailViewController ()
 
@@ -44,7 +45,7 @@
     _nameText = [[UILabel alloc] initWithFrame:nameFrame];
     _nameText.text = _chengyu.name;
     _nameText.textAlignment = NSTextAlignmentCenter;
-    _nameText.font = [UIFont systemFontOfSize:32.f];
+    _nameText.font = [UIFont fontWithName:kYueSongFontName size:32.f];
     [self setBackgroundAndTextColor:_nameText];
     [self.view addSubview:_nameText];
     

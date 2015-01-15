@@ -26,6 +26,7 @@
     // 初始化语音朗读和语音识别组件
     NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@, timeout=%@",@"54b4720d", @"20000"];
     [IFlySpeechUtility createUtility:initString];
+    
     return YES;
 }
 

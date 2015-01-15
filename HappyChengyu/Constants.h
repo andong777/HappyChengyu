@@ -13,5 +13,6 @@
 #define kTone @"Tone"
 #define kReading @"Reading"
 #define kSpeaker @"Speaker"
+#define kYueSongFontName @"FZQKBYSJW--GB1-0"
 
 #endif
