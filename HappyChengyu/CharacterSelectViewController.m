@@ -10,10 +10,12 @@
 #import "ChengyuSelectViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
-#import "CustomCell.h"
+#import "TitleCell.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface CharacterSelectViewController (){
-    NSMutableOrderedSet *startSet;
+    NSArray *characters;
+    NSMutableArray *colorArray;
 }
 
 @end
@@ -28,9 +30,9 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
 
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     flowLayout.headerReferenceSize = CGSizeMake(100, 25);
-    [self.collectionView registerClass:[CustomCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier];
+    [self.collectionView registerClass:[TitleCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier];
     
-    startSet = [NSMutableOrderedSet orderedSetWithCapacity:100];
+    NSMutableOrderedSet *startSet = [NSMutableOrderedSet orderedSet];
     for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
         NSString *theLetter = [cy.abbr substringToIndex:1];
         if([theLetter isEqualToString:_firstLetter]){
@@ -38,6 +40,9 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
             [startSet addObject:firstCharacter];
         }
     }
+    characters = [startSet array];
+    
+    colorArray = [[NSMutableArray alloc] initWithArray:[NSArray arrayOfColorsWithColorScheme:ColorSchemeAnalogous for:self.color                                                                                                 flatScheme:NO]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +58,9 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         ChengyuSelectViewController *vc = segue.destinationViewController;
-        vc.firstCharacter = [startSet objectAtIndex:indexPath.row];
+        vc.firstCharacter = [characters objectAtIndex:indexPath.row];
+        TitleCell *selectedCell = (TitleCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        vc.color = selectedCell.label.backgroundColor;
     }
 }
 
@@ -65,19 +72,23 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [startSet count];
+    return [characters count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.label.text = [startSet objectAtIndex:indexPath.row];
+    TitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.label.text = [characters objectAtIndex:indexPath.row];
+    cell.label.backgroundColor = [colorArray objectAtIndex:indexPath.row % [colorArray count]];
+    cell.label.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:cell.label.backgroundColor isFlat:YES];
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if([kind isEqualToString:UICollectionElementKindSectionHeader]){
-        CustomCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier forIndexPath:indexPath];
+        TitleCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier forIndexPath:indexPath];
         headerView.label.text = _firstLetter;
+        headerView.label.backgroundColor = self.color;
+        headerView.label.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:headerView.label.backgroundColor isFlat:YES];
         return headerView;
     }
     return nil;

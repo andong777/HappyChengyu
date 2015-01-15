@@ -6,22 +6,24 @@
 //  Copyright (c) 2015年 AN Dong. All rights reserved.
 //
 
-#import "CustomCell.h"
+#import "TitleCell.h"
 
-@implementation CustomCell
+@implementation TitleCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self){
-        self.label = [[UILabel alloc] initWithFrame:self.contentView.bounds];
+        self.label = [[UILabel alloc] init];
         self.label.opaque = NO;
-        self.label.backgroundColor = [UIColor lightGrayColor];
-        self.label.textColor = [UIColor blackColor];
         self.label.textAlignment = NSTextAlignmentCenter;
         self.label.font = [UIFont systemFontOfSize:24.f];
         [self.contentView addSubview:self.label];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    self.label.frame = self.contentView.bounds;
 }
 
 @end

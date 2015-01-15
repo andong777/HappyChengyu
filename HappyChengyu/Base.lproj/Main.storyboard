@@ -52,7 +52,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="区分声调" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yW-O3-va1">
-                                        <rect key="frame" x="10" y="68.5" width="83" height="20.5"/>
+                                        <rect key="frame" x="10" y="68" width="83" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                         <rect key="frame" x="101" y="63" width="51" height="31"/>
                                     </switch>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="OhO-7V-3H8" firstAttribute="width" secondItem="1yW-O3-va1" secondAttribute="width" id="6iq-aZ-kZg"/>
                                     <constraint firstAttribute="trailing" secondItem="liI-f3-E2Z" secondAttribute="trailing" constant="10" id="7I7-b3-4ma"/>
@@ -85,12 +85,15 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEi-NC-z2a">
-                                <rect key="frame" x="80" y="366" width="160" height="30"/>
+                                <rect key="frame" x="100" y="366" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.52106726169586182" green="0.24050712585449219" blue="0.68248951435089111" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="evQ-eG-Ib2"/>
+                                    <constraint firstAttribute="width" constant="120" id="EkG-iX-cfj"/>
+                                    <constraint firstAttribute="height" constant="40" id="evQ-eG-Ib2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="开始成语接龙">
+                                    <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -106,7 +109,6 @@
                             <constraint firstAttribute="centerY" secondItem="AuP-K9-LP6" secondAttribute="centerY" id="Hep-Gj-Xxm"/>
                             <constraint firstAttribute="centerX" secondItem="SEi-NC-z2a" secondAttribute="centerX" id="RWN-3B-2nD"/>
                             <constraint firstItem="AuP-K9-LP6" firstAttribute="width" secondItem="cgY-wE-gL4" secondAttribute="width" multiplier="0.5" id="dpo-tc-nWg"/>
-                            <constraint firstItem="AuP-K9-LP6" firstAttribute="width" secondItem="SEi-NC-z2a" secondAttribute="width" id="eWL-Of-HTY"/>
                             <constraint firstAttribute="centerX" secondItem="AuP-K9-LP6" secondAttribute="centerX" id="jhr-yN-3PW"/>
                         </constraints>
                     </view>
@@ -215,15 +217,15 @@
                             <inset key="sectionInset" minX="4" minY="4" maxX="4" maxY="4"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="yPM-sD-b7g" customClass="CustomCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="yPM-sD-b7g" customClass="TitleCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-cJ-caO">
-                                            <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-cJ-caO">
+                                            <rect key="frame" x="8" y="8" width="59" height="59"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -231,7 +233,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="AUa-cJ-caO" firstAttribute="top" secondItem="yPM-sD-b7g" secondAttribute="topMargin" id="bdQ-dx-yg4"/>
                                     <constraint firstItem="AUa-cJ-caO" firstAttribute="leading" secondItem="yPM-sD-b7g" secondAttribute="leadingMargin" id="eOE-sd-69O"/>
@@ -564,7 +566,7 @@
                             <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="OZ9-u8-XzE" customClass="CustomCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="OZ9-u8-XzE" customClass="TitleCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1007,6 +1009,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0VX-r6-nyS"/>
+        <segue reference="x0f-PN-ykH"/>
     </inferredMetricsTieBreakers>
 </document>

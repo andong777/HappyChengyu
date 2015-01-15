@@ -8,13 +8,14 @@
 
 #import "LetterSelectViewController.h"
 #import "CharacterSelectViewController.h"
-#import "CustomCell.h"
+#import "TitleCell.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 #import <VCTransitionsLibrary/CEExplodeAnimationController.h>
+#import <ChameleonFramework/Chameleon.h>
 
 @interface LetterSelectViewController ()<UINavigationControllerDelegate>{
-    NSMutableOrderedSet *startSet;
+    NSArray *letters;
 }
 
 @end
@@ -26,7 +27,7 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    startSet = [NSMutableOrderedSet orderedSetWithCapacity:26];
+    NSMutableOrderedSet *startSet = [NSMutableOrderedSet orderedSetWithCapacity:26];
     for(Chengyu *cy in [ChengyuHelper sharedInstance].chengyuList){
         NSString *firstLetter = [cy.abbr substringToIndex:1];
         [startSet addObject:firstLetter];
@@ -34,7 +35,7 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
     [startSet sortUsingComparator:^(id obj1, id obj2) {
         return [obj1 compare:obj2];
     }];
-    
+    letters = [startSet array];
     self.navigationController.delegate = self;
 }
 
@@ -51,7 +52,9 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         CharacterSelectViewController *vc = segue.destinationViewController;
-        vc.firstLetter = [startSet objectAtIndex:indexPath.row];
+        vc.firstLetter = [letters objectAtIndex:indexPath.row];
+        TitleCell *selectedCell = (TitleCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        vc.color = selectedCell.label.backgroundColor;
     }
 }
 
@@ -59,12 +62,15 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [startSet count];
+    return [letters count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.label.text = [startSet objectAtIndex:indexPath.row];
+    TitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.label.text = [letters objectAtIndex:indexPath.row];
+    UIColor *backgroundColor = [UIColor colorWithRandomFlatColorOfShadeStyle:UIShadeStyleLight];
+    cell.label.backgroundColor = backgroundColor;
+    cell.label.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:backgroundColor isFlat:YES];
     return cell;
 }
 
@@ -75,7 +81,7 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 (UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation                                               fromViewController:(UIViewController *)fromVC                                                  toViewController:(UIViewController *)toVC {
     // reverse the animation for 'pop' transitions
     CEReversibleAnimationController *animator = [self animator];
-    animator.duration = 1;
+    animator.duration = 0.8;
     animator.reverse = (operation == UINavigationControllerOperationPush);
     return animator;
 }

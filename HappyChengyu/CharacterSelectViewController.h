@@ -10,6 +10,7 @@
 
 @interface CharacterSelectViewController : UICollectionViewController
 
-@property (nonatomic, strong) NSString *firstLetter;
+@property (nonatomic, copy) NSString *firstLetter;
+@property (nonatomic, copy) UIColor *color;
 
 @end

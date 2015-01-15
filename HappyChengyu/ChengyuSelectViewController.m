@@ -10,9 +10,10 @@
 #import "ChengyuDetailViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface ChengyuSelectViewController (){
-    NSMutableArray *chengyus;
+    NSArray *chengyus;
 }
 
 @end
@@ -22,10 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    chengyus = [[[ChengyuHelper sharedInstance] findAllWithFirstCharacter:_firstCharacter] mutableCopy];
+    chengyus = [[ChengyuHelper sharedInstance] findAllWithFirstCharacter:_firstCharacter];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.tableView.backgroundColor = self.color;
     [self.tableView reloadData];
 }
 
@@ -42,6 +44,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         ChengyuDetailViewController *vc = segue.destinationViewController;
         vc.chengyu = [chengyus objectAtIndex:indexPath.row];
+        vc.color = self.color;
     }
 }
 
@@ -64,9 +67,19 @@
     static NSString *identifier = @"ChengyuCellReuseIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     Chengyu *chengyu = [chengyus objectAtIndex:indexPath.row];
+    cell.backgroundColor = self.color;
     cell.textLabel.text = chengyu.name;
     cell.detailTextLabel.text = [chengyu.pinyin componentsJoinedByString:@" "];
+    cell.detailTextLabel.textColor = cell.textLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:cell.backgroundColor isFlat:YES];
     return cell;
+}
+
+
+#pragma mark <UITableViewDelegate>
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.textLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:self.color isFlat:YES];
 }
 
 @end

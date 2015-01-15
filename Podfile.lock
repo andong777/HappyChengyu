@@ -10,7 +10,7 @@ DEPENDENCIES:
   - ChameleonFramework
   - Mantle
   - MBProgressHUD (~> 0.8)
-  - VCTransitionsLibrary
+  - VCTransitionsLibrary (~> 1.5.0)
 
 SPEC CHECKSUMS:
   ChameleonFramework: c60096686e3771f5d78f26cfbfd08955a8a88cbd

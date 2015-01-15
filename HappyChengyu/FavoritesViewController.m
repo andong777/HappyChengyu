@@ -10,9 +10,11 @@
 #import "ChengyuDetailViewController.h"
 #import "FavoritesHelper.h"
 #import "Chengyu.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface FavoritesViewController (){
     NSDictionary *_favorites;
+    NSMutableDictionary *_colors;
 }
 
 @end
@@ -24,6 +26,7 @@
     
     _favorites = [FavoritesHelper sharedInstance].favorites;
     NSLog(@"favorites: %lu", (unsigned long)[_favorites count]);
+    _colors = [NSMutableDictionary dictionary];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,8 +62,14 @@
     NSString *key = [self tableView:tableView titleForHeaderInSection:indexPath.section];
     Chengyu *chengyu = [[_favorites valueForKey:key] objectAtIndex:indexPath.row];
     cell.textLabel.text = chengyu.name;
-    NSLog(@"favorite: %@", chengyu.name);
     cell.detailTextLabel.text = [chengyu.pinyin componentsJoinedByString:@" "];
+    UIColor *sectionColor = [_colors valueForKey:key];
+    if(!sectionColor){
+        sectionColor = [UIColor colorWithRandomFlatColorOfShadeStyle:UIShadeStyleLight];
+        [_colors setValue:sectionColor forKey:key];
+    }
+    cell.backgroundColor = sectionColor;
+    cell.textLabel.textColor = cell.detailTextLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:sectionColor isFlat:YES];
     return cell;
 }
 
@@ -87,6 +96,21 @@
 }
 
 
+#pragma mark <UITableViewDelegate>
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    NSString *key = [self tableView:tableView titleForHeaderInSection:section];
+    UIColor *sectionColor = [_colors valueForKey:key];
+    if(!sectionColor){
+        sectionColor = [UIColor colorWithRandomFlatColorOfShadeStyle:UIShadeStyleLight];
+        [_colors setValue:sectionColor forKey:key];
+    }
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.contentView.backgroundColor = sectionColor;
+    header.textLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:sectionColor isFlat:YES];
+}
+
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -94,6 +118,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSString *key = [self tableView:self.tableView titleForHeaderInSection:indexPath.section];
     vc.chengyu = [_favorites[key] objectAtIndex:indexPath.row];
+    vc.color = _colors[key];
     vc.fromFavorite = YES;
 }
 

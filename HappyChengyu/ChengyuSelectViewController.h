@@ -10,6 +10,7 @@
 
 @interface ChengyuSelectViewController : UITableViewController
 
-@property (nonatomic, strong) NSString *firstCharacter;
+@property (nonatomic, copy) NSString *firstCharacter;
+@property (nonatomic, copy) UIColor *color;
 
 @end

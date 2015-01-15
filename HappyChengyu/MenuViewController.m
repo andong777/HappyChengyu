@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "GameViewController.h"
 #import "Constants.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface MenuViewController ()
 
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.bounds andColors:@[FlatYellow, FlatWatermelon]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,6 +45,11 @@
             _toneSwitch.on = NO;
         }
     }
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {

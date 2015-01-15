@@ -4,7 +4,7 @@
 target 'HappyChengyu' do
 	pod 'Mantle'
 	pod 'MBProgressHUD', '~> 0.8'
-    pod 'VCTransitionsLibrary'
+    pod 'VCTransitionsLibrary', '~> 1.5.0'
     pod 'ChameleonFramework'
 end
 

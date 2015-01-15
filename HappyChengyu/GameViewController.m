@@ -12,6 +12,7 @@
 #import "Chengyu.h"
 #import "ResultViewController.h"
 #import <MBProgressHUD.h>
+#import <ChameleonFramework/Chameleon.h>
 #import <iflyMSC/IFlySpeechSynthesizerDelegate.h>
 #import <iflyMSC/IFlySpeechSynthesizer.h>
 #import <iflyMSC/IFlyRecognizerViewDelegate.h>

@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) Chengyu *chengyu;
 @property (nonatomic, assign) BOOL fromFavorite;
+@property (nonatomic, copy) UIColor *color;
 
 @end
