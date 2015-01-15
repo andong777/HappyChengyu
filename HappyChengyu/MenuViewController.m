@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.bounds andColors:@[FlatSand, FlatSand]];
+    self.view.backgroundColor = [UIColor flatSandColor];
     
     _startButton.layer.cornerRadius = 5;
     _startButton.layer.borderWidth = 1.5;
