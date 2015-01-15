@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *characterSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *toneSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 - (IBAction)toggleCharacterSwitch:(UISwitch *)sender;
 
@@ -26,6 +27,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.bounds andColors:@[FlatYellow, FlatWatermelon]];
+    
+    _startButton.layer.cornerRadius = 5;
+    _startButton.layer.borderWidth = 1.5;
+    _startButton.layer.borderColor = [UIColor flatGrayColor].CGColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

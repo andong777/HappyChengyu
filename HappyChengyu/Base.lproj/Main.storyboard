@@ -37,24 +37,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开心成语接龙" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-K2-jay">
-                                <rect key="frame" x="52" y="84" width="216" height="43"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-K9-LP6">
                                 <rect key="frame" x="80" y="222" width="160" height="124"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="区分汉字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhO-7V-3H8">
                                         <rect key="frame" x="10" y="34" width="83" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="区分声调" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yW-O3-va1">
                                         <rect key="frame" x="10" y="68" width="83" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="liI-f3-E2Z">
@@ -86,36 +81,42 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEi-NC-z2a">
                                 <rect key="frame" x="100" y="366" width="120" height="40"/>
-                                <color key="backgroundColor" red="0.52106726169586182" green="0.24050712585449219" blue="0.68248951435089111" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="EkG-iX-cfj"/>
                                     <constraint firstAttribute="height" constant="40" id="evQ-eG-Ib2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="开始成语接龙">
-                                    <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="1mt-rp-PMm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开心成语接龙" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-K2-jay">
+                                <rect key="frame" x="52" y="119" width="216" height="43"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SEi-NC-z2a" firstAttribute="top" secondItem="AuP-K9-LP6" secondAttribute="bottom" constant="20" id="2fz-Vs-NjY"/>
-                            <constraint firstItem="N4o-K2-jay" firstAttribute="top" secondItem="Lfg-rE-Isn" secondAttribute="bottom" constant="20" id="Cpl-lO-TTN"/>
                             <constraint firstAttribute="centerX" secondItem="N4o-K2-jay" secondAttribute="centerX" id="FeT-II-DE9"/>
                             <constraint firstAttribute="centerY" secondItem="AuP-K9-LP6" secondAttribute="centerY" id="Hep-Gj-Xxm"/>
                             <constraint firstAttribute="centerX" secondItem="SEi-NC-z2a" secondAttribute="centerX" id="RWN-3B-2nD"/>
                             <constraint firstItem="AuP-K9-LP6" firstAttribute="width" secondItem="cgY-wE-gL4" secondAttribute="width" multiplier="0.5" id="dpo-tc-nWg"/>
                             <constraint firstAttribute="centerX" secondItem="AuP-K9-LP6" secondAttribute="centerX" id="jhr-yN-3PW"/>
+                            <constraint firstItem="AuP-K9-LP6" firstAttribute="top" secondItem="N4o-K2-jay" secondAttribute="bottom" constant="60" id="vpX-HC-Bjt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="u2L-Be-L1T"/>
                     <navigationItem key="navigationItem" id="sdQ-Rs-DN0"/>
                     <connections>
                         <outlet property="characterSwitch" destination="liI-f3-E2Z" id="OYO-6w-cbU"/>
+                        <outlet property="startButton" destination="SEi-NC-z2a" id="kCS-6Y-3Da"/>
                         <outlet property="toneSwitch" destination="bgu-qS-XOc" id="jdu-Wl-Lft"/>
                     </connections>
                 </viewController>
@@ -709,7 +710,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOH-bG-a29">
-                                <rect key="frame" x="16" y="358" width="224" height="30"/>
+                                <rect key="frame" x="16" y="358" width="238" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
@@ -719,6 +720,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-ap-f7u">
                                 <rect key="frame" x="274" y="358" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="1qL-ht-J6D"/>
+                                </constraints>
                                 <state key="normal" title="确定">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -749,13 +753,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-78-Yro">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-78-Yro">
                                 <rect key="frame" x="120" y="398" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="oEE-Oe-1yz"/>
                                     <constraint firstAttribute="width" constant="80" id="rKp-EZ-1sE"/>
                                 </constraints>
-                                <state key="normal" title="语音输入">
+                                <state key="normal" backgroundImage="microphone">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -800,6 +804,7 @@
                             <constraint firstItem="0tN-sM-xKu" firstAttribute="centerY" secondItem="VUN-C8-txm" secondAttribute="centerY" id="OLn-AE-Opy"/>
                             <constraint firstItem="7l2-tD-27G" firstAttribute="top" secondItem="6DC-bn-6Vi" secondAttribute="bottom" constant="3" id="Phj-0V-zk9"/>
                             <constraint firstItem="7l2-tD-27G" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.2" id="SAm-2y-hdm"/>
+                            <constraint firstItem="4bo-ap-f7u" firstAttribute="leading" secondItem="AOH-bG-a29" secondAttribute="trailing" constant="20" id="SPa-Kr-0ks"/>
                             <constraint firstAttribute="centerX" secondItem="S3r-0g-hvY" secondAttribute="centerX" id="Sal-bB-TEZ"/>
                             <constraint firstItem="0tN-sM-xKu" firstAttribute="top" secondItem="7l2-tD-27G" secondAttribute="bottom" constant="8" id="W6P-FI-Y1Y"/>
                             <constraint firstItem="4bo-ap-f7u" firstAttribute="centerY" secondItem="AOH-bG-a29" secondAttribute="centerY" id="WJJ-iU-bI6"/>
@@ -808,7 +813,6 @@
                             <constraint firstItem="6DC-bn-6Vi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="dwu-cU-ULq"/>
                             <constraint firstItem="S3r-0g-hvY" firstAttribute="width" secondItem="Jl0-i3-RIM" secondAttribute="width" id="ec9-eL-Yaa"/>
                             <constraint firstItem="Jl0-i3-RIM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ekS-er-QhG"/>
-                            <constraint firstItem="AOH-bG-a29" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.7" id="fJl-dC-LmF"/>
                             <constraint firstItem="AOH-bG-a29" firstAttribute="top" secondItem="hBa-Oy-2VO" secondAttribute="bottom" constant="8" id="fwM-2v-bXG"/>
                             <constraint firstItem="K3V-78-Yro" firstAttribute="top" secondItem="AOH-bG-a29" secondAttribute="bottom" constant="10" id="g8O-ND-1YD"/>
                             <constraint firstItem="4bo-ap-f7u" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="nNU-3o-Ack"/>
@@ -824,7 +828,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="U0o-0C-onW"/>
                     <navigationItem key="navigationItem" title="成语接龙" id="xbT-FK-S9k">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kAa-p9-XlH">
+                        <barButtonItem key="leftBarButtonItem" title="结束" id="kAa-p9-XlH">
                             <connections>
                                 <action selector="clickQuit:" destination="vXZ-lx-hvc" id="PtP-Nb-Bdr"/>
                             </connections>
@@ -973,9 +977,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="结束" id="ndR-17-PyP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="b1g-Te-1GD">
+                        <barButtonItem key="leftBarButtonItem" title="返回首页" id="Nsg-vy-Mzw">
                             <connections>
-                                <action selector="clickReturn:" destination="qMk-bY-HET" id="Gko-Vn-AjU"/>
+                                <action selector="clickReturn:" destination="qMk-bY-HET" id="SKn-lX-bSO"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="zZb-kv-KXc">
@@ -999,6 +1003,7 @@
     <resources>
         <image name="favorites" width="32" height="32"/>
         <image name="folder" width="32" height="32"/>
+        <image name="microphone" width="512" height="512"/>
         <image name="running" width="32" height="32"/>
         <image name="search" width="32" height="32"/>
         <image name="sliders" width="32" height="32"/>
