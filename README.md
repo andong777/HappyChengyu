@@ -20,4 +20,6 @@ A chengyu-linking iOS APP for entertainment
 - ~~美化成语大全界面，加入搜索条；~~
 - ~~加入语音输入和语音朗读功能；~~
 - ~~加入配色；~~
+- cell在iPhone 6上的显示问题；
+- 重构Detail View；
 - 启动屏幕和Logo；
