@@ -105,8 +105,14 @@
         sectionColor = [UIColor colorWithRandomFlatColorOfShadeStyle:UIShadeStyleLight];
         [_colors setValue:sectionColor forKey:key];
     }
+    NSString *lastKey = section > 0 ? [self tableView:tableView titleForHeaderInSection:section - 1] : nil;
+    UIColor *lastSectionColor = [_colors valueForKey:lastKey];
+    if(!lastSectionColor){
+        lastSectionColor = [UIColor flatWhiteColor];
+    }
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.contentView.backgroundColor = sectionColor;
+    header.contentView.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:header.bounds andColors:@[lastSectionColor, sectionColor]];
+//    header.contentView.backgroundColor = sectionColor;
     header.textLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:sectionColor isFlat:YES];
 }
 

@@ -28,8 +28,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor flatSandColor];
     
-    _startButton.layer.cornerRadius = 5;
-    _startButton.layer.borderWidth = 1.5;
+    _startButton.layer.cornerRadius = 10;
+    _startButton.layer.borderWidth = 1;
     _startButton.layer.borderColor = [UIColor flatGrayColor].CGColor;
 }
 

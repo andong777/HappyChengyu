@@ -12,7 +12,6 @@
 #import "Chengyu.h"
 #import "ResultViewController.h"
 #import <MBProgressHUD.h>
-#import <ChameleonFramework/Chameleon.h>
 #import <iflyMSC/IFlySpeechSynthesizerDelegate.h>
 #import <iflyMSC/IFlySpeechSynthesizer.h>
 #import <iflyMSC/IFlyRecognizerViewDelegate.h>
@@ -57,6 +56,13 @@
     [self setupSpeechRecognizer];
     
     _detailSwitch.selectedSegmentIndex = 0;
+    _detailText.layer.cornerRadius = 5;
+    _detailText.layer.borderWidth = 1;
+    _detailText.layer.borderColor = [UIColor blueColor].CGColor;
+    _checkButton.layer.cornerRadius = 10;
+    _checkButton.layer.borderWidth = 1;
+    _checkButton.layer.borderColor = [UIColor blueColor].CGColor;
+    
     [self doRestart];
 }
 
@@ -338,7 +344,7 @@
 }
 
 - (void)onError: (IFlySpeechError *) error {
-    [self setErrorInfo:@"识别结束"];
+//    [self setErrorInfo:@"识别结束"];
     NSLog(@"recognize error: %@", error.errorDesc);
 }
 
