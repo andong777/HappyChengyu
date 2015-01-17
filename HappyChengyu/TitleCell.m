@@ -13,16 +13,11 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self){
-        self.label = [[UILabel alloc] init];
-        self.label.opaque = NO;
+        self.label = [[UILabel alloc] initWithFrame:self.contentView.bounds];
         self.label.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:self.label];
     }
     return self;
-}
-
-- (void)layoutSubviews {
-    self.label.frame = self.contentView.bounds;
 }
 
 @end

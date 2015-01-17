@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 AN Dong. All rights reserved.
 //
 
-#import "ChengyuDetailViewController.h"
+#import "ChengyuLegacyDetailViewController.h"
 #import "FavoritesHelper.h"
 #import "Chengyu.h"
 #import <ChameleonFramework/Chameleon.h>
 #import "Constants.h"
 
-@interface ChengyuDetailViewController ()
+@interface ChengyuLegacyDetailViewController ()
 
 @property (strong, nonatomic) UILabel *nameText;
 @property (strong, nonatomic) UILabel *pinyinText;
@@ -23,7 +23,7 @@
 - (void)clickAddOrRemove:(id)sender;
 @end
 
-@implementation ChengyuDetailViewController
+@implementation ChengyuLegacyDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

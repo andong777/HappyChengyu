@@ -8,7 +8,7 @@
 
 #import "LetterSelectViewController.h"
 #import "CharacterSelectViewController.h"
-#import "TitleCell.h"
+#import "LetterCell.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 #import <VCTransitionsLibrary/CEExplodeAnimationController.h>
@@ -53,8 +53,8 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         CharacterSelectViewController *vc = segue.destinationViewController;
         vc.firstLetter = [letters objectAtIndex:indexPath.row];
-        TitleCell *selectedCell = (TitleCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-        vc.color = selectedCell.label.backgroundColor;
+        LetterCell *selectedCell = (LetterCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        vc.color = selectedCell.backgroundColor;
     }
 }
 
@@ -66,10 +66,10 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    LetterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [letters objectAtIndex:indexPath.row];
     UIColor *backgroundColor = [UIColor colorWithRandomFlatColorOfShadeStyle:UIShadeStyleLight];
-    cell.label.backgroundColor = backgroundColor;
+    cell.backgroundColor = backgroundColor;
     cell.label.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:backgroundColor isFlat:YES];
     return cell;
 }
@@ -80,14 +80,11 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:
 (UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation                                               fromViewController:(UIViewController *)fromVC                                                  toViewController:(UIViewController *)toVC {
     // reverse the animation for 'pop' transitions
-    CEReversibleAnimationController *animator = [self animator];
-    animator.duration = 0.8;
-    animator.reverse = (operation == UINavigationControllerOperationPush);
-    return animator;
-}
-
-- (CEReversibleAnimationController *)animator {
-    return [CEExplodeAnimationController new];
+//    CEReversibleAnimationController *animator = [CEExplodeAnimationController new];
+//    animator.duration = 0.8;
+//    animator.reverse = (operation == UINavigationControllerOperationPush);
+//    return animator;
+    return nil;
 }
 
 @end

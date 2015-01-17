@@ -47,13 +47,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"sections: %lu", (unsigned long)[_favorites count]);
     return [_favorites count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSString *key = [self tableView:tableView titleForHeaderInSection:section];
-    NSLog(@"key %@ has %lu items", key, (unsigned long)[[_favorites valueForKey:key] count]);
     return [[_favorites valueForKey:key] count];
 }
 

@@ -10,6 +10,7 @@
 #import "ChengyuSelectViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
+#import "CharacterCell.h"
 #import "TitleCell.h"
 #import <ChameleonFramework/Chameleon.h>
 
@@ -59,7 +60,7 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         ChengyuSelectViewController *vc = segue.destinationViewController;
         vc.firstCharacter = [characters objectAtIndex:indexPath.row];
-        TitleCell *selectedCell = (TitleCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        CharacterCell *selectedCell = (CharacterCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
         vc.color = selectedCell.label.backgroundColor;
     }
 }
@@ -76,7 +77,7 @@ static NSString * const headerReuseIdentifier = @"HeaderReuseIdentifier";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CharacterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.label.text = [characters objectAtIndex:indexPath.row];
     cell.label.backgroundColor = [colorArray objectAtIndex:indexPath.row % [colorArray count]];
     cell.label.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:cell.label.backgroundColor isFlat:YES];

@@ -7,7 +7,7 @@
 //
 
 #import "SearchViewController.h"
-#import "ChengyuDetailViewController.h"
+#import "ChengyuLegacyDetailViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 
@@ -114,7 +114,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    ChengyuDetailViewController *vc = segue.destinationViewController;
+    ChengyuLegacyDetailViewController *vc = segue.destinationViewController;
     vc.chengyu = [searchResults objectAtIndex:indexPath.row];
 }
 
