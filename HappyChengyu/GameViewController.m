@@ -82,6 +82,7 @@
 }
 
 - (void)doRestart {
+    NSLog(@"restart");
     chances = 3;
     _hintButton.enabled = YES;
     [_hintButton setTitle:[NSString stringWithFormat:@"提示(%lu)", (unsigned long)chances] forState:UIControlStateNormal];
@@ -95,14 +96,7 @@
 - (void)doCheck {
     NSString *content = _answerText.text;
     NSError *error = nil;
-    Chengyu *validChengyu = nil;
-    if(_includeCharacter){
-        NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
-        validChengyu = [[ChengyuHelper sharedInstance] checkValidByName:content andCharacter:theCharacter error:&error];
-    }else{
-        NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
-        validChengyu = [[ChengyuHelper sharedInstance] checkValidByName:content andPinyin:thePinyin includingTone:_includeTone error:&error];
-    }
+    Chengyu *validChengyu = [self checkText:content error:&error];
     if(validChengyu){
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeCustomView;
@@ -122,6 +116,18 @@
         }
         [self setErrorInfo:errorInfo];
     }
+}
+
+- (Chengyu *)checkText:(NSString *)text error:(NSError **)error {
+    Chengyu *result = nil;
+    if(_includeCharacter){
+        NSString *theCharacter = [currentChengyu.name substringFromIndex:[currentChengyu.name length] - 1];
+        result = [[ChengyuHelper sharedInstance] checkValidByName:text andCharacter:theCharacter error:error];
+    }else{
+        NSString *thePinyin = [currentChengyu.pinyin objectAtIndex:[currentChengyu.pinyin count] - 1];
+        result = [[ChengyuHelper sharedInstance] checkValidByName:text andPinyin:thePinyin includingTone:_includeTone error:error];
+    }
+    return result;
 }
 
 - (void)doAnswer {
@@ -177,6 +183,7 @@
 }
 
 - (IBAction)clickRestart:(UIButton *)sender {
+    NSLog(@"click restart");
     [self doRestart];
 }
 
@@ -341,6 +348,19 @@
         [result appendFormat:@"%@",key];
     }
     _answerText.text = [NSString stringWithFormat:@"%@%@", _answerText.text, result];
+    if(_answerText.text){
+        NSError *error;
+        Chengyu *validChengyu = [self checkText:_answerText.text error:&error];
+        if(validChengyu){
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeCustomView;
+            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark"]];
+            [hud hide:YES afterDelay:1];
+            currentChengyu = validChengyu;
+            [self setContent];
+            [self doAnswer];
+        }
+    }
 }
 
 - (void)onError: (IFlySpeechError *) error {
