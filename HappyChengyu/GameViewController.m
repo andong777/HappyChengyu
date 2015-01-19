@@ -183,7 +183,6 @@
 }
 
 - (IBAction)clickRestart:(UIButton *)sender {
-    NSLog(@"click restart");
     [self doRestart];
 }
 

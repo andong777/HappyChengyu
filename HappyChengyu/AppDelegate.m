@@ -57,13 +57,13 @@
 #pragma mark <UITabBarControllerDelegate>
 
 - (id<UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-//    NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
-//    NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
-//    CEReversibleAnimationController *animator = [CECrossfadeAnimationController new];
-//    animator.duration = 0.5;
-//    animator.reverse = fromVCIndex < toVCIndex;
-//    return animator;
-    return nil;
+    NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
+    NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
+    CEReversibleAnimationController *animator = [CECrossfadeAnimationController new];
+    animator.duration = 0.5;
+    animator.reverse = fromVCIndex < toVCIndex;
+    return animator;
+//    return nil;
 }
 
 @end

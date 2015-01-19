@@ -80,8 +80,8 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:
 (UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation                                               fromViewController:(UIViewController *)fromVC                                                  toViewController:(UIViewController *)toVC {
     // reverse the animation for 'pop' transitions
-//    CEReversibleAnimationController *animator = [CEExplodeAnimationController new];
-//    animator.duration = 0.8;
+//    CEExplodeAnimationController *animator = [CEExplodeAnimationController new];
+//    animator.duration = 0.6;
 //    animator.reverse = (operation == UINavigationControllerOperationPush);
 //    return animator;
     return nil;

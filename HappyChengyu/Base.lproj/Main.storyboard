@@ -17,7 +17,6 @@
             <string>FZQKBYSJW--GB1-0</string>
             <string>FZQKBYSJW--GB1-0</string>
             <string>FZQKBYSJW--GB1-0</string>
-            <string>FZQKBYSJW--GB1-0</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -760,7 +759,6 @@
                             <constraint firstAttribute="centerX" secondItem="Ob1-Uu-XST" secondAttribute="centerX" id="Jwf-BF-g5r"/>
                             <constraint firstItem="f9P-65-CAW" firstAttribute="centerX" secondItem="ioI-98-cak" secondAttribute="centerX" id="NEm-zJ-bPL"/>
                             <constraint firstItem="9qq-ZG-FGu" firstAttribute="height" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.15" priority="750" id="PHV-ow-8lb"/>
-                            <constraint firstItem="f9P-65-CAW" firstAttribute="top" secondItem="q9v-s2-VAV" secondAttribute="bottom" constant="8" id="QKu-eS-dWy"/>
                             <constraint firstItem="TLO-PT-fpe" firstAttribute="height" secondItem="f9P-65-CAW" secondAttribute="height" id="RL3-zv-pdz"/>
                             <constraint firstItem="TLO-PT-fpe" firstAttribute="centerX" secondItem="f9P-65-CAW" secondAttribute="centerX" id="WRl-Pr-YhO"/>
                             <constraint firstItem="Ob1-Uu-XST" firstAttribute="height" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.18" priority="750" id="eL9-Cj-gpo"/>
@@ -778,6 +776,7 @@
                             <constraint firstItem="q9v-s2-VAV" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="sxI-py-GK7"/>
                             <constraint firstAttribute="centerX" secondItem="9qq-ZG-FGu" secondAttribute="centerX" id="vMr-lV-caw"/>
                             <constraint firstAttribute="centerX" secondItem="NeJ-Nx-PmA" secondAttribute="centerX" id="vXX-Zq-DB6"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="top" secondItem="q9v-s2-VAV" secondAttribute="bottom" constant="29" id="wtP-qR-Yp6"/>
                             <constraint firstAttribute="centerX" secondItem="rgY-Vr-OuI" secondAttribute="centerX" id="xAI-pu-RwH"/>
                         </constraints>
                     </view>
@@ -792,13 +791,15 @@
                     <connections>
                         <outlet property="exampleLabel" destination="ioI-98-cak" id="pow-qq-XnR"/>
                         <outlet property="exampleText" destination="rgY-Vr-OuI" id="dqe-wU-HwQ"/>
+                        <outlet property="exampleToSourceConstraint" destination="HUh-f0-7Xf" id="TPo-yG-Kz0"/>
                         <outlet property="meaningLabel" destination="f9P-65-CAW" id="1Te-vo-W9g"/>
                         <outlet property="meaningText" destination="9qq-ZG-FGu" id="W4D-eN-K6N"/>
+                        <outlet property="meaningToTitleConstraint" destination="wtP-qR-Yp6" id="cSE-qj-gFd"/>
                         <outlet property="nameText" destination="NeJ-Nx-PmA" id="h8z-On-08S"/>
                         <outlet property="pinyinText" destination="q9v-s2-VAV" id="Czo-Fr-otI"/>
                         <outlet property="sourceLabel" destination="TLO-PT-fpe" id="JIj-Yd-VRo"/>
                         <outlet property="sourceText" destination="Ob1-Uu-XST" id="CDQ-Vd-kkC"/>
-                        <outlet property="toSourceConstraint" destination="HUh-f0-7Xf" id="acW-pa-dBi"/>
+                        <outlet property="sourceToMeaningConstraint" destination="now-sN-aXY" id="yYo-sw-fDq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw2-2H-3uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -854,7 +855,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="形容工作刚开始就取得成功。" translatesAutoresizingMaskIntoConstraints="NO" id="7l2-tD-27G">
                                 <rect key="frame" x="16" y="169" width="288" height="142"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="FZQKBYSJW--GB1-0" family="FZQingKeBenYueSongS-R-GB" pointSize="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-78-Yro">

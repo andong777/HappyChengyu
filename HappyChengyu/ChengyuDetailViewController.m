@@ -23,7 +23,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *exampleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toSourceConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *meaningToTitleConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sourceToMeaningConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *exampleToSourceConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *exampleToMeaningConstraint;
 
 @end
 
@@ -35,6 +39,7 @@
         self.view.backgroundColor = self.color;
         textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:self.color isFlat:YES];
     }
+    _exampleToMeaningConstraint = [NSLayoutConstraint constraintWithItem:_exampleText attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_meaningText attribute:NSLayoutAttributeBottom multiplier:1 constant:50];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,6 +68,7 @@
         if(!_chengyu.example){
             _exampleLabel.hidden = YES;
             _exampleText.hidden = YES;
+            _sourceToMeaningConstraint.constant = 50;
         }
     }else{
         if(!_chengyu.example){
@@ -70,12 +76,12 @@
             _sourceText.hidden = YES;
             _exampleLabel.hidden = YES;
             _exampleText.hidden = YES;
+            _meaningToTitleConstraint.constant = 80;
         }else{
             _sourceLabel.hidden = YES;
             _sourceText.hidden = YES;
-//            [_exampleText removeConstraint:_toSourceConstraint];
-//            [_exampleText addConstraint:[NSLayoutConstraint constraintWithItem:_exampleText attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_meaningText attribute:NSLayoutAttributeBottom multiplier:1 constant:40]];
-//            [self.view setNeedsLayout];
+            [self.view removeConstraint:_exampleToSourceConstraint];
+            [self.view addConstraint:_exampleToMeaningConstraint];
         }
     }
 
