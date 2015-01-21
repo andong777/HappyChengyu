@@ -66,4 +66,11 @@
 //    return nil;
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if([tabBarController.selectedViewController isEqual:viewController]){
+        return NO;
+    }
+    return YES;
+}
+
 @end

@@ -9,11 +9,11 @@
 #import "MenuViewController.h"
 #import "GameViewController.h"
 #import "Constants.h"
-#import <ChameleonFramework/Chameleon.h>
 
 @interface MenuViewController ()
 
 @property (weak, nonatomic) IBOutlet UISwitch *characterSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *toneLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *toneSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
@@ -26,11 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor flatSandColor];
     
     _startButton.layer.cornerRadius = 10;
     _startButton.layer.borderWidth = 1;
-    _startButton.layer.borderColor = [UIColor flatGrayColor].CGColor;
+    _startButton.layer.borderColor = _startButton.currentTitleColor.CGColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,11 +37,12 @@
     NSNumber *includeCharacter = [defaults objectForKey:kCharacter];
     if(includeCharacter && [includeCharacter boolValue]){
         _characterSwitch.on = YES;
-        _toneSwitch.enabled = NO;
-        _toneSwitch.on = YES;
+        _toneLabel.hidden = YES;
+        _toneSwitch.hidden = YES;
     }else{
         _characterSwitch.on = NO;
-        _toneSwitch.enabled = YES;
+        _toneLabel.hidden = NO;
+        _toneSwitch.hidden = NO;
         NSNumber *includeTone = [defaults objectForKey:kTone];
         if(includeTone && [includeTone boolValue]){
             _toneSwitch.on = YES;
@@ -64,10 +64,11 @@
 
 - (IBAction)toggleCharacterSwitch:(UISwitch *)sender {
     if(sender.isOn){
-        _toneSwitch.On = YES;
-        _toneSwitch.enabled = NO;
+        _toneLabel.hidden = YES;
+        _toneSwitch.hidden = YES;
     }else{
-        _toneSwitch.enabled = YES;
+        _toneLabel.hidden = NO;
+        _toneSwitch.hidden = NO;
     }
 }
 

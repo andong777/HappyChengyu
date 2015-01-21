@@ -37,7 +37,6 @@
         _favorites = [NSMutableDictionary dictionary];
         NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString *path = [documentDirectory stringByAppendingPathComponent:kFavoritesFileName];
-//        if([[NSFileManager defaultManager] fileExistsAtPath:path]){
             NSData *JSONData = [NSData dataWithContentsOfFile:path];
             if(JSONData){
                 NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
@@ -47,7 +46,6 @@
                     [_favorites setValue:transformedArray forKey:key];
                 }
             }
-//        }
     }
     return self;
 }
@@ -61,7 +59,6 @@
     if(!array){
         array = [NSMutableArray array];
     }
-    NSLog(@"category %@ has %lu items", category, (unsigned long)[array count]);
     [array addObject:chengyu];
     [_favorites setValue:array forKey:category];
     contentsChanged = YES;

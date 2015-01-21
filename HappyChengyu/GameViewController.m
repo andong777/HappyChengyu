@@ -351,6 +351,7 @@
         NSError *error;
         Chengyu *validChengyu = [self checkText:_answerText.text error:&error];
         if(validChengyu){
+            
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.mode = MBProgressHUDModeCustomView;
             hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark"]];
