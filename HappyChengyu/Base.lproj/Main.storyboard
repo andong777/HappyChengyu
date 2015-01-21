@@ -376,6 +376,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HPg-xW-gCa">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HPg-xW-gCa" id="paV-pZ-8VX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="允许四字词语" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie5-v7-D0o">
+                                                    <rect key="frame" x="20" y="11" width="102" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GAK-cn-LLU">
+                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchWords:" destination="EoU-x2-dBq" eventType="valueChanged" id="mz0-Jn-avI"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ie5-v7-D0o" firstAttribute="leading" secondItem="paV-pZ-8VX" secondAttribute="leadingMargin" constant="12" id="2N5-Wd-sE6"/>
+                                                <constraint firstItem="Ie5-v7-D0o" firstAttribute="centerY" secondItem="paV-pZ-8VX" secondAttribute="centerY" id="CR9-1F-oum"/>
+                                                <constraint firstItem="GAK-cn-LLU" firstAttribute="centerY" secondItem="Ie5-v7-D0o" secondAttribute="centerY" id="Vfd-DB-RWo"/>
+                                                <constraint firstItem="GAK-cn-LLU" firstAttribute="trailing" secondItem="paV-pZ-8VX" secondAttribute="trailingMargin" id="f36-sD-NzR"/>
+                                                <constraint firstItem="Ie5-v7-D0o" firstAttribute="top" secondItem="paV-pZ-8VX" secondAttribute="topMargin" constant="3" id="lMd-MV-o9i"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="语音设置" id="MP4-1M-myA">
@@ -497,6 +524,7 @@
                         <outlet property="readingSwitch" destination="C5z-o4-Va5" id="19Y-wk-7ge"/>
                         <outlet property="speakerSwitch" destination="jCY-AY-xnb" id="gcc-CR-Inw"/>
                         <outlet property="toneSwitch" destination="avB-Nk-RDh" id="JBN-O1-MRl"/>
+                        <outlet property="wordsSwitch" destination="GAK-cn-LLU" id="shz-oJ-I8W"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pm-bp-kC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -854,17 +882,17 @@
                                 </connections>
                             </segmentedControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="形容工作刚开始就取得成功。" translatesAutoresizingMaskIntoConstraints="NO" id="7l2-tD-27G">
-                                <rect key="frame" x="16" y="169" width="288" height="142"/>
+                                <rect key="frame" x="16" y="169" width="288" height="113.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-78-Yro">
-                                <rect key="frame" x="120" y="429" width="80" height="80"/>
+                                <rect key="frame" x="100" y="388.5" width="120" height="120.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="K3V-78-Yro" secondAttribute="height" multiplier="1:1" id="8hg-Uz-SpY"/>
-                                    <constraint firstAttribute="height" constant="80" placeholder="YES" id="oEE-Oe-1yz"/>
-                                    <constraint firstAttribute="width" constant="80" placeholder="YES" id="rKp-EZ-1sE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="IlM-Xk-0LK"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="Mbw-OR-osn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="microphone">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -875,7 +903,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUN-C8-txm">
-                                <rect key="frame" x="254" y="331" width="50" height="30"/>
+                                <rect key="frame" x="254" y="302.5" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="IMU-V6-ylh"/>
                                     <constraint firstAttribute="height" constant="30" id="Uis-pN-ynm"/>
@@ -888,7 +916,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3t-s7-8cA">
-                                <rect key="frame" x="16" y="332" width="45" height="30"/>
+                                <rect key="frame" x="16" y="303.5" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="3Kj-VI-yV9"/>
                                     <constraint firstAttribute="height" constant="30" id="LqS-p4-LQo"/>
@@ -904,7 +932,7 @@
                                 <rect key="frame" x="284" y="82" width="20" height="20"/>
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOH-bG-a29">
-                                <rect key="frame" x="16" y="381" width="218" height="30"/>
+                                <rect key="frame" x="16" y="348.5" width="218" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gXw-9Y-59U"/>
                                 </constraints>
@@ -916,7 +944,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-ap-f7u">
-                                <rect key="frame" x="254" y="381" width="50" height="30"/>
+                                <rect key="frame" x="254" y="348.5" width="50" height="30"/>
                                 <color key="backgroundColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="1qL-ht-J6D"/>
@@ -934,22 +962,22 @@
                         <constraints>
                             <constraint firstItem="AOH-bG-a29" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="0SA-cb-o4u"/>
                             <constraint firstAttribute="centerX" secondItem="K3V-78-Yro" secondAttribute="centerX" id="35t-YM-me5"/>
-                            <constraint firstItem="C3t-s7-8cA" firstAttribute="top" secondItem="7l2-tD-27G" secondAttribute="bottom" constant="21" id="4QN-D1-zwn"/>
+                            <constraint firstItem="C3t-s7-8cA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7l2-tD-27G" secondAttribute="bottom" constant="21" id="4QN-D1-zwn"/>
                             <constraint firstItem="S3r-0g-hvY" firstAttribute="top" secondItem="Jl0-i3-RIM" secondAttribute="bottom" constant="-2" id="4iH-D2-dWT"/>
                             <constraint firstItem="7l2-tD-27G" firstAttribute="width" secondItem="6DC-bn-6Vi" secondAttribute="width" id="6he-lS-Dbx"/>
                             <constraint firstItem="C3t-s7-8cA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="83p-R3-ect"/>
                             <constraint firstAttribute="centerX" secondItem="7l2-tD-27G" secondAttribute="centerX" id="CA3-e1-oaA"/>
                             <constraint firstItem="OCQ-8v-9Mk" firstAttribute="centerY" secondItem="Jl0-i3-RIM" secondAttribute="centerY" id="Cip-im-3Zd"/>
                             <constraint firstItem="OCQ-8v-9Mk" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="HNy-jC-jP1"/>
-                            <constraint firstItem="AOH-bG-a29" firstAttribute="top" secondItem="C3t-s7-8cA" secondAttribute="bottom" constant="19" id="KD3-6a-TZK"/>
+                            <constraint firstItem="AOH-bG-a29" firstAttribute="top" relation="greaterThanOrEqual" secondItem="C3t-s7-8cA" secondAttribute="bottom" constant="15" id="KD3-6a-TZK"/>
                             <constraint firstAttribute="centerX" secondItem="Jl0-i3-RIM" secondAttribute="centerX" id="KWY-eo-HrM"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="K3V-78-Yro" secondAttribute="bottom" constant="10" id="MIj-ei-exq"/>
                             <constraint firstItem="7l2-tD-27G" firstAttribute="top" secondItem="6DC-bn-6Vi" secondAttribute="bottom" constant="3" id="Phj-0V-zk9"/>
-                            <constraint firstItem="7l2-tD-27G" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.25" id="SAm-2y-hdm"/>
+                            <constraint firstItem="7l2-tD-27G" firstAttribute="height" relation="greaterThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.2" id="SAm-2y-hdm"/>
                             <constraint firstItem="4bo-ap-f7u" firstAttribute="leading" secondItem="AOH-bG-a29" secondAttribute="trailing" constant="20" id="SPa-Kr-0ks"/>
                             <constraint firstAttribute="centerX" secondItem="S3r-0g-hvY" secondAttribute="centerX" id="Sal-bB-TEZ"/>
                             <constraint firstItem="4bo-ap-f7u" firstAttribute="centerY" secondItem="AOH-bG-a29" secondAttribute="centerY" id="XVJ-0S-9bW"/>
-                            <constraint firstItem="K3V-78-Yro" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AOH-bG-a29" secondAttribute="bottom" constant="18" id="b09-aF-1eA"/>
+                            <constraint firstItem="K3V-78-Yro" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AOH-bG-a29" secondAttribute="bottom" constant="10" id="b09-aF-1eA"/>
                             <constraint firstItem="C3t-s7-8cA" firstAttribute="centerY" secondItem="VUN-C8-txm" secondAttribute="centerY" constant="0.5" id="bto-C4-h3i"/>
                             <constraint firstItem="6DC-bn-6Vi" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="dJn-YR-lGC"/>
                             <constraint firstItem="6DC-bn-6Vi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="dwu-cU-ULq"/>

@@ -15,11 +15,13 @@
 @property (weak, nonatomic) IBOutlet UISwitch *toneSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *readingSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *speakerSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *wordsSwitch;
 
 - (IBAction)switchCharacter:(UISwitch *)sender;
 - (IBAction)switchTone:(UISwitch *)sender;
 - (IBAction)switchReading:(UISwitch *)sender;
 - (IBAction)switchSpeaker:(UISegmentedControl *)sender;
+- (IBAction)switchWords:(UISwitch *)sender;
 
 @end
 
@@ -112,6 +114,14 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"VoiceSettingsChanged" object:self];
 }
 
+- (IBAction)switchWords:(UISwitch *)sender {
+    if(sender.isOn){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"敬请期待" message:@"成语接龙时使用四字词语，\n更好玩，更易玩！\n后续更新会加入此功能，敬请期待！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
+        [sender setOn:NO animated:YES];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.section == 2){
@@ -131,4 +141,6 @@
         }
     }
 }
+
+
 @end
