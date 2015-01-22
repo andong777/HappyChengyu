@@ -1,6 +1,8 @@
-# HappyChengyu
+# 开心成语接龙 支持语音输入和语音朗读，自带成语大全和搜索功能，寓教于乐，成语学习好帮手
 
-A chengyu-linking iOS APP for entertainment
+《开心成语接龙》是首个使用语音玩成语接龙的iOS应用。它能听懂你说的成语，并以各种人声读出答案，更真实、更方便，免去了同类应用打字的麻烦。它还具有成语学习功能，支持成语大全和成语搜索两种方法查询，成语释义丰富，支持收藏功能。
+
+https://itunes.apple.com/us/app/kai-xin-cheng-yu-jie-long/id960147648
 
 ## To-dos
 
@@ -20,6 +22,6 @@ A chengyu-linking iOS APP for entertainment
 - ~~美化成语大全界面，加入搜索条；~~
 - ~~加入语音输入和语音朗读功能；~~
 - ~~加入配色；~~
-- cell在iPhone 6上的显示问题；
-- 重构Detail View；
+- ~cell在iPhone 6上的显示问题；~
+- ~重构Detail View；~
 - 启动屏幕和Logo；

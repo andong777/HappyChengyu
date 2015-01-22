@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7658C33E1A58D01D0062C946"
-               BuildableName = "HappyChengyu.app"
-               BlueprintName = "HappyChengyu"
+               BuildableName = "happychengyu.app"
+               BlueprintName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
                ReferencedContainer = "container:HappyChengyu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7658C3571A58D01D0062C946"
-               BuildableName = "HappyChengyuTests.xctest"
-               BlueprintName = "HappyChengyuTests"
+               BuildableName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests"
                ReferencedContainer = "container:HappyChengyu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7658C3571A58D01D0062C946"
-               BuildableName = "HappyChengyuTests.xctest"
-               BlueprintName = "HappyChengyuTests"
+               BuildableName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests"
                ReferencedContainer = "container:HappyChengyu.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7658C33E1A58D01D0062C946"
-            BuildableName = "HappyChengyu.app"
-            BlueprintName = "HappyChengyu"
+            BuildableName = "happychengyu.app"
+            BlueprintName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
             ReferencedContainer = "container:HappyChengyu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7658C33E1A58D01D0062C946"
-            BuildableName = "HappyChengyu.app"
-            BlueprintName = "HappyChengyu"
+            BuildableName = "happychengyu.app"
+            BlueprintName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
             ReferencedContainer = "container:HappyChengyu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7658C33E1A58D01D0062C946"
-            BuildableName = "HappyChengyu.app"
-            BlueprintName = "HappyChengyu"
+            BuildableName = "happychengyu.app"
+            BlueprintName = "HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
             ReferencedContainer = "container:HappyChengyu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

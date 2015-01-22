@@ -126,11 +126,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.section == 2){
         if(indexPath.row == 0){
-            NSString *appURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @""];
+            NSString *appURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"960147648"];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appURL]];
         }else if(indexPath.row == 1){
             dispatch_async(dispatch_queue_create("share", NULL), ^{
-                NSArray *activityItems = @[[NSString stringWithFormat:@"《开心成语接龙》是一个通过语音玩接龙的iOS应用，还可以查询和学习成语哦！"]];
+                NSArray *activityItems = @[[NSString stringWithFormat:@"《开心成语接龙》是首个使用语音玩成语接龙的iOS应用。它能听懂你说的成语，并以各种人声读出答案，更真实、更方便，免去了同类应用打字的麻烦。它还具有成语学习功能，支持成语大全和成语搜索两种方法查询，成语释义丰富，支持收藏功能。"]];
                 UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
                 activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
                 dispatch_async(dispatch_get_main_queue(), ^{
