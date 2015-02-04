@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FavoritesHelper.h"
+#import "ChengyuHelper.h"
 #import <iflyMSC/IFlySpeechUtility.h>
 #import <VCTransitionsLibrary/CECrossfadeAnimationController.h>
 
@@ -19,6 +20,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [ChengyuHelper sharedInstance]; // load data now
+    });
+    
     // 指定Tab Bar Controller的delegate
     UITabBarController *tabBarController = (UITabBarController *)(self.window.rootViewController);
     tabBarController.delegate = self;

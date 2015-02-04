@@ -109,8 +109,8 @@
         lastSectionColor = [UIColor flatWhiteColor];
     }
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.contentView.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:header.bounds andColors:@[lastSectionColor, sectionColor]];
-//    header.contentView.backgroundColor = sectionColor;
+//    header.contentView.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:header.bounds andColors:@[lastSectionColor, sectionColor]];
+    header.contentView.backgroundColor = sectionColor;
     header.textLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:sectionColor isFlat:YES];
 }
 

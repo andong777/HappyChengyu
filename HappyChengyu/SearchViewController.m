@@ -7,7 +7,7 @@
 //
 
 #import "SearchViewController.h"
-#import "ChengyuLegacyDetailViewController.h"
+#import "ChengyuDetailViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
 
@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     _searchBar = [[UISearchBar alloc] init];
-    _searchBar.placeholder = @"搜索成语";
+    _searchBar.placeholder = @"搜索成语、成语首字母缩写或单字";
     _searchBar.searchBarStyle = UISearchBarStyleMinimal;
     _searchBar.showsCancelButton = YES;
     _searchBar.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
@@ -114,7 +114,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    ChengyuLegacyDetailViewController *vc = segue.destinationViewController;
+    ChengyuDetailViewController *vc = segue.destinationViewController;
     vc.chengyu = [searchResults objectAtIndex:indexPath.row];
 }
 

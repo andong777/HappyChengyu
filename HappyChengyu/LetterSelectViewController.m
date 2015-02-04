@@ -32,9 +32,9 @@ static NSString * const reuseIdentifier = @"CellReuseIdentifier";
         NSString *firstLetter = [cy.abbr substringToIndex:1];
         [startSet addObject:firstLetter];
     }
-    [startSet sortUsingComparator:^(id obj1, id obj2) {
-        return [obj1 compare:obj2];
-    }];
+//    [startSet sortUsingComparator:^(id obj1, id obj2) {
+//        return [obj1 compare:obj2];
+//    }];
     letters = [startSet array];
     self.navigationController.delegate = self;
 }

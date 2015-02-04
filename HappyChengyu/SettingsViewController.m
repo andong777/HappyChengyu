@@ -46,13 +46,13 @@
             _toneSwitch.on = NO;
         }
     }
-    NSNumber *reading = [defaults objectForKey:kReading];
-    if(reading && [reading boolValue]){
-        _readingSwitch.on = YES;
-        _speakerSwitch.enabled = YES;
-    }else{
+    NSNumber *noReading = [defaults objectForKey:kNoReading];
+    if(noReading && [noReading boolValue]){
         _readingSwitch.on = NO;
         _speakerSwitch.enabled = NO;
+    }else{
+        _readingSwitch.on = YES;
+        _speakerSwitch.enabled = YES;
     }
     NSString *speaker = [defaults stringForKey:kSpeaker];
     if([speaker isEqualToString:@"man"]){
@@ -93,7 +93,7 @@
 
 - (IBAction)switchReading:(UISwitch *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(sender.isOn) forKey:kReading];
+    [defaults setObject:@(sender.isOn) forKey:kNoReading];
     if(sender.isOn){
         _speakerSwitch.enabled = YES;
     }else{

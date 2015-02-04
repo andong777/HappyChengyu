@@ -31,6 +31,7 @@
     static ChengyuHelper *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        NSLog(@"chengyu data loaded now");
         shared = [[[self class] alloc] init];
     });
     return shared;
