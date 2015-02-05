@@ -11,6 +11,7 @@
 
 #define kCharacter @"Character"
 #define kTone @"Tone"
+#define kWords @"Words"
 #define kNoReading @"NoReading" // set reading to true by default
 #define kSpeaker @"Speaker"
 #define kYueSongFontName @"FZQKBYSJW--GB1-0"

@@ -20,7 +20,6 @@
 		7658C34B1A58D01D0062C946 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C34A1A58D01D0062C946 /* GameViewController.m */; };
 		7658C34E1A58D01D0062C946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7658C34C1A58D01D0062C946 /* Main.storyboard */; };
 		7658C3501A58D01D0062C946 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7658C34F1A58D01D0062C946 /* Images.xcassets */; };
-		7658C3531A58D01D0062C946 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7658C3511A58D01D0062C946 /* LaunchScreen.xib */; };
 		7658C35F1A58D01D0062C946 /* HappyChengyuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */; };
 		7658C3721A58F0380062C946 /* ChengyuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7658C3711A58F0380062C946 /* ChengyuHelper.m */; };
 		766F4ED11A5A7E8B002FB3FF /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 766F4ED01A5A7E8B002FB3FF /* test.json */; };
@@ -77,7 +76,6 @@
 		7658C34A1A58D01D0062C946 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		7658C34D1A58D01D0062C946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7658C34F1A58D01D0062C946 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7658C3521A58D01D0062C946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7658C3581A58D01D0062C946 /* HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyChengyu.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7658C35D1A58D01D0062C946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7658C35E1A58D01D0062C946 /* HappyChengyuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyChengyuTests.m; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				7658C3691A58EBFE0062C946 /* Controllers */,
 				7658C3681A58EBDB0062C946 /* Models */,
 				7658C34C1A58D01D0062C946 /* Main.storyboard */,
-				7658C3511A58D01D0062C946 /* LaunchScreen.xib */,
 				7658C34F1A58D01D0062C946 /* Images.xcassets */,
 				7658C3421A58D01D0062C946 /* Supporting Files */,
 			);
@@ -407,7 +404,6 @@
 			files = (
 				7658C34E1A58D01D0062C946 /* Main.storyboard in Resources */,
 				76943B151A827B8D00C6ECA2 /* 方正清刻本悦宋简体.TTF in Resources */,
-				7658C3531A58D01D0062C946 /* LaunchScreen.xib in Resources */,
 				766F4ED11A5A7E8B002FB3FF /* test.json in Resources */,
 				7658C3501A58D01D0062C946 /* Images.xcassets in Resources */,
 				763D18FF1A59926D00A3B3A5 /* chengyu.json in Resources */,
@@ -507,14 +503,6 @@
 				7658C34D1A58D01D0062C946 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7658C3511A58D01D0062C946 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7658C3521A58D01D0062C946 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

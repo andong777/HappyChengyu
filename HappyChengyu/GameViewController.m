@@ -287,14 +287,20 @@
 }
 
 - (void)setupSpeechSynthesizer {
-    BOOL noReading = [[[NSUserDefaults standardUserDefaults] objectForKey:kNoReading] boolValue];
-    BOOL speaker = [[[NSUserDefaults standardUserDefaults] objectForKey:kSpeaker] boolValue];
+    BOOL noReading = [[NSUserDefaults standardUserDefaults] boolForKey:kNoReading];
+    NSString *speaker = [[NSUserDefaults standardUserDefaults] stringForKey:kSpeaker];
     if(!noReading){
         _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
         _iFlySpeechSynthesizer.delegate = self;
         [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
         [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
-        [_iFlySpeechSynthesizer setParameter:speaker ? @"xiaoyu" : @"xiaoyan" forKey: [IFlySpeechConstant VOICE_NAME]];
+        NSString *voice = @"xiaoyan";
+        if([speaker isEqualToString:@"man"]){
+            voice = @"xiaoyu";
+        }else if([speaker isEqualToString:@"child"]){
+            voice = @"vinn";
+        }
+        [_iFlySpeechSynthesizer setParameter:voice forKey: [IFlySpeechConstant VOICE_NAME]];
         [_iFlySpeechSynthesizer setParameter:@"8000" forKey: [IFlySpeechConstant SAMPLE_RATE]];
         [_iFlySpeechSynthesizer setParameter:nil forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
     }
@@ -302,7 +308,7 @@
 }
 
 - (void)onVoiceSettingsChanged:(NSNotification *)notification {
-    BOOL noReading = [[[NSUserDefaults standardUserDefaults] objectForKey:kNoReading] boolValue];
+    BOOL noReading = [[NSUserDefaults standardUserDefaults] boolForKey:kNoReading];
     NSString *speaker = [[NSUserDefaults standardUserDefaults] stringForKey:kSpeaker];
     if(!noReading && !_iFlySpeechSynthesizer){
         _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
@@ -326,7 +332,7 @@
             voice = @"vinn";
         }
         [_iFlySpeechSynthesizer setParameter:voice forKey: [IFlySpeechConstant VOICE_NAME]];
-    }else if(noReading && _iFlySpeechSynthesizer){
+    }else{
         _iFlySpeechSynthesizer = nil;
     }
 }

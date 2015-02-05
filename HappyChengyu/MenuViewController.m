@@ -34,8 +34,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *includeCharacter = [defaults objectForKey:kCharacter];
-    if(includeCharacter && [includeCharacter boolValue]){
+    BOOL includeCharacter = [defaults boolForKey:kCharacter];
+    if(includeCharacter){
         _characterSwitch.on = YES;
         _toneLabel.hidden = YES;
         _toneSwitch.hidden = YES;
@@ -43,8 +43,8 @@
         _characterSwitch.on = NO;
         _toneLabel.hidden = NO;
         _toneSwitch.hidden = NO;
-        NSNumber *includeTone = [defaults objectForKey:kTone];
-        if(includeTone && [includeTone boolValue]){
+        BOOL includeTone = [defaults boolForKey:kTone];
+        if(includeTone){
             _toneSwitch.on = YES;
         }else{
             _toneSwitch.on = NO;

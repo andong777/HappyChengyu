@@ -31,23 +31,29 @@
     [super viewDidLoad];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *includeCharacter = [defaults objectForKey:kCharacter];
-    if(includeCharacter && [includeCharacter boolValue]){
+    BOOL includeCharacter = [defaults boolForKey:kCharacter];
+    if(includeCharacter){
         _characterSwitch.on = YES;
         _toneSwitch.enabled = NO;
         _toneSwitch.on = YES;
     }else{
         _characterSwitch.on = NO;
         _toneSwitch.enabled = YES;
-        NSNumber *includeTone = [defaults objectForKey:@"Tone"];
-        if(includeTone && [includeTone boolValue]){
+        BOOL includeTone = [defaults boolForKey:@"Tone"];
+        if(includeTone){
             _toneSwitch.on = YES;
         }else{
             _toneSwitch.on = NO;
         }
     }
-    NSNumber *noReading = [defaults objectForKey:kNoReading];
-    if(noReading && [noReading boolValue]){
+//    BOOL includeWords = [defaults boolForKey:kWords];
+//    if(includeWords){
+//        _wordsSwitch.on = YES;
+//    }else{
+//        _wordsSwitch.on = NO;
+//    }
+    BOOL noReading = [defaults boolForKey:kNoReading];
+    if(noReading){
         _readingSwitch.on = NO;
         _speakerSwitch.enabled = NO;
     }else{
@@ -76,29 +82,32 @@
 
 - (IBAction)switchCharacter:(UISwitch *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(sender.isOn) forKey:kCharacter];
+    [defaults setBool:sender.isOn forKey:kCharacter];
     if(sender.isOn){
         _toneSwitch.on = YES;
-        [defaults setObject:@(YES) forKey:kTone];
+        [defaults setBool:YES forKey:kTone];
         _toneSwitch.enabled = NO;
     }else{
         _toneSwitch.enabled = YES;
     }
+    [defaults synchronize];
 }
 
 - (IBAction)switchTone:(UISwitch *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(sender.isOn) forKey:kTone];
+    [defaults setBool:sender.isOn forKey:kTone];
+    [defaults synchronize];
 }
 
 - (IBAction)switchReading:(UISwitch *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(sender.isOn) forKey:kNoReading];
+    [defaults setBool:sender.isOn forKey:kNoReading];
     if(sender.isOn){
         _speakerSwitch.enabled = YES;
     }else{
         _speakerSwitch.enabled = NO;
     }
+    [defaults synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"VoiceSettingsChanged" object:self];
 }
 
@@ -111,6 +120,7 @@
     }else{
         [defaults setObject:@"woman" forKey:kSpeaker];
     }
+    [defaults synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"VoiceSettingsChanged" object:self];
 }
 
