@@ -11,6 +11,7 @@
 #import "Chengyu.h"
 
 @interface ResultViewController (){
+    NSMutableArray *chengyuNames;
     NSInteger length;
     NSInteger minutes;
     NSInteger seconds;
@@ -28,20 +29,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *chengyus = [ChengyuHelper sharedInstance].appearedList;
+    NSArray *chengyus = [[ChengyuHelper sharedInstance].appearedList copy];
     length = [chengyus count];
-    _lengthText.text = [NSString stringWithFormat:@"%ld", (long)length];
-    NSMutableArray *chengyuNames = [NSMutableArray arrayWithCapacity:length];
+    
+    chengyuNames = [NSMutableArray arrayWithCapacity:length];
     for(Chengyu *cy in chengyus){
         [chengyuNames addObject:cy.name];
     }
-    _contentText.text = [chengyuNames componentsJoinedByString:@" → "];
+    
     NSInteger ti = (NSInteger)_timeInterval;
     seconds = ti % 60;
     minutes = (ti / 60) % 60;
-    _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", (long)minutes, (long)seconds];
+    
     // TODO: 真正实现获取百分比
-    percentage = length / 3 * 10;
+    percentage = 0;
+    if(length > 0 && ti > 0){
+        percentage = 100. - 50. / length;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    _lengthText.text = [NSString stringWithFormat:@"%ld", (long)length];
+    _contentText.text = [chengyuNames componentsJoinedByString:@" → "];
+    _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", (long)minutes, (long)seconds];
     _percentText.text = [NSString stringWithFormat:@"你打败了 %ld%% 的人", (long)percentage];
 }
 
@@ -52,7 +63,8 @@
 
 - (IBAction)clickShare:(id)sender {
     dispatch_async(dispatch_queue_create("share", NULL), ^{
-        NSArray *activityItems = @[[NSString stringWithFormat:@"我在《开心成语接龙》玩成语接龙，接龙长度达到%ld，用时%ld分%ld秒，打败了%ld%%的人。", (long)length, (long)minutes, (long)seconds, (long)percentage]];
+        static NSString *url = @"https://itunes.apple.com/us/app/kai-xin-cheng-yu-jie-long/id960147648?l=zh&ls=1&mt=8";
+        NSArray *activityItems = @[[NSString stringWithFormat:@"我用 开心成语接龙 %@ 玩成语接龙，接龙长度达到%ld，用时%ld分%ld秒，打败了%ld%%的人。", url, (long)length, (long)minutes, (long)seconds, (long)percentage]];
         UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
         activityController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList];
         dispatch_async(dispatch_get_main_queue(), ^{

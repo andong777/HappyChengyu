@@ -17,14 +17,6 @@
     #define kFileName @"chengyu"
 #endif
 
-
-@interface ChengyuHelper() {
-    NSMutableArray *_chengyuList;
-    NSMutableArray *_appearedList;
-}
-
-@end
-
 @implementation ChengyuHelper
 
 + (ChengyuHelper *)sharedInstance {
@@ -51,7 +43,7 @@
 }
 
 - (void)reloadData {
-    [_appearedList removeAllObjects];
+    [self.appearedList removeAllObjects];
 }
 
 - (Chengyu *)randomWithRemove:(BOOL)remove {
@@ -60,29 +52,32 @@
     do {
         NSUInteger index = arc4random() % [_chengyuList count];
         result = [_chengyuList objectAtIndex:index];
-        NSString *character = [result.name substringFromIndex:[result.name length] - 1];
-        candidatesAfterResult = [self findAllWithFirstCharacter:character];
+        if(![_appearedList containsObject:result]){
+            NSString *character = [result.name substringFromIndex:[result.name length] - 1];
+            candidatesAfterResult = [self findAllWithFirstCharacter:character];
+        }
     } while (!candidatesAfterResult || [candidatesAfterResult count] == 0);
+    
     if(remove){
-        [_chengyuList removeObject:result];
-        [_appearedList addObject:result];
+        [self.appearedList addObject:result];
     }
     return result;
 }
 
 - (NSArray *)findAllWithFirstCharacter:(NSString *)character {
     NSPredicate *select = [NSPredicate predicateWithFormat:@"%K BEGINSWITH %@", @"name", character];
-    return [_chengyuList filteredArrayUsingPredicate:select];
+    NSMutableArray *candidates =  [[_chengyuList filteredArrayUsingPredicate:select] mutableCopy];
+    [candidates removeObjectsInArray:_appearedList];
+    return candidates;
 }
 
 - (Chengyu *)findNextWithFirstCharacter:(NSString *)character andRemove:(BOOL)remove {
-    NSMutableArray *candidates = [[self findAllWithFirstCharacter:character] mutableCopy];
+    NSArray *candidates = [self findAllWithFirstCharacter:character];
     if(candidates && [candidates count]){
         NSUInteger index = arc4random() % [candidates count];
         Chengyu *result = [candidates objectAtIndex:index];
         if(remove){
-            [candidates removeObjectAtIndex:index];
-            [_appearedList addObject:result];
+            [self.appearedList addObject:result];
         }
         return result;
     }
@@ -96,17 +91,18 @@
     }else{
         select = [NSPredicate predicateWithFormat:@"%K[FIRST] ==[cd] %@", @"pinyin", pinyin];
     }
-    return [_chengyuList filteredArrayUsingPredicate:select];
+    NSMutableArray *candidates = [[_chengyuList filteredArrayUsingPredicate:select] mutableCopy];
+    [candidates removeObjectsInArray:_appearedList];
+    return candidates;
 }
 
 - (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include andRemove:(BOOL)remove {
-    NSMutableArray *candidates = [[self findAllWithFirstPinyin:pinyin includingTone:include] mutableCopy];
+    NSArray *candidates = [self findAllWithFirstPinyin:pinyin includingTone:include];
     if(candidates && [candidates count]){
         NSUInteger index = arc4random() % [candidates count];
         Chengyu *result = [candidates objectAtIndex:index];
         if(remove){
-            [candidates removeObjectAtIndex:index];
-            [_appearedList addObject:result];
+            [self.appearedList addObject:result];
         }
         return result;
     }
@@ -144,8 +140,7 @@
     for(NSUInteger i = 0; i < [_chengyuList count]; i++){
         Chengyu *one = _chengyuList[i];
         if([one.name isEqualToString:name]){
-            [_chengyuList removeObjectAtIndex:i];
-            [_appearedList addObject:one];
+            [self.appearedList addObject:one];
             return one;
         }
     }
@@ -179,8 +174,7 @@
                 isEqual = ([pinyin compare:startingPinyin options:NSDiacriticInsensitiveSearch] == NSOrderedSame);
             }
             if(isEqual){
-                [_chengyuList removeObjectAtIndex:i];
-                [_appearedList addObject:one];
+                [self.appearedList addObject:one];
                 return one;
             }else{
                 *error = [NSError errorWithDomain:@"customised" code:IncorrectStartError userInfo:nil];

@@ -76,7 +76,7 @@
             _sourceText.hidden = YES;
             _exampleLabel.hidden = YES;
             _exampleText.hidden = YES;
-            _meaningToTitleConstraint.constant = 80;
+//            _meaningToTitleConstraint.constant = 80;
         }else{
             _sourceLabel.hidden = YES;
             _sourceText.hidden = YES;

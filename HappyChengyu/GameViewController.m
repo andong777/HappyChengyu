@@ -20,12 +20,14 @@
 #import <iflyMSC/IFlySpeechError.h>
 #import "Constants.h"
 
-@interface GameViewController ()<IFlySpeechSynthesizerDelegate, IFlyRecognizerViewDelegate> {
+@interface GameViewController ()
+<IFlySpeechSynthesizerDelegate, IFlyRecognizerViewDelegate, UIAlertViewDelegate> {
     Chengyu *currentChengyu;
     NSDate *startTime;
     NSUInteger chances;
     IFlySpeechSynthesizer *_iFlySpeechSynthesizer;
     IFlyRecognizerView *_iflyRecognizerView;
+    NSInteger keyboardMovement;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameText;
@@ -41,7 +43,6 @@
 - (IBAction)clickCheck:(UIButton *)sender;
 - (IBAction)clickRestart:(UIButton *)sender;
 - (IBAction)clickHint:(UIButton *)sender;
-- (IBAction)clickQuit:(id)sender;
 - (IBAction)clickAddOrRemove:(id)sender;
 - (IBAction)clickRecord:(id)sender;
 
@@ -54,6 +55,7 @@
     
     [self setupSpeechSynthesizer];
     [self setupSpeechRecognizer];
+    [self registerForKeyboardNotifications];
     
     _detailSwitch.selectedSegmentIndex = 0;
     _detailText.layer.cornerRadius = 5;
@@ -66,8 +68,8 @@
     [self doRestart];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     if([[FavoritesHelper sharedInstance] hasFavorite:currentChengyu]){
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
@@ -187,7 +189,8 @@
 }
 
 - (IBAction)clickRestart:(UIButton *)sender {
-    [self doRestart];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"确定重新开始吗？" message:@"重新开始会清空本次的接龙记录！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
 }
 
 - (IBAction)clickHint:(UIButton *)sender {
@@ -207,10 +210,6 @@
     if(answer){
         _answerText.text = answer.name;
     }
-}
-
-- (IBAction)clickQuit:(id)sender {
-    [self performSegueWithIdentifier:@"EndSegue" sender:self];
 }
 
 - (IBAction)clickAddOrRemove:(id)sender {
@@ -262,28 +261,47 @@
     [_answerText resignFirstResponder];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+// Call this method somewhere in your view controller setup code.
+- (void)registerForKeyboardNotifications
 {
-    [self animateTextField: textField up: YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
 {
-    [self animateTextField: textField up: NO];
-}
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
-- (void) animateTextField: (UITextField*) textField up: (BOOL) up
-{
-    const int movementDistance = 80;
-    const float movementDuration = 0.3f;
-    
-    int movement = (up ? -movementDistance : movementDistance);
-    
     [UIView beginAnimations: @"anim" context: nil];
     [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView setAnimationDuration: 0.3];
+    int distance = self.view.frame.size.height - _answerText.frame.origin.y - _answerText.frame.size.height;
+    keyboardMovement = kbSize.height - distance;
+    self.view.frame = CGRectOffset(self.view.frame, 0, -1 * keyboardMovement);
     [UIView commitAnimations];
+    
+    self.navigationItem.title = currentChengyu.name;
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: 0.3];
+    self.view.frame = CGRectOffset(self.view.frame, 0, keyboardMovement);
+    [UIView commitAnimations];
+    
+    static NSString *fixedTitle = @"成语接龙";
+    self.navigationItem.title = fixedTitle;
 }
 
 - (void)setupSpeechSynthesizer {
@@ -314,7 +332,7 @@
         _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
         _iFlySpeechSynthesizer.delegate = self;
         [_iFlySpeechSynthesizer setParameter:@"20" forKey:[IFlySpeechConstant SPEED]];
-        [_iFlySpeechSynthesizer setParameter:@"80" forKey: [IFlySpeechConstant VOLUME]];
+        [_iFlySpeechSynthesizer setParameter:@"100" forKey: [IFlySpeechConstant VOLUME]];
         NSString *voice = @"xiaoyan";
         if([speaker isEqualToString:@"man"]){
             voice = @"xiaoyu";
@@ -376,6 +394,16 @@
 - (void)onError: (IFlySpeechError *) error {
 //    [self setErrorInfo:@"识别结束"];
     NSLog(@"recognize error: %@", error.errorDesc);
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch(buttonIndex){
+        case 1:
+            [self doRestart];
+            break;
+        default:
+            break;  // cancelled
+    }
 }
 
 @end

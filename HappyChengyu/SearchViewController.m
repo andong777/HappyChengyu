@@ -57,7 +57,7 @@
                         initWithData:
                         [[chengyu.pinyin componentsJoinedByString:@" "] dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES]
                         encoding:NSASCIIStringEncoding] uppercaseString];
-    NSMutableAttributedString *pinyinAttributedString = [[NSMutableAttributedString alloc] initWithString:pinyin attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]}];
+    NSMutableAttributedString *pinyinAttributedString = [[NSMutableAttributedString alloc] initWithString:[chengyu.pinyin componentsJoinedByString:@" "] attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]}];
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[NSString stringWithFormat:@"(%@)", self.searchBar.text] options:kNilOptions error:nil];
     [regex enumerateMatchesInString:chengyu.name options:kNilOptions range:NSMakeRange(0, [chengyu.name length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
         NSRange subStringRange = [result rangeAtIndex:1];
