@@ -9,6 +9,7 @@
 #import "ResultViewController.h"
 #import "ChengyuHelper.h"
 #import "Chengyu.h"
+#import <MBProgressHUD.h>
 
 @interface ResultViewController (){
     NSMutableArray *chengyuNames;
@@ -44,7 +45,15 @@
     // TODO: 真正实现获取百分比
     percentage = 0;
     if(length > 0){
-        percentage = 100. - 50. / length;
+        percentage = 100. - 100. / length;
+    }
+    
+    if(self.extraInfo){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = self.extraInfo;
+        hud.yOffset = 100;
+        [hud hide:YES afterDelay:1.5];
     }
 }
 

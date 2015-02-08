@@ -10,7 +10,7 @@
 #import "Chengyu.h"
 #import <Mantle/Mantle.h>
 
-//#define TEST
+#define TEST
 #ifdef TEST
     #define kFileName @"test"
 #else
@@ -84,16 +84,36 @@
     return nil;
 }
 
-- (NSArray *)findAllWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include {
-    NSPredicate *select = nil;
-    if(include){
-        select = [NSPredicate predicateWithFormat:@"%K[FIRST] == %@", @"pinyin", pinyin];
-    }else{
-        select = [NSPredicate predicateWithFormat:@"%K[FIRST] ==[cd] %@", @"pinyin", pinyin];
++ (BOOL)comparePinyinWithoutToneString:(NSString *)string anotherString:(NSString *)anotherString {
+    static NSString *v = @"v";
+    NSString *testString = string;
+    NSString *anotherTestString = anotherString;
+    if([string hasSuffix:@"ü"] || [string hasSuffix:@"ǘ"] || [string hasSuffix:@"ǚ"] || [string hasSuffix:@"ǜ"]){
+        testString = [string stringByAppendingString:v];
     }
-    NSMutableArray *candidates = [[_chengyuList filteredArrayUsingPredicate:select] mutableCopy];
-    [candidates removeObjectsInArray:_appearedList];
-    return candidates;
+    if([anotherString hasSuffix:@"ü"] || [anotherString hasSuffix:@"ǘ"] || [anotherString hasSuffix:@"ǚ"] || [anotherString hasSuffix:@"ǜ"] || [anotherString hasSuffix:@""]){
+        anotherTestString = [anotherString stringByAppendingString:v];
+    }
+    return [testString compare:anotherTestString options:NSDiacriticInsensitiveSearch | NSCaseInsensitiveSearch] == NSOrderedSame;
+}
+
+- (NSArray *)findAllWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include {
+    if(include){
+        NSPredicate *select = [NSPredicate predicateWithFormat:@"%K[FIRST] == %@", @"pinyin", pinyin];
+        NSMutableArray *candidates = [[_chengyuList filteredArrayUsingPredicate:select] mutableCopy];
+        [candidates removeObjectsInArray:_appearedList];
+        return candidates;
+    }else{
+        // TODO 对拼音“吁”的判断有误，会将其变成“u”。
+//        NSPredicate *select = [NSPredicate predicateWithFormat:@"%K[FIRST] ==[cd] %@", @"pinyin", pinyin];
+        NSMutableArray *candidates = [NSMutableArray array];
+        for(Chengyu *cy in _chengyuList){
+            if([[self class ]comparePinyinWithoutToneString:[cy.pinyin firstObject] anotherString:pinyin]){
+                [candidates addObject:cy];
+            }
+        }
+        return candidates;
+    }
 }
 
 - (Chengyu *)findNextWithFirstPinyin:(NSString *)pinyin includingTone:(BOOL)include andRemove:(BOOL)remove {
@@ -166,12 +186,12 @@
     for(NSUInteger i = 0; i < [_chengyuList count]; i++){
         Chengyu *one = _chengyuList[i];
         if([one.name isEqualToString:name]){
-            NSString *startingPinyin = [one.pinyin objectAtIndex:0];
+            NSString *startingPinyin = [one.pinyin firstObject];
             BOOL isEqual = NO;
             if(include){
                 isEqual = [pinyin isEqualToString:startingPinyin];
             }else{
-                isEqual = ([pinyin compare:startingPinyin options:NSDiacriticInsensitiveSearch] == NSOrderedSame);
+                isEqual = [[self class] comparePinyinWithoutToneString:pinyin anotherString:startingPinyin];
             }
             if(isEqual){
                 [self.appearedList addObject:one];

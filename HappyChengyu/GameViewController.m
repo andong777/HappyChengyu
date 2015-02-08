@@ -121,6 +121,7 @@
             case WrongLengthError: errorInfo = @"必须是四个字"; break;
             case NonExistentNameError: errorInfo = @"不是成语"; break;
             case UsedNameError: errorInfo = @"已经用过了"; break;
+            case IncorrectStartError: errorInfo = @"成语首字不匹配"; break;
             default: errorInfo = @"未知错误";
         }
         [self setErrorInfo:errorInfo];
@@ -180,6 +181,10 @@
         NSLog(@"%f", timeInterval);
         ResultViewController *vc = segue.destinationViewController;
         vc.timeInterval = timeInterval;
+        // 用户退出sender为退出按钮，程序无法接龙主动退出sender为self
+        if(sender == self){
+            vc.extraInfo = @"找不到可以接龙的词语了";
+        }
     }
 }
 
@@ -233,7 +238,7 @@
 }
 
 - (IBAction)clickQuit:(id)sender {
-    [self performSegueWithIdentifier:@"EndSegue" sender:self];
+    [self performSegueWithIdentifier:@"EndSegue" sender:sender];
 }
 
 - (void)setContent {

@@ -11,5 +11,6 @@
 @interface ResultViewController : UITableViewController
 
 @property (nonatomic, assign) NSTimeInterval timeInterval;
+@property (nonatomic, copy) NSString *extraInfo;
 
 @end
