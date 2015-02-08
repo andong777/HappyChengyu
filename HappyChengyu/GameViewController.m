@@ -27,6 +27,7 @@
     NSUInteger chances;
     IFlySpeechSynthesizer *_iFlySpeechSynthesizer;
     IFlyRecognizerView *_iflyRecognizerView;
+    CGRect originalFrame;
     NSInteger keyboardMovement;
 }
 
@@ -45,6 +46,7 @@
 - (IBAction)clickHint:(UIButton *)sender;
 - (IBAction)clickAddOrRemove:(id)sender;
 - (IBAction)clickRecord:(id)sender;
+- (IBAction)clickQuit:(id)sender;
 
 @end
 
@@ -70,6 +72,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    originalFrame = self.view.frame;
     
     if([[FavoritesHelper sharedInstance] hasFavorite:currentChengyu]){
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
@@ -174,6 +177,7 @@
     if([segue.identifier isEqualToString:@"EndSegue"]){
         NSDate *stopTime = [NSDate date];
         NSTimeInterval timeInterval = [stopTime timeIntervalSinceDate:startTime];
+        NSLog(@"%f", timeInterval);
         ResultViewController *vc = segue.destinationViewController;
         vc.timeInterval = timeInterval;
     }
@@ -228,6 +232,10 @@
     [_iflyRecognizerView start];
 }
 
+- (IBAction)clickQuit:(id)sender {
+    [self performSegueWithIdentifier:@"EndSegue" sender:self];
+}
+
 - (void)setContent {
     if(currentChengyu){
         _nameText.text = currentChengyu.name;
@@ -267,24 +275,24 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification object:nil];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
-    
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
+    self.view.frame = originalFrame;
+    
     NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
 
     [UIView beginAnimations: @"anim" context: nil];
     [UIView setAnimationBeginsFromCurrentState: YES];
     [UIView setAnimationDuration: 0.3];
     int distance = self.view.frame.size.height - _answerText.frame.origin.y - _answerText.frame.size.height;
-    keyboardMovement = kbSize.height - distance;
+    keyboardMovement = kbSize.height > distance ? kbSize.height - distance : 0;
     self.view.frame = CGRectOffset(self.view.frame, 0, -1 * keyboardMovement);
     [UIView commitAnimations];
     

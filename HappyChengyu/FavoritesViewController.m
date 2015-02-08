@@ -47,7 +47,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_favorites count];
+    NSUInteger count = [_favorites count];
+    if(count > 0)   return count;
+    
+    // Display a message when the table is empty
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    messageLabel.text = @"您还没有添加任何收藏";
+    messageLabel.textColor = [UIColor blackColor];
+    messageLabel.numberOfLines = 0;
+    messageLabel.textAlignment = NSTextAlignmentCenter;
+    messageLabel.font = [UIFont systemFontOfSize:24];
+    [messageLabel sizeToFit];
+    
+    self.tableView.backgroundView = messageLabel;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -43,13 +43,13 @@
     
     // TODO: 真正实现获取百分比
     percentage = 0;
-    if(length > 0 && ti > 0){
+    if(length > 0){
         percentage = 100. - 50. / length;
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     _lengthText.text = [NSString stringWithFormat:@"%ld", (long)length];
     _contentText.text = [chengyuNames componentsJoinedByString:@" → "];
     _timeText.text = [NSString stringWithFormat:@"用时：%ld分 %ld秒", (long)minutes, (long)seconds];
