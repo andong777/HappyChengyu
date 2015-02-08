@@ -10,7 +10,7 @@
 #import "Chengyu.h"
 #import <Mantle/Mantle.h>
 
-#define TEST
+//#define TEST
 #ifdef TEST
     #define kFileName @"test"
 #else

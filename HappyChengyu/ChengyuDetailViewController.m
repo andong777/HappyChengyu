@@ -17,17 +17,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nameText;
 @property (weak, nonatomic) IBOutlet UILabel *pinyinText;
-@property (weak, nonatomic) IBOutlet UITextView *meaningText;
-@property (weak, nonatomic) IBOutlet UITextView *sourceText;
-@property (weak, nonatomic) IBOutlet UITextView *exampleText;
-@property (weak, nonatomic) IBOutlet UILabel *exampleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
+@property (weak, nonatomic) IBOutlet UITextView *meaningText;
+@property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
+@property (weak, nonatomic) IBOutlet UITextView *sourceText;
+@property (weak, nonatomic) IBOutlet UILabel *exampleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *exampleText;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *meaningToTitleConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sourceToMeaningConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *exampleToSourceConstraint;
-@property (strong, nonatomic) NSLayoutConstraint *exampleToMeaningConstraint;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
+@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *texts;
 
 @end
 
@@ -39,52 +37,43 @@
         self.view.backgroundColor = self.color;
         textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:self.color isFlat:YES];
     }
-    _exampleToMeaningConstraint = [NSLayoutConstraint constraintWithItem:_exampleText attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_meaningText attribute:NSLayoutAttributeBottom multiplier:1 constant:50];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     if([[FavoritesHelper sharedInstance] hasFavorite:_chengyu]){
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
     }else{
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
     }
     
-    _nameText.text = _chengyu.name;
     _nameText.textColor = textColor;
-    _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
     _pinyinText.textColor = textColor;
-    _meaningText.text = _chengyu.meaning;
-    _meaningText.textColor = textColor;
-    _meaningLabel.textColor = textColor;
-    _sourceLabel.textColor = textColor;
-    _sourceText.text = _chengyu.source;
-    _sourceText.textColor = textColor;
-    _exampleLabel.textColor = textColor;
-    _exampleText.text = _chengyu.example;
-    _exampleText.textColor = textColor;
-    
-    if(_chengyu.source){
-        if(!_chengyu.example){
-            _exampleLabel.hidden = YES;
-            _exampleText.hidden = YES;
-            _sourceToMeaningConstraint.constant = 50;
-        }
-    }else{
-        if(!_chengyu.example){
-            _sourceLabel.hidden = YES;
-            _sourceText.hidden = YES;
-            _exampleLabel.hidden = YES;
-            _exampleText.hidden = YES;
-//            _meaningToTitleConstraint.constant = 80;
-        }else{
-            _sourceLabel.hidden = YES;
-            _sourceText.hidden = YES;
-            [self.view removeConstraint:_exampleToSourceConstraint];
-            [self.view addConstraint:_exampleToMeaningConstraint];
-        }
+    _meaningLabel.text = @"含\n义";
+    _sourceLabel.text = @"出\n处";
+    _exampleLabel.text = @"例\n子";
+    for(UILabel *label in self.labels){
+        label.textAlignment = NSTextAlignmentCenter;
+        label.layer.borderColor = textColor.CGColor;
+        label.layer.borderWidth = 1;
+        label.textColor = textColor;
     }
+    for(UITextView *text in self.texts){
+        text.layer.borderColor = textColor.CGColor;
+        text.layer.borderWidth = 1;
+        text.textColor = textColor;
+        [text addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    }
+    [self setContent];
+}
 
+- (void)dealloc {
+    for(UITextView *text in self.texts){
+        [text removeObserver:self forKeyPath:@"contentSize"];
+    }
+}
+
+- (void)setContent {
+    _nameText.text = _chengyu.name;
+    _pinyinText.text = [_chengyu.pinyin componentsJoinedByString:@" "];
+    _meaningText.text = _chengyu.meaning;
+    _sourceText.text = _chengyu.source;
 }
 
 - (IBAction)clickAddOrRemove:(id)sender {
@@ -99,6 +88,13 @@
         [helper addFavorite:_chengyu];
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor blueColor];
     }
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    UITextView *tv = object;
+    CGFloat topCorrect = ([tv bounds].size.height - [tv contentSize].height * [tv zoomScale])/2.0;
+    topCorrect = ( topCorrect < 0.0 ? 0.0 : topCorrect );
+    tv.contentOffset = (CGPoint){.x = 0, .y = -topCorrect};
 }
 
 @end

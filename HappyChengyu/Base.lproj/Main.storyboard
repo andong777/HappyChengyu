@@ -716,42 +716,35 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="含义" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9P-65-CAW">
-                                <rect key="frame" x="30" y="125" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="含义" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9P-65-CAW">
+                                <rect key="frame" x="16" y="147" width="34" height="114.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="CUH-tH-60M"/>
-                                    <constraint firstAttribute="height" constant="21" id="Jee-Qi-Cqt"/>
+                                    <constraint firstAttribute="width" constant="34" id="zW7-9m-s6A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="形容工作刚开始就取得成功。" translatesAutoresizingMaskIntoConstraints="NO" id="9qq-ZG-FGu">
-                                <rect key="frame" x="16" y="146" width="288" height="85"/>
+                                <rect key="frame" x="49" y="147" width="255" height="114.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出处" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLO-PT-fpe">
-                                <rect key="frame" x="30" y="239" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="元·无名氏《小尉迟》第二折：“那老尉迟这一去，马到成功。”" translatesAutoresizingMaskIntoConstraints="NO" id="Ob1-Uu-XST">
-                                <rect key="frame" x="16" y="260" width="288" height="102"/>
+                                <rect key="frame" x="49" y="261" width="255" height="114"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="例子" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-98-cak">
-                                <rect key="frame" x="30" y="370" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="例子" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-98-cak">
+                                <rect key="frame" x="16" y="374.5" width="34" height="114.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="只要不轻敌，相信你们一定会～。" translatesAutoresizingMaskIntoConstraints="NO" id="rgY-Vr-OuI">
-                                <rect key="frame" x="16" y="391" width="288" height="113.5"/>
+                                <rect key="frame" x="49" y="374.5" width="255" height="114.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -765,46 +758,46 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出处" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLO-PT-fpe">
+                                <rect key="frame" x="16" y="261" width="34" height="114"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="TLO-PT-fpe" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="0Ae-Tq-upU"/>
+                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="0hy-ar-CzQ"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="height" secondItem="f9P-65-CAW" secondAttribute="height" id="1Gk-ig-Qzb"/>
                             <constraint firstItem="NeJ-Nx-PmA" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="1ps-cu-pLI"/>
-                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="2TR-R9-QiN"/>
-                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="top" secondItem="f9P-65-CAW" secondAttribute="bottom" id="2b7-Lp-Occ"/>
-                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="5u9-iV-RLj"/>
-                            <constraint firstItem="cRD-Ia-Rts" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rgY-Vr-OuI" secondAttribute="bottom" constant="8" id="6Ag-vX-MMa"/>
+                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="top" secondItem="9qq-ZG-FGu" secondAttribute="bottom" constant="-1" id="5Qm-nG-geH"/>
+                            <constraint firstItem="ioI-98-cak" firstAttribute="width" secondItem="f9P-65-CAW" secondAttribute="width" id="5gf-a1-Z8d"/>
+                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="top" secondItem="Ob1-Uu-XST" secondAttribute="bottom" constant="-1" id="5mJ-4E-1WU"/>
                             <constraint firstItem="q9v-s2-VAV" firstAttribute="top" secondItem="NeJ-Nx-PmA" secondAttribute="bottom" id="6m4-4i-gEG"/>
-                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="7Rj-TM-MyP"/>
-                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.15" id="9BD-cH-yfu"/>
-                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="Aqx-P6-j48"/>
-                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.1" id="Avm-kx-CoZ"/>
-                            <constraint firstItem="TLO-PT-fpe" firstAttribute="width" secondItem="ioI-98-cak" secondAttribute="width" id="BBi-Sc-lQp"/>
-                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="top" secondItem="TLO-PT-fpe" secondAttribute="bottom" id="EK2-Yv-ca0"/>
-                            <constraint firstItem="f9P-65-CAW" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" constant="14" id="ESt-Pa-diD"/>
+                            <constraint firstItem="TLO-PT-fpe" firstAttribute="height" secondItem="Ob1-Uu-XST" secondAttribute="height" id="7Eu-GN-tDd"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="height" secondItem="Ob1-Uu-XST" secondAttribute="height" id="7KF-zN-wpg"/>
+                            <constraint firstItem="ioI-98-cak" firstAttribute="height" secondItem="rgY-Vr-OuI" secondAttribute="height" id="8xo-qJ-bvg"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="DMo-GH-vDO"/>
                             <constraint firstItem="NeJ-Nx-PmA" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="EX9-aQ-wbE"/>
-                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="top" secondItem="Ob1-Uu-XST" secondAttribute="bottom" constant="29" id="HUh-f0-7Xf"/>
-                            <constraint firstAttribute="centerX" secondItem="Ob1-Uu-XST" secondAttribute="centerX" id="Jwf-BF-g5r"/>
-                            <constraint firstItem="f9P-65-CAW" firstAttribute="centerX" secondItem="ioI-98-cak" secondAttribute="centerX" id="NEm-zJ-bPL"/>
-                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="height" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.15" priority="750" id="PHV-ow-8lb"/>
-                            <constraint firstItem="TLO-PT-fpe" firstAttribute="height" secondItem="f9P-65-CAW" secondAttribute="height" id="RL3-zv-pdz"/>
-                            <constraint firstItem="TLO-PT-fpe" firstAttribute="centerX" secondItem="f9P-65-CAW" secondAttribute="centerX" id="WRl-Pr-YhO"/>
-                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="height" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.18" priority="750" id="eL9-Cj-gpo"/>
-                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="gE7-Q7-Kyf"/>
-                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.15" id="giX-el-0xU"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="top" secondItem="q9v-s2-VAV" secondAttribute="bottom" constant="30" id="IGK-Ut-Y3R"/>
+                            <constraint firstItem="ioI-98-cak" firstAttribute="centerY" secondItem="rgY-Vr-OuI" secondAttribute="centerY" id="LIN-yc-EGD"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="leading" secondItem="f9P-65-CAW" secondAttribute="trailing" constant="-1" id="SoL-1m-10m"/>
+                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="leading" secondItem="TLO-PT-fpe" secondAttribute="trailing" constant="-1" id="UTX-BP-1oa"/>
+                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="Xch-8p-Mcg"/>
+                            <constraint firstItem="f9P-65-CAW" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="Y5y-Sv-LBf"/>
                             <constraint firstItem="q9v-s2-VAV" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="gjV-Gx-Hpu"/>
-                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="ik0-on-kHA"/>
-                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="top" secondItem="ioI-98-cak" secondAttribute="bottom" id="jf1-LA-Dwl"/>
-                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="height" secondItem="Psc-FV-fb0" secondAttribute="height" multiplier="0.2" priority="750" id="njj-0q-4Ix"/>
-                            <constraint firstItem="Ob1-Uu-XST" firstAttribute="top" secondItem="9qq-ZG-FGu" secondAttribute="bottom" constant="29" id="now-sN-aXY"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="height" secondItem="rgY-Vr-OuI" secondAttribute="height" id="hxP-gc-caL"/>
+                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="centerY" secondItem="f9P-65-CAW" secondAttribute="centerY" id="lhg-U8-Pc4"/>
+                            <constraint firstItem="TLO-PT-fpe" firstAttribute="centerY" secondItem="Ob1-Uu-XST" secondAttribute="centerY" id="mIT-X5-eyE"/>
+                            <constraint firstItem="ioI-98-cak" firstAttribute="width" secondItem="TLO-PT-fpe" secondAttribute="width" id="mVy-iE-ZJK"/>
                             <constraint firstItem="NeJ-Nx-PmA" firstAttribute="top" secondItem="WiM-qc-MGK" secondAttribute="bottom" constant="8" id="os8-ht-yWX"/>
-                            <constraint firstItem="TLO-PT-fpe" firstAttribute="height" secondItem="ioI-98-cak" secondAttribute="height" id="oyI-A1-uqw"/>
+                            <constraint firstItem="ioI-98-cak" firstAttribute="leading" secondItem="Psc-FV-fb0" secondAttribute="leadingMargin" id="ozi-E7-Jp6"/>
                             <constraint firstAttribute="centerX" secondItem="q9v-s2-VAV" secondAttribute="centerX" id="pBU-Jk-eB3"/>
-                            <constraint firstItem="TLO-PT-fpe" firstAttribute="width" secondItem="f9P-65-CAW" secondAttribute="width" id="qJF-hW-tyC"/>
                             <constraint firstItem="q9v-s2-VAV" firstAttribute="trailing" secondItem="Psc-FV-fb0" secondAttribute="trailingMargin" id="sxI-py-GK7"/>
-                            <constraint firstAttribute="centerX" secondItem="9qq-ZG-FGu" secondAttribute="centerX" id="vMr-lV-caw"/>
+                            <constraint firstItem="rgY-Vr-OuI" firstAttribute="leading" secondItem="ioI-98-cak" secondAttribute="trailing" constant="-1" id="uic-sq-mpj"/>
                             <constraint firstAttribute="centerX" secondItem="NeJ-Nx-PmA" secondAttribute="centerX" id="vXX-Zq-DB6"/>
-                            <constraint firstItem="9qq-ZG-FGu" firstAttribute="top" secondItem="q9v-s2-VAV" secondAttribute="bottom" constant="29" id="wtP-qR-Yp6"/>
-                            <constraint firstAttribute="centerX" secondItem="rgY-Vr-OuI" secondAttribute="centerX" id="xAI-pu-RwH"/>
+                            <constraint firstItem="cRD-Ia-Rts" firstAttribute="top" secondItem="rgY-Vr-OuI" secondAttribute="bottom" constant="30" id="z58-3g-Ar9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="成语" id="tkc-wR-ZkW">
@@ -816,17 +809,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="exampleLabel" destination="ioI-98-cak" id="pow-qq-XnR"/>
+                        <outlet property="exampleLabel" destination="ioI-98-cak" id="LJr-Vd-wPj"/>
                         <outlet property="exampleText" destination="rgY-Vr-OuI" id="dqe-wU-HwQ"/>
-                        <outlet property="exampleToSourceConstraint" destination="HUh-f0-7Xf" id="TPo-yG-Kz0"/>
-                        <outlet property="meaningLabel" destination="f9P-65-CAW" id="1Te-vo-W9g"/>
+                        <outlet property="meaningLabel" destination="f9P-65-CAW" id="12e-R1-Re8"/>
                         <outlet property="meaningText" destination="9qq-ZG-FGu" id="W4D-eN-K6N"/>
-                        <outlet property="meaningToTitleConstraint" destination="wtP-qR-Yp6" id="cSE-qj-gFd"/>
                         <outlet property="nameText" destination="NeJ-Nx-PmA" id="h8z-On-08S"/>
                         <outlet property="pinyinText" destination="q9v-s2-VAV" id="Czo-Fr-otI"/>
-                        <outlet property="sourceLabel" destination="TLO-PT-fpe" id="JIj-Yd-VRo"/>
+                        <outlet property="sourceLabel" destination="TLO-PT-fpe" id="2ky-vg-Ol7"/>
                         <outlet property="sourceText" destination="Ob1-Uu-XST" id="CDQ-Vd-kkC"/>
-                        <outlet property="sourceToMeaningConstraint" destination="now-sN-aXY" id="yYo-sw-fDq"/>
+                        <outletCollection property="labels" destination="f9P-65-CAW" id="vlC-OO-AwC"/>
+                        <outletCollection property="labels" destination="TLO-PT-fpe" id="GFH-E5-6xB"/>
+                        <outletCollection property="labels" destination="ioI-98-cak" id="gLg-n8-Bmc"/>
+                        <outletCollection property="texts" destination="9qq-ZG-FGu" id="K6M-tV-JBp"/>
+                        <outletCollection property="texts" destination="Ob1-Uu-XST" id="6QP-Xv-JvI"/>
+                        <outletCollection property="texts" destination="rgY-Vr-OuI" id="Paw-Y5-Zkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw2-2H-3uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
