@@ -238,6 +238,7 @@
 }
 
 - (IBAction)clickQuit:(id)sender {
+    NSLog(@"quit");
     [self performSegueWithIdentifier:@"EndSegue" sender:sender];
 }
 

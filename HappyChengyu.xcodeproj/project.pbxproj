@@ -598,10 +598,10 @@
 					"$(SRCROOT)/../lib",
 				);
 				INFOPLIST_FILE = HappyChengyu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = happychengyu;
-				PROVISIONING_PROFILE = "1b2a3f69-cd8e-4b26-add6-1cd1d1baca6d";
+				PROVISIONING_PROFILE = "6a4b9292-6e10-4d5d-a2af-97b4ba51827c";
 			};
 			name = Debug;
 		};
@@ -619,10 +619,10 @@
 					"$(SRCROOT)/../lib",
 				);
 				INFOPLIST_FILE = HappyChengyu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = happychengyu;
-				PROVISIONING_PROFILE = "b4ad94bd-0cd2-4f93-97d0-8fcca619af33";
+				PROVISIONING_PROFILE = "6a4b9292-6e10-4d5d-a2af-97b4ba51827c";
 			};
 			name = Release;
 		};

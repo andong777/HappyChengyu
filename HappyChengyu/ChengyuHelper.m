@@ -104,7 +104,6 @@
         [candidates removeObjectsInArray:_appearedList];
         return candidates;
     }else{
-        // TODO 对拼音“吁”的判断有误，会将其变成“u”。
 //        NSPredicate *select = [NSPredicate predicateWithFormat:@"%K[FIRST] ==[cd] %@", @"pinyin", pinyin];
         NSMutableArray *candidates = [NSMutableArray array];
         for(Chengyu *cy in _chengyuList){

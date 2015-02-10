@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     _searchBar = [[UISearchBar alloc] init];
-    _searchBar.placeholder = @"搜索成语、成语首字母缩写或单字";
+    _searchBar.placeholder = @"输入成语、成语缩写或单字";
     _searchBar.searchBarStyle = UISearchBarStyleMinimal;
     _searchBar.showsCancelButton = YES;
     _searchBar.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
